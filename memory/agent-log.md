@@ -147,3 +147,7 @@ STATE: task=产品工程 Skill 立项——方向档 v0.8：**蓝海定位定稿
 - **新门禁候选 statechart-gate**（强制候选第 10 项，作用域=多状态功能面≥3 态，单态豁免）：①翻译表有 statechart 定义②无死端③全可达④错误态有恢复⑤守卫有行——①③④机器查 exit 1，②⑤半自动
 - 工件链闭环：功能句→翻译表→statechart→矩阵视图→spec-trace→走查→账本；statechart 成 spec-trace 反向追溯的数据源+走查路径生成器
 - GATE: {level=L2-S, v=蓝海定位+statechart 载体定稿, cmd=H 档落盘+direction §九蓝海段+agent-log+commit, exit=0, files=参考Skill/H-功能流程状态设计蓝海.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=红海教手法蓝海定义结构（手法治标结构治本）；statechart 让「契约可判定化」有了可执行载体（无死端=出路的严格表述）；源格式机器读+视图人读=双向工件的分层, exempt=statechart/XState 细节基于稳定经典知识未抓原文（Harel 1987 论文稳定）, caps=—, effort=蓝海定位+学科挂靠+门禁设计+工件链闭环, stop_reason=—}
+
+### 2026-09-21 05:16｜第十六轮：开工前自查——待裁决四条+自我约束两条（direction §四登记）
+- 用户问「还有疑问或补充吗」（开工前最后一道确认）——批判性自查后：疑问 4 条待裁决（statechart-gate 转正节奏：推荐实测后证据裁决；第四包命名确认；判定表首批选材是否先过目；agentic 实测任务来源），补充 2 条自我约束（使用率监控对应物第一迭代后补；知识库=训练分布有幻觉引用风险→出处标信心级+接受抽验）
+- GATE: {level=L2-S, v=开工前自查登记, cmd=自查+direction §四待裁决块+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=「还有疑问吗」的正确答法=批判性自查出真待裁决项而不是客套没有；知识库要声明边界（训练分布≠实时检索，幻觉引用比无引用更糟）, exempt=—, caps=—, effort=4 疑问+2 约束, stop_reason=—}
