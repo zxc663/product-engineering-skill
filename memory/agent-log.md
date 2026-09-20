@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.5.2：桌面项目纪律核实完成（E 档），素材源+三升格入档 | level=L2-F | route=联通层唯一职责+强制八项+capability-map（对齐踩坑经验库先例）+判定表选材源=AI会话知识沉淀 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.5.2（2026-09-21）**——五份调研（A/B/C/D/E：E=桌面项目纪律核实：「项目/」42 条纪律+知识沉淀库 40+ 条+博客项目+主项目复查）+问题定义（含目的态）+衰减链+品味时序+联通层（§九）+强制边界与缺口（§十）；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.6：**挂靠定稿**（工作流家族第四包）+源库钩子已埋（34c4a08 未 push） | level=L2-F | route=第四包 shisan-xinuo-product 落位源库 skill/（设计部=桌面项目）+条件钩子分合可用+agentic 验收套 EVIDENCE 格式 | confirm=无需 | gates_passed=钩子分态自检（条件限定 grep 全过）；合态待包落地实测 | last_errpath=promote-skill 路径直觉错（在启动包根非源库内）→舍弃非主线
+- 当前阶段：**方向定稿 v0.6（2026-09-21）**——五调研+问题定义（目的态）+衰减链+品味时序+联通层（§九）+强制边界（§十）+**挂靠架构定稿**（§三：第四包落位源库；§四：第一迭代含钩子合态实测）；源库已埋钩子本地 commit 34c4a08 未 push 未发行；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader；ponytail 本机=单文件 6.7KB；桌面扫描红线：新建文件夹/样本=真实账单不碰、私人目录不读
-- 最近更新：2026-09-21 04:40
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；桌面红线：样本=真实账单不碰
+- 最近更新：2026-09-21 04:50
+- 遗留：第四包本体未写（第一迭代）；源库钩子未发行（用户发版流程）；工作流回补四条待实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
@@ -113,3 +114,11 @@ STATE: task=产品工程 Skill 立项——方向档 v0.5.2：桌面项目纪律
 - 博客项目三条两条已被工作流吸收（漂移自检/判级不可隐/接续豁免=确认状态）；主项目复查无漏
 - 三升格入 direction：①阶梯加第 0 问（产品视角判必要性）②验收标准前置并入联通工序③能力地图对齐踩坑经验库先例（§十已补回指）；判定表首批选材源=知识沉淀库（本土实战出处>外部蒸馏）
 - GATE: {level=L2-S, v=桌面项目纪律核实, cmd=ls 盘点+双 AGENTS.md 通读+知识沉淀库头部+落档 E+direction §十回指+agent-log+commit, exit=0, files=参考Skill/E-桌面项目纪律核实.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=用户观点要查实践史——目的态早在 2026-08-13 就固化过，机制化才是新增量；本土实战素材出处说服力高于外部蒸馏；机制先例优先于发明（能力地图=踩坑经验库泛化）, exempt=TRAE.md/子项目/踩坑经验库正文未读（AGENTS 已浓缩其机制，预算纪律）, caps=—, effort=11 目录盘点+2 项目深核+42 条筛分+素材源登记, stop_reason=—}
+
+### 2026-09-21 04:50｜第十二轮：工作流源库核实+挂靠定稿+条件钩子实施（用户两连指令）
+- 源库定位：D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端 GitHub/Gitee，skill/ 三包=核心/flows/roles）
+- **源库核实（E 档 §5，B 组漏的仓库工程层）**：①EVIDENCE.md=with/without 对照路测（v1.8.0 双轨同指令+9 维行为矩阵+N=1 诚实）——工作流已实践 agentic 基准，第一迭代验收直接套格式 ②RELEASE-CHECKLIST=发行工程化（版本六处锁/verify-release 8 项/「清单=时点快照每批强制重写」/push 单独批准）③三包「独立可装建议同装」=分合范式 ④hooks 模板先例 ⑤#371 ev=/#373 机器事实优先=同源条款引用端口
+- **挂靠架构定稿（用户「要不挂靠在工作流下了」）**：第四包 shisan-xinuo-product 落位源库 skill/ 与 flows/roles 并列（独立可装建议同装）；继承家族发行链；桌面项目=设计部
+- **条件钩子实施**（源库本地 commit 34c4a08，未 push 未发行）：skill-usage §8（检测→在场三缝合点：计划检索位/GATE 门禁真值/收尾账本写回；未装→跳过+GATE exempt 声明；裁决优先序：底线门禁>流程纪律>品味裁决；单一权威不复制包内容）+SKILL §10 路由 dispatch 行+加载表行+CHANGELOG Unreleased
+- **分合验证**：分态自检过（grep 全部 product 引用均带「若在场/未装」条件限定——包未入库不悬空）；合态实测=第一迭代验收项（包落位后缝合点实触发）
+- GATE: {level=L2-F, v=源库核实+挂靠定稿+钩子实施, cmd=源库结构/git/发行件核实+三处钩子落位+分态 grep 自检+双仓 commit, exit=源库 34c4a08+本项目待提交, files=源库{skill-usage.md+SKILL.md+CHANGELOG.md}+本项目{E档§5+direction §三/§四+agent-log}, refs=0(未跑 lookup，0 照报), errpath=promote-skill 路径直觉错（在启动包根）→舍弃非主线; runlog=roadtest 自动产物不夹带（只 add 三文件）, lessons=条件式钩子是「引用不存在之物不悬空」的通用解（每处引用带在场限定）；家族分合范式复用 flows/roles 先例不发明；B 组蒸馏漏仓库工程层——蒸馏要分层（文本层/工程层）, exempt=合态缝合点未实测（包本体未产，第一迭代验收项）；源库未 push（用户批准制）, caps=—, effort=源库五件核实+三处钩子+双仓落档, stop_reason=—}

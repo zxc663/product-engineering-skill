@@ -40,8 +40,10 @@
 
 ## 三、Skill 结构定稿（对齐 skill-creator 规范）
 
+**安装位置定稿（2026-09-21 用户裁决：挂靠工作流家族）**：第四包 `shisan-xinuo-product` 开发于工作流源库 `skill/` 下与 flows/roles 并列（源库=D:/Agent工作流启动包/shisan-xinuo-workflow），**独立可装、建议同装**（家族范式）；继承家族发行链（RELEASE-CHECKLIST/verify-release/dist/syncer）。桌面「产品工程Skill/」项目=**设计部**（direction 权威+调研档 A-E+agent-log）。源库已埋条件钩子（skill-usage §8+SKILL §10 路由行，本地 commit 34c4a08 未 push 未发行）——分合都可用：第四包独立可装/三包不装它照常/同装自动缝合。
+
 ```
-product-engineering/            ← 安装于 .agents/skills/
+shisan-xinuo-product/          ← 家族第四包（源库 skill/ 下；独立可装建议同装）
 ├── SKILL.md                    ← <500 行：frontmatter + 四问题域路由 + 判定表骨架（首批 10 条）+ 反借口表 v1 + 何时读哪个文件
 ├── references/
 │   ├── interaction-bridge.md   ← 联通层（中心）：来源三合法+功能天生六问+翻译表 schema+双底双顶清单
@@ -64,6 +66,7 @@ product-engineering/            ← 安装于 .agents/skills/
 
 ## 四、第一迭代切片（下一轮动工）
 
+0. **落位**：包本体开发于源库 `skill/shisan-xinuo-product/`（SKILL.md+references+scripts 四件），本地 commit 不 push；第一迭代验收含「钩子合态实测」（包落位后三缝合点在源库副本上实际触发一次）。
 1. SKILL.md 骨架（frontmatter+联通层路由+判定表首批 10 条+interaction-bridge 骨架：来源三合法+功能天生六问+双底双顶首批条目）。
 2. anti-excuses.md：反借口表 9 条成稿。
 3. scripts/registry-gate：可运行的 grep 门禁 v1（对一个样例项目实测 exit 0/1 两态）。

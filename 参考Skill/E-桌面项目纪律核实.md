@@ -44,3 +44,13 @@ P1-P4 原型门禁（check-proto-parity 四断言可运行=产品工程三门禁
 2. **验收标准前置并入联通工序**：翻译表产出后即写 3-5 条可验证验收标准（Given/When/Then），先于任何实现。
 3. **能力地图机制对齐踩坑经验库先例**：开工必读+症状检索+四段式+维护时间戳+harvest——不发明新机制，泛化已验证机制。
 4. **判定表首批 10 条选材源**：AI会话知识沉淀 40+ 条实战条目（触发场景｜判断｜行动现成格式）优先于外部蒸馏选材——本土实战出处说服力最高。
+
+## 5. 工作流源库核实（D:/Agent工作流启动包/shisan-xinuo-workflow，git 仓双远端，B 组蒸馏只覆盖 skill 文本——本轮补仓库工程层）
+
+1. **EVIDENCE.md with/without 对照路测（v1.8.0）**：双轨同指令同初始状态（without=通用子代理只读轨/with=按 11 步主流程落地）+9 维行为对照矩阵（判级/复述/验收前置/红线显式化/文档同步…）+局限诚实（N=1 样本声明）——**工作流已实践 agentic 基准，比 ponytail 更早；direction §四 的 agentic 对照验收直接套此格式**。
+2. **RELEASE-CHECKLIST 发行工程化**：版本六处锁（package.json/SKILL frontmatter/README 徽章/项目信息/reference-sources/AGENTS）+verify-release 可复跑门禁（8 项）+facts_sync 机器事实断言+「**本清单=时点快照，每批次开工强制重写（防过期口径指挥发行）**」+push 单独批准+豁免面义务——Skill 作为产品的完整发行供应链，第四包挂靠后直接继承。
+3. **三包家族分合范式**：skill/ 三包「独立可装、建议同装、按需加载、用完不驻留」——产品工程第四包挂靠的机制基础（本轮已按此实施钩子，源库本地 commit 34c4a08）。
+4. **hooks 模板体系先例**：templates/hooks/session-start.example.sh+session-end.example.sh+hooks.example.json——生命周期钩子的形态先例（工作流回补四条之一有原型）。
+5. **同源条款（引用不复制）**：CHANGELOG v3.2.0 细则 #371「GATE ev= 验证层级（exec/cover/invariant/indep）」与 #373「机器事实优先于 LLM 判据+公开数字须随仓可复算+效果主张须外部盲评」——与产品工程取证纪律同源，判表引用端口。
+6. **明确不拿**：roadtest/scorecard/判据体系（j1.0-j2.5）=工作流自有效果验证基建——工作流域，引用端口不搬内容。
+7. **核实过程实测**：promote-skill 在启动包根不在源库内（路径直觉错一次）；CHANGELOG 为简史制（每版一行关键意图，完整逻辑在 git log）——第四包 CHANGELOG 沿用此制。
