@@ -254,3 +254,9 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - 抽验 peer 声明的三处修复全部属实：LEAVE_STAGED→idle+RESUME_STAGED→awaitingReview 闭环 ✓；queued 自环+QUEUE_EMPTIED→idle ✓；statechart-gate 重跑 rc=0 ✓——**peer 的 GATE 报告与实物一致，其合规可信度上调**
 - errpath 补记：设计部 push 128 两连（origin 从未配置——第 18 轮用全 URL 推送未留 remote）→ 全 URL+extraheader 成功（4c0c9d7..97659dc）；教训=首次 push 后应 `remote add origin` 留常规通道
 - GATE: {level=L2-S, v=peer v2 复核, cmd=json 抽验三处+gate 重跑 rc=0, exit=0, files=—（评审轮）, refs=0(未跑 lookup，0 照报), errpath=设计部 push 128（无 remote）→全 URL 重推成功, lessons=trust but verify：对 peer 的 GATE 报告抽验实物——报告属实则对方后续报告可信度加权, exempt=—, caps=—, effort=三处抽验+门禁重跑, stop_reason=—}
+
+### 2026-09-21 06:15｜peer 实战第五批：全站覆盖——剩余 6 页 statechart 全过（财务会话）
+- 逐页实战完成：dashboard(5)/budget(8)/calendar(5)/report(8)/nlquery(4)/settings(5)+settings-purge(3)——**全站 10 功能面 statechart 全部过门禁**，样本全落 docs/*-statechart.json（gate 实测语料池成形）
+- **对照缺口清单**：多数页实现与态机吻合（今晚 15 轮迭代的沉淀）；新发现一处六问②缺口——**NL 查询与 AI 月报生成 10-30s 无取消按钮**（Nielsen 三阈值：超 10s 必可取消；当前 AbortSignal 未接前端 UI）——记录待修（修复需后端取消端点，成本中）
+- **方法收敛观察**：五批实战后，statechart 书写速度显著提升（首批 8 态要对照源码，第五批 5 态纯凭今晚走查记忆 5 分钟）——「态在脑中成形」是七步跑道的熟练曲线，也正是被验方「把工匠三样东西外置」论断的 peer 侧体感
+- GATE: {level=L2-S, v=peer 实战第五批全站覆盖, cmd=6 页 statechart+gate×6, exit=0×6, files=docs/{dashboard,budget,calendar,report,nlquery,settings,settings-purge}-page-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=全站覆盖后「每页态机」成为走查清单的可执行形态（比文字清单更可判定）, exempt=nlquery/report 取消按钮缺口未修（需后端取消端点，登记待修）, caps=—, effort=6 页+全站覆盖, stop_reason=—}
