@@ -4,11 +4,11 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.3（四调研+问题定义+衰减链+§八品味与时序纪律） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链对策+时序纪律（构想先于设计/复用归落地/权威序非瀑布） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.3（2026-09-21）**——A/B/C/D 四调研+〇节问题定义+§六同类对照+§七衰减链+§八工程品味与时序纪律（PG 原文一手引用）；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.3.1（四调研含 ponytail 上游深读+问题定义+衰减链+品味与时序纪律） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链对策+时序纪律+agentic 对照验收 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.3.1（2026-09-21）**——A/B/C/D 四调研（D 含 ponytail 上游深读：基准方法论/hooks 注入/debt 账本/正交先例四吸收）+〇节问题定义+§六同类对照+§七衰减链+§八品味与时序纪律；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader（paulgraham.com 同路成功）
-- 最近更新：2026-09-21 03:51
+- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader（paulgraham.com 同路成功）；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
+- 最近更新：2026-09-21 04:05
 - 遗留：Skill 本体未写；门禁脚本未产
 
 ## 二、教训区
@@ -63,3 +63,10 @@ STATE: task=产品工程 Skill 立项——方向档 v0.3（四调研+问题定�
 - 权威序≠瀑布序：设计=宪法/落地=执法/走查=司法审查（证据回写账本反哺下版）
 - Skill 后果三条：判定表加「组件驱动设计=一票否决」时序条目+注册表双视图（能力索引/组件卡）+设计档准入六态可数化（设计门禁雏形）
 - GATE: {level=L2-S, v=品味解剖+时序纪律定稿, cmd=web_reader 拉 PG 原文+五能力蒸馏+direction §八+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit agent-log 再报 modified（#294 heredoc 后未重读）→重读再改成功, lessons=品味可执行部分全是否定性知识（美涌现不可枚举/丑可枚举可判定）；问题在错的层面被解决=无品味的原型症状；反人类设计大多不是决策出来的是方便累积出来的, exempt=联网未多轮（一手文献一轮即定，预算纪律）, caps=mcp__web_reader__webReader, effort=PG 十四条逐条蒸馏为五能力+命题两处严谨化+三条 Skill 后果, stop_reason=—}
+
+### 2026-09-21 04:05｜第六轮：ponytail 上游原仓库深读（用户直供 github.com/DietrichGebert/ponytail）
+- 确认=本机 ponytail（单文件 6.7KB）的上游完整产品；本机蒸馏漏掉的四件最值钱：**基准方法论**（同类首个对照实验：真实仓库 12 ticket×n=4 以 git diff 计分——LOC -54%/tokens -22%/cost -20%；裸口号提示 LOC 降但安全掉 95%=白名单条款才是安全来源；single-shot 旧基准 80-94% 被 #126 挑战后公开修正并标注 artifact=诚实测量样本）/**hooks always-on 注入**（UserPromptSubmit+PreToolUse+模式开关=衰减链 1/4 级已验证工程解；20 平台矩阵）/**ponytail: 注释+debt harvest**（裁决账本最小实现样例）/六命令族+check-rule-copies 副本一致性门禁
+- 阶梯精确形态补两条：理解问题之后运行（Lazy about solution, never about reading）+「规则不是最少 token，是只写任务需要的且永不砍验证/错误处理/安全/a11y」
+- 差异化表修正：账本位非全空白——ponytail-debt 占债务语义（记为何没写），decision-ledger 裁决语义（记为何这么定）仍空白
+- 四吸收落档：D 档 §6+direction §四验收升级（agentic 对照）+§八末六条；本机 ponytail-review 为独立 Skill 不在上游命令族内（本机化改动的痕迹，待后考）
+- GATE: {level=L2-S, v=ponytail 上游深读, cmd=web_reader 抓仓库全文+本机 ls 对照+D档§6+direction两处+agent-log+commit, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit D 档报 not read（#294 压缩后读态丢失）→重读再改成功, lessons=给 Skill 做对照实验是同类首创且可复制（真实 diff 计分+对照组+安全单列）；安全不来自口号来自白名单条款；账本有债务/裁决两种语义；hooks 注入>概率触发, exempt=本机 ponytail-review 与上游关系未深查（B 组已蒸馏其形态，不再重复）, caps=mcp__web_reader__webReader, effort=全文深读+本机副本对照+差异化表修正+四吸收落档, stop_reason=—}

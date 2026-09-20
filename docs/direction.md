@@ -63,7 +63,7 @@ product-engineering/            ← 安装于 .agents/skills/
 1. SKILL.md 骨架（frontmatter+路由+首批判定表 10 条：四问题域各 2-3 条，全部代码级正反例）。
 2. anti-excuses.md：反借口表 9 条成稿。
 3. scripts/registry-gate：可运行的 grep 门禁 v1（对一个样例项目实测 exit 0/1 两态）。
-4. 验收：按 skill-creator 规范用 2-3 个真实提示词测触发与输出；trace 查 busywork。
+4. 验收：按 skill-creator 规范用 2-3 个真实提示词测触发与输出；trace 查 busywork；+ponytail 式 **agentic 对照实测**（同任务带/不带 Skill 各跑、以 git diff 计分、安全项单列——上游 ponytail 证明裸口号提示安全掉 5pp，白名单条款不可省；D 档 §6）。
 
 **第一迭代验收校准（按问题定义）**：不只测「触发与输出」，每件工件必须同时通过问题定义检验——①失忆工人检验：一个全新会话、只装本 Skill 不装任何历史，能否在正确的动作前拿到它？②成本检验：使用它的成本（一次 grep/一次读 50 行）是否低于不使用（另造一页）？③兑现检验：门禁能否对「classifyNotice 式死代码」给出退出码 1？三者任一不过=该工件返工或删除。
 
@@ -117,3 +117,5 @@ product-engineering/            ← 安装于 .agents/skills/
 - **权威序≠瀑布序**：设计是宪法（管辖落地），落地是执法（复用=兑现方法论），实机走查=司法审查（证据回写账本反哺下版设计——好设计是重设计，账本=制度化的重设计记忆）。一刀切瀑布会把设计变成不可证伪的教条（5 缺陷走查即一轮司法审查）。
 
 **Skill 设计后果三条**：①判定表新增时序纪律条目——组件驱动设计（先选控件后定交互）=一票否决级反面；②注册表双视图：能力索引（设计时读）/组件卡（落地时读）；③设计档准入=六态矩阵可数化（缺态 exit 1）——品味首次前移到代码之前拦截。
+
+**上游 ponytail 深读吸收（2026-09-21，D 档 §6，用户直供链接）**：①第一迭代验收升级为 **agentic 对照实测**（同任务带/不带 Skill、git diff 计分、安全项单列——裸「YAGNI+一行流」口号提示 LOC 降但安全掉到 95%，证明白名单条款才是安全来源，光有极简口号会砍 guard）；②decision-ledger 写回采纳「**ponytail: 注释+定期 harvest**」轻量形态——代码内一行标注「为什么没写/为什么这么定」，收尾命令收割入账，防 later 变 never；③判定表补**阅读义务**条款——阶梯/查表在理解问题之后运行，禁跳过阅读直选档（Lazy about the solution, never about reading）；④caveman×ponytail 正交先例（管说的 Skill×管建的 Skill，零重叠可叠加）=工作流 Skill×产品工程 Skill 双架构的市场验证；⑤hooks 每轮注入（UserPromptSubmit/PreToolUse+模式开关）作为治衰减链第 1/4 级的工程通道备选——ZCode hooks 落地时启用。⑥账本差异化表述修正：ponytail-debt 占了「债务语义」账本位（记为何没写），decision-ledger 的「裁决语义」（记为何这么定）仍空白。

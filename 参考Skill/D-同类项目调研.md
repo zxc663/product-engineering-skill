@@ -40,3 +40,21 @@ awesome-claude-skills 三大目录（BehiSecc / travisvn ≈8.8k★ / ComposioHQ
 1. 判定表新增「业界共识」来源：vercel-labs/web-interface-guidelines（100+ 条，七类）——与 ux-feature-design/ui-ux-pro-max 并列为出处源。
 2. 命令形态借鉴 hallmark：门禁不只是脚本，做成 `audit`（出 punch list）/`study`（从人类指定设计提取 DNA 进注册表）两类动词。
 3. 交付物可携带「portable design.md」交接形态（hallmark study 同款）——跨工具/跨会话交接的现成范式。
+
+## 6. DietrichGebert/ponytail 上游原仓库深读（2026-09-21，用户直供链接）
+
+**定位**：本机 ponytail Skill（B 组已蒸馏其规则文本；本机=单文件 SKILL.md 6.7KB，~/.zcode/skills，无 ~/.agents 副本）的上游完整产品——「Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.」规则文本只是它的一小部分；上游=规则+hooks 注入架构+命令族+基准+账本。**本机副本蒸馏时漏掉的恰是最值钱的四件**：
+
+**基准方法论（同类中首个给 Skill 做对照实验的）**：真实 Claude Code headless 会话编辑真实仓库（tiangolo/full-stack-fastapi-template，FastAPI+React），12 张 feature ticket，同 agent 带/不带 Skill 对照，n=4，**以 git diff 计分**：ponytail LOC -54%/tokens -22%/cost -20%/time -27%/安全 100%；对照组 caveman（纯简短散文）LOC -20% 但 tokens +7%；裸「YAGNI+一行流」提示 LOC -33% 但**安全掉到 95%**（砍掉了 guard）——证明安全性来自阶梯的白名单条款（验证/错误处理/安全/a11y 永不在砍削名单），光喊极简口号不给白名单就会掉安全。最大削减恰落在真实 over-build 陷阱（date picker 404→23 行、color picker 287→23 行，均以原生 input 替代组件）；已极简的代码削减≈0。**修正史**：早期 single-shot 基准报 80-94% 被 issue #126 挑战（裸模型基线用散文填充答案=对话基线伪影），公开修正为 agentic 数字并保留旧数据标注 artifact——诚实测量的活样本，与本 Skill「不假实现」红线同构。
+
+**七级阶梯的精确形态**（比本机副本多两条关键条款）：①阶梯在理解问题**之后**运行而非代替理解——「先读要改的代码、追真实流，再选档」；「Lazy about the solution, never about reading」（对方案懒，对阅读绝不懒）②规则从来不是「最少 token」，是「只写任务需要的，且永不砍验证/错误处理/安全/无障碍」——代码小因为必要，不是 golf。
+
+**产品形态**：
+- **hooks always-on 注入**：UserPromptSubmit 每轮注入规则集+PreToolUse 注入 subagent（PONYTAIL_SUBAGENT_MATCHER 正则控范围）+模式 lite/full/ultra/off——**不靠 description 概率触发=衰减链第 1 级（不触发）与第 4 级（仪式化）的已验证工程解**；20 平台适配矩阵（AGENTS.md 为所有平台的指令兜底）。
+- **六命令族**：`/ponytail-review`（diff 查过度工程，交回删除清单）/`audit`（全仓不只 diff）/`debt`（收获 ponytail: 注释进 ledger，「防 later 变 never」）/`gain`（测量记分板）/`help`。
+- **ponytail: 注释**：`<!-- ponytail: browser has one -->`——代码内一行标注「为什么没写」，debt 命令定期收割入账本=**裁决账本的最小实现样例**（写回协议的轻量形态）。
+- **check-rule-copies.js**：多平台规则副本一致性门禁（改规则文本跑 npm test 即查漂移）——多副本治理的工程化。
+
+**对 §4 差异化表的修正**：「跨会话裁决账本全场空白」需弱化——ponytail-debt 是账本（债务语义：记「为何没写」待收割）；我们的 decision-ledger 是裁决语义（记「为何这么定」直接复用）。语义不同但机制位已被占，差异化表述改为「账本机制位已有债务先例，裁决语义+设计域仍空白」。
+
+**对本 Skill 的四条吸收（已并入 direction.md §八末）**：①三重检验升级为 ponytail 式 agentic 对照实测（真实 diff 计分+无 Skill 对照组+安全项单列）；②decision-ledger 写回采纳「ponytail: 注释+定期 harvest」轻量形态；③判定表补「阅读义务」条款（阶梯/查表在理解问题之后运行，禁跳过阅读直选档）；④caveman×ponytail 正交先例（管说的 Skill×管建的 Skill 零重叠可叠加）=工作流 Skill×产品工程 Skill 双架构的市场验证。
