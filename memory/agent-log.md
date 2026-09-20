@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.8：**蓝海定位定稿**（结构层=功能流程状态设计，statechart 载体，H 档） | level=L2-F | route=第四包挂靠源库+联通层核心交付=结构层（六问翻译表→statechart→矩阵视图→spec-trace→走查→账本）+强制候选 10 项（+statechart-gate 带作用域） | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=web_reader/WebSearch 间歇 429→稳定公开体系拆解+挂出处（statechart=Harel 1987/XState 稳定经典）
-- 当前阶段：**方向定稿 v0.8（2026-09-21）**——八调研（A-H：H=功能流程状态设计蓝海）+问题定义+衰减链+品味时序+联通层（§九 蓝海定位+statechart 载体）+强制边界（§十 9 项+候选第 10）+挂靠架构；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill——**第四包 v0.1.0 第一迭代已落地源库**（4dac20e，9 文件 381 行） | level=L2-F | route=联通层七步跑道（功能句→六问→statechart→矩阵→验收前置→查表实现→追溯取证写回）+双门禁自测两态过+合态文件存在性 7/7 | confirm=豁免：用户授权自裁决开工 | gates_passed=registry-gate/statechart-gate --selftest 两态验证 exit=0；钩子合态文件存在性验证通过 | last_errpath=—
+- 当前阶段：**第一迭代完成（2026-09-21）**，待办：①源库未 push（用户批准制）②statechart-gate 转正待实测证据 ③agentic 对照实测（任务源=财务项目历史：导入向导/设置页/仪表盘）④使用率监控对应物 ⑤skill-creator 规范触发词实测
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch/web_reader 间歇 429
-- 最近更新：2026-09-21 05:12
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；第四包=skill/shisan-xinuo-product
+- 最近更新：2026-09-21 05:25
+- 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；statechart-gate 待第一迭代实现（JSON 无死端/全可达/错误态恢复检查）；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；G 档 §6 留白待用户贴抖音关键帧逐帧拆解；缺口 6-9 未入 direction（判定表入库时挂）
 - 遗留：第四包本体未写（第一迭代）；F 档缺口 2-9 项为劝导级未全部入 direction（判定表入库时逐条挂）
@@ -151,3 +152,9 @@ STATE: task=产品工程 Skill 立项——方向档 v0.8：**蓝海定位定稿
 ### 2026-09-21 05:16｜第十六轮：开工前自查——待裁决四条+自我约束两条（direction §四登记）
 - 用户问「还有疑问或补充吗」（开工前最后一道确认）——批判性自查后：疑问 4 条待裁决（statechart-gate 转正节奏：推荐实测后证据裁决；第四包命名确认；判定表首批选材是否先过目；agentic 实测任务来源），补充 2 条自我约束（使用率监控对应物第一迭代后补；知识库=训练分布有幻觉引用风险→出处标信心级+接受抽验）
 - GATE: {level=L2-S, v=开工前自查登记, cmd=自查+direction §四待裁决块+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=「还有疑问吗」的正确答法=批判性自查出真待裁决项而不是客套没有；知识库要声明边界（训练分布≠实时检索，幻觉引用比无引用更糟）, exempt=—, caps=—, effort=4 疑问+2 约束, stop_reason=—}
+
+### 2026-09-21 05:25｜第十七轮：开工——第四包 v0.1.0 第一迭代落地源库（用户授权自裁决开工）
+- 四条自裁决：statechart-gate 保持候选实测后转正/命名维持 shisan-xinuo-product/判定表混合选材理由入出处/实测任务源=财务项目历史
+- **第四包落地**（源库 4dac20e，9 文件 381 行，未夹带 runlog）：SKILL.md 74 行（七步跑道/双底双顶含第四底/强制 9+候选 10/冲突裁决序/规模分档 L0-L2 防仪式爆炸）+interaction-bridge（三合法/六问带出处信心级/statechart schema）+judgement-table（首批 10 条：结构层 2/不难用 3/不难看 2/时序 1/a11y 2，全带出处+信心级）+anti-excuses（v1 九条+危险词触发）+capability-map（10 行时点×症状路由）+decision-ledger（裁决语义+准入五问+写回时机+首批样例 2 条）+registry（纯检查者/双视图/归因标记格式）+registry-gate.py+statechart-gate.py
+- **验证**：两门禁 --selftest 两态全过（registry：缺归因被拦/补归因放行；statechart：合法机放行/死端 C2+不可达 C3+错误态无出路 C4 被拦）；钩子合态文件存在性 7/7 ✓；SKILL.md 74 行<500 规范
+- GATE: {level=L2-F, v=第四包 v0.1.0 第一迭代, cmd=mkdir+7 Write+2 Edit+selftest×2+合态存在性+源库 commit 4dac20e, exit=0, files=源库 skill/shisan-xinuo-product/{SKILL.md+references×6+scripts×2}+设计部{direction §四回填+agent-log}, refs=0(未跑 lookup，0 照报), errpath=—, lessons=第一迭代最小闭环=骨架+两门禁可跑+自测两态；裁决被授权时自行裁决并留档理由（不回问）, exempt=agentic 对照实测未跑（任务已定源，下一迭代）；spec-trace 门禁未实现（属第二迭代：需对接具体项目结构）, caps=—, effort=9 文件 381 行+双门禁自测, stop_reason=—}
