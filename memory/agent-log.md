@@ -260,3 +260,10 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - **对照缺口清单**：多数页实现与态机吻合（今晚 15 轮迭代的沉淀）；新发现一处六问②缺口——**NL 查询与 AI 月报生成 10-30s 无取消按钮**（Nielsen 三阈值：超 10s 必可取消；当前 AbortSignal 未接前端 UI）——记录待修（修复需后端取消端点，成本中）
 - **方法收敛观察**：五批实战后，statechart 书写速度显著提升（首批 8 态要对照源码，第五批 5 态纯凭今晚走查记忆 5 分钟）——「态在脑中成形」是七步跑道的熟练曲线，也正是被验方「把工匠三样东西外置」论断的 peer 侧体感
 - GATE: {level=L2-S, v=peer 实战第五批全站覆盖, cmd=6 页 statechart+gate×6, exit=0×6, files=docs/{dashboard,budget,calendar,report,nlquery,settings,settings-purge}-page-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=全站覆盖后「每页态机」成为走查清单的可执行形态（比文字清单更可判定）, exempt=nlquery/report 取消按钮缺口未修（需后端取消端点，登记待修）, caps=—, effort=6 页+全站覆盖, stop_reason=—}
+
+### 2026-09-21 06:25｜spec-trace v1 组件级三方绑定（用户粒度裁决）
+- 用户：细粒度不够——每个页面/窗口的每个独立组件都要过，且要对上功能实现与后端逻辑块
+- spec-trace-gate v1：联通行三段→**五段三方绑定**（page/component/feature/backend/evidence），粒度=组件实例；新增 T4 UI 孤儿（代码有清单无=发明/漏登记）+T5 死逻辑（后端块无消费=classifyNotice 结构化形态）；纯展示组件显式 NONE(纯展示)；可选 --components/--backends 清单做全量差集
+- selftest 首跑抓出我自己样本 bug（backend 清单与绑定字符串不一致误报死逻辑）→修样本再过——selftest 先拦作者再拦用户
+- 三副本同步+源库 commit+push
+- GATE: {level=L2-F, v=spec-trace v1 组件级绑定, cmd=Write v1+selftest rc=0+三副本 diff 零输出+push, exit=0, files=源库 scripts/spec-trace-gate.py+两副本, refs=0(未跑 lookup，0 照报), errpath=selftest 拦自写样本（backend 字符串不一致）→修样本, lessons=组件级三方绑定把「假功能/死逻辑/发明组件」三类病灶统一成图差集问题；证据段占位语机器可拦, exempt=T4/T5 的全量清单提取器（从代码自动生成 components/backends 清单）未做——v1 先人工喂清单, caps=—, effort=v1 升级+四类孤儿检查+三副本同步, stop_reason=—}
