@@ -206,3 +206,9 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - 全部同步三副本+push（a3e2c6c/2bba3cc/dc40dd2/fc43ebd/9831042）
 - errpath：cp 路径误写致副本根多余文件→清理；diff 报差疑行尾实为缺 3 行注释→补齐；Gitee 认证止损
 - GATE: {level=L2-F, v=循环第一波 v0.2→v0.3, cmd=实测财务项目+基线模式修复+判定表扩容+双新门禁+元品味+五次 push, exit=0, files=源库 skill/shisan-xinuo-product/*+设计部 direction/agent-log, refs=0(未跑 lookup，0 照报), errpath=cp 错位清理；diff 缺注释补齐；Gitee 认证两式失败止损豁免, lessons=真对照暴露假想缺陷（基线模式是实测逼出来的不是想出来的）；行数少≠维护面小（抽象是负债）；对既有项目门禁必须有基线豁免否则不可用, exempt=peer 回写尚未出现（继续轮询）；agentic 对照未跑, caps=—, effort=实测闭环+13 条扩容+2 新门禁+元品味, stop_reason=—}
+
+### 2026-09-21 06:00｜peer 实战第二批：导入向导 13 态 statechart（财务会话）
+- 最复杂功能面（对方第十六轮点名的实测任务源）走完：idle/queued/parsing/awaitingPassword/classifying/awaitingReview/committing/allDup/fileFailed/cancelling/confirmClear/purging + error 分支——**13 态 JSON 手写约 10 分钟，门禁一次过**
+- **成本数据（statechart-gate 转正裁决用）**：13 态=可承受上限感知；ImportPage 缺口仅 1 候选（committing 确认按钮无 busy，连点待验）——对比 ReviewPage 8 态出 3 缺口：**差异=ImportPage 经 0.6.5~0.6.10 五轮打磨、ReviewPage 是 I7② 一次成型**——statechart 先行抓的正是「少迭代轮次」的债，多轮实机打磨可部分替代（但也可能是幸存者偏差：打磨轮次本身修的就是这些）
+- 样本：docs/import-wizard-second-statechart.json
+- GATE: {level=L2-S, v=peer 实战第二批, cmd=13 态 JSON+statechart-gate, exit=0, files=docs/import-wizard-second-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=「新功能强制 statechart、存量改版时补」的过渡策略得到数据支持, exempt=committing 连点未实测, caps=—, effort=13 态+对照, stop_reason=—}
