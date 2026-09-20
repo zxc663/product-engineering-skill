@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill——**第四包 v0.1.0 第一迭代已落地源库**（4dac20e，9 文件 381 行） | level=L2-F | route=联通层七步跑道（功能句→六问→statechart→矩阵→验收前置→查表实现→追溯取证写回）+双门禁自测两态过+合态文件存在性 7/7 | confirm=豁免：用户授权自裁决开工 | gates_passed=registry-gate/statechart-gate --selftest 两态验证 exit=0；钩子合态文件存在性验证通过 | last_errpath=—
-- 当前阶段：**第一迭代完成（2026-09-21）**，待办：①源库未 push（用户批准制）②statechart-gate 转正待实测证据 ③agentic 对照实测（任务源=财务项目历史：导入向导/设置页/仪表盘）④使用率监控对应物 ⑤skill-creator 规范触发词实测
+STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本机**（GitHub zxc663/product-engineering-skill；第四包三副本一致：源库/.agents/.zcode） | level=L2-F | route=联通层七步跑道+双门禁+能力地图+账本+注册表；钩子已埋源库 | confirm=豁免：用户授权（拿令牌建仓） | gates_passed=两门禁 selftest 两态过×2（源库+部署副本）；三副本 diff 零输出；push rc=0 | last_errpath=Mimosa 拦 bash 直写技能目录 .py→改 Write 通道（PreToolUse 可扫）
+- 当前阶段：**发布+部署完成（2026-09-21）**——GitHub 开源仓 product-engineering-skill（README+LICENSE+全设计档+调研 A-H）；第四包部署 .agents+.zcode 两技能目录（重启/新会话生效）；待办：①源库 workflow 未 push（批准制）②statechart-gate 转正待实测 ③agentic 对照实测 ④spec-trace 门禁（第二迭代）⑤触发词实测（需新会话）
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；第四包=skill/shisan-xinuo-product
-- 最近更新：2026-09-21 05:25
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（推送须批准）；PAT 来源=D:/Agent个人资源/机密资源（同命令内提取注入用毕即弃，零明文零落盘）
+- 最近更新：2026-09-21 05:35
+- 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；statechart-gate 待第一迭代实现（JSON 无死端/全可达/错误态恢复检查）；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；G 档 §6 留白待用户贴抖音关键帧逐帧拆解；缺口 6-9 未入 direction（判定表入库时挂）
@@ -158,3 +159,14 @@ STATE: task=产品工程 Skill——**第四包 v0.1.0 第一迭代已落地源�
 - **第四包落地**（源库 4dac20e，9 文件 381 行，未夹带 runlog）：SKILL.md 74 行（七步跑道/双底双顶含第四底/强制 9+候选 10/冲突裁决序/规模分档 L0-L2 防仪式爆炸）+interaction-bridge（三合法/六问带出处信心级/statechart schema）+judgement-table（首批 10 条：结构层 2/不难用 3/不难看 2/时序 1/a11y 2，全带出处+信心级）+anti-excuses（v1 九条+危险词触发）+capability-map（10 行时点×症状路由）+decision-ledger（裁决语义+准入五问+写回时机+首批样例 2 条）+registry（纯检查者/双视图/归因标记格式）+registry-gate.py+statechart-gate.py
 - **验证**：两门禁 --selftest 两态全过（registry：缺归因被拦/补归因放行；statechart：合法机放行/死端 C2+不可达 C3+错误态无出路 C4 被拦）；钩子合态文件存在性 7/7 ✓；SKILL.md 74 行<500 规范
 - GATE: {level=L2-F, v=第四包 v0.1.0 第一迭代, cmd=mkdir+7 Write+2 Edit+selftest×2+合态存在性+源库 commit 4dac20e, exit=0, files=源库 skill/shisan-xinuo-product/{SKILL.md+references×6+scripts×2}+设计部{direction §四回填+agent-log}, refs=0(未跑 lookup，0 照报), errpath=—, lessons=第一迭代最小闭环=骨架+两门禁可跑+自测两态；裁决被授权时自行裁决并留档理由（不回问）, exempt=agentic 对照实测未跑（任务已定源，下一迭代）；spec-trace 门禁未实现（属第二迭代：需对接具体项目结构）, caps=—, effort=9 文件 381 行+双门禁自测, stop_reason=—}
+
+### 2026-09-21 05:27｜第十八轮（补记，原 bash 被打断）：GitHub 开源仓上线+第四包本机部署
+- 建仓：PAT 同命令内提取注入（零明文零落盘），创建 zxc663/product-engineering-skill（公开）；README+LICENSE→commit 4c0c9d7→push rc=0（extraheader 注入，输出过滤）
+- 部署：第四包复制 .agents+.zcode；Mimosa 拦 bash 直写 .py→scripts 改 Write 通道 4 次；三副本 diff 零输出一致；冒烟两门禁 selftest 全过
+- 生效路径：重启/新会话后在场；触发词实测待办
+- GATE: {level=L2-F, v=建仓+说明+部署, cmd=find+python 建仓+push rc=0+部署+diff+冒烟, exit=0, files=GitHub 新仓+设计部 README/LICENSE/agent-log, refs=0(未跑 lookup，0 照报), errpath=Mimosa 拦 bash 直写 .py→Write 通道, lessons=密钥同命令内提取注入丢弃；hook 拦截是防护改道 Write 让扫描可见, exempt=主仓 workflow 未 push；触发生效需新会话, caps=—, effort=建仓+说明+推送+三副本, stop_reason=—}
+
+### 2026-09-21 05:30｜第十九轮：peer 验证启动（用户令兄弟会话加载验证交流）
+- 用户在另一会话（无限循环路测）发令：「桌面上新的产品 Skill——通知他，你加载并做验证，你们相互交流」=天然的触发词实测+外部对抗验证机会
+- 递出验证单 docs/peer-verification-card.md：四件验证（完整性+门禁自测/触发词实测/出处抽验对抗重点——查出虚标整批降级/设计漏洞审查）+反馈回写路径（本 log 追加「peer 验证轮」）+自我声明（骨架版已知待办不算新发现）
+- GATE: {level=L2-S, v=peer 验证卡, cmd=Write 验证卡+agent-log+commit, exit=0, files=docs/peer-verification-card.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=被验方主动递验单+预声明已知缺陷=把对抗变成增量而不是防御, exempt=—, caps=—, effort=四件验单+回写协议, stop_reason=—}
