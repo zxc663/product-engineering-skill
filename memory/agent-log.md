@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.5：职责再收窄（不定义主题组件）+真强制八项+能力地图+缺口登记五项 | level=L2-F | route=联通层唯一职责（规定功能应怎么来）+强制/劝导分界（八项法律级过成本检验）+capability-map 路由层 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.5（2026-09-21）**——四调研（D 档 §1-7）+问题定义+衰减链+品味时序+联通层中心（§九）+强制边界与缺口登记（§十：强制八项/能力地图/新缺口五项/工作流回补四条）；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.5.1：目的态定稿（真实用户体验=唯一对象，3 万 vs 30 万类比入档） | level=L2-F | route=联通层唯一职责（规定功能应怎么来，服务真实用户体验）+强制八项+capability-map | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.5.1（2026-09-21）**——四调研（D 档 §1-7）+〇节问题定义（含目的态定稿：组件技巧=通缩品不定义，体验完整性=稀缺品是唯一对象）+衰减链+品味时序+联通层（§九）+强制边界与缺口（§十）；待用户点名开工第一迭代切片
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
-- 最近更新：2026-09-21 04:26
+- 最近更新：2026-09-21 04:33
+- 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
@@ -97,3 +98,9 @@ STATE: task=产品工程 Skill 立项——方向档 v0.5：职责再收窄（�
 - **新缺口五项**：①同层 Skill 冲突无裁决（优先序：底线门禁>流程纪律>品味裁决）②豁免梯度缺（借 ponytail 模式分级，否则 L1 被六问淹没→糊弄温床）③出路活性缺（exit-existence gate 候选：出路指向死页查不出——dead-binding 姊妹件）④触发回归缺（测试集+N 口语命中统计）⑤用户验收面缺（联通行三列表=功能→交互→证据，spec-trace 用户可见形态）
 - **工作流回补四条**（ponytail 侧）：hooks 模式开关+subagent 注入正则/debt harvest 形态/agentic 对照基准（治合规不可测）/命令族化——待用户择期实施
 - GATE: {level=L2-S, v=强制边界+能力地图+缺口登记定稿, cmd=两问归因+direction §十+§三结构增 capability-map+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=强制与劝导的分界线=可机器判定×成本检验；registry 的正确角色是检查者不是定义者；无人维护的地图=第二个失忆（工件需要 harvest 机制）；豁免梯度不是松懈是防糊弄, exempt=—, caps=—, effort=强制筛分八项+缺口挖潜五项+能力地图 schema, stop_reason=—}
+
+### 2026-09-21 04:33｜第十轮：目的态定稿（用户「能明白吗」+3 万 vs 30 万类比，direction §〇 新段）
+- 用户以两抖音视频类比检验理解：7.17（六种组件交互提升质感=组件技巧路线，太多太多）vs 9.71（同 APP 有人报 3 万有人报 30 万，30 万怎么来清清楚楚）——主题组件都不定义，定义的是真实用户使用产品时体验怎么更好
+- **§〇 新增目的态定稿**：3 万与 30 万功能清单可完全相同，差价全在旅程完整性（空态有引导/等待不焦虑/出错不慌/反悔有路/回来还认识=六问六态双底双顶的全部内容）；每项可指认可举证可验收（取证+联通行）=「清清楚楚」；时代论证：AI 压组件样式成本趋零（通缩品），溢价集中在体验完整性（稀缺品）——本 Skill 存在理由=把 3 万到 30 万差价变成可判定可生产的清单
+- 自省：前几轮重机制轻目的态——用户此问校验出表述缺失，目的态应常置 §〇 而非散在机制节
+- GATE: {level=L2-S, v=目的态定稿, cmd=理解确认+direction §〇 目的态段+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=差价在旅程完整性不在功能数量；组件技巧是通缩品体验完整性是稀缺品（AI 时代）；机制表述必须常挂目的态否则机制会漂移成新仪式, exempt=抖音链接未打开（用户转述已完整）, caps=—, effort=类比解码+时代论证+目的态入档, stop_reason=—}
