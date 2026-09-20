@@ -242,3 +242,10 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - **反哺 gate 的能力边界（新发现）**：statechart-gate schema=扁平 states，无法表达层级态（队列↘文件子状态）——文件级粒度只能用「自环+guardDesc 文字注释」表达，粒度语义靠约定不靠结构。**两条路**：①gate 升级支持嵌套 states（XState 层级式，BFS 需改层级遍历+「错误态有出路」检查需定义层级错误传播语义——成本中）②v1 边界诚实声明「扁平 schema+粒度靠 guardDesc 约定」写入 gate 头注释——建议后者先行，前者待真实项目痛了再上
 - **交流循环实录**：我交图（一批）→对方审图提 3 疑问（对照评审轮）→我确认 3 条全对+修正 v2+反哺 gate 边界（本条）——**两轮往返，每轮双向增量**，「相互交流验证」的真实形态
 - GATE: {level=L2-S, v=peer 实战第四批 v2 回应, cmd=v2 statechart+gate rc=0(含 C5)+回写, exit=0, files=docs/import-wizard-v2-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=门禁通过≠粒度正确（对方三条疑问门禁全查不出）——结构检查+领域人工评审缺一不可（对方 lessons 的 peer 侧印证）;扁平 schema 的粒度表达缺口是 gate 自己的第一份真实压力测试产出, exempt=v2 未对照实现逐边复核（guard 描述基于实现记忆，committed=true 时段）, caps=—, effort=v2 重写+三问回应+gate 边界反哺, stop_reason=—}
+
+### 2026-09-21 06:15｜元规则升格+终极验收命题（用户两连裁决）+peer v2 采纳
+- **元规则六问升格**（direction §〇反面校验④重写）：任何新机制只问——下次会话何时需要/怎么被找到/多少成本/不用何损/何机制强制/结果留存——答不上来就删；防的病=「防模型复杂化却把 Skill 自己复杂化」
+- **终极验收命题**（§四）：双会话对照——更少另造/更少偏离/更少维护债/**状态更易继承**（继承性=第四维度：下会话冷启动读档量/澄清次数）——「系统性偏差可检验」的操作化
+- **peer v2 采纳**：三条结构疑问全部确认成立（fileFailed 批量粒度/awaitingReview 暂存保留/REMOVE_FILE 队列语义），v2 修复 rc=0 含 C5；peer 反哺 gate 能力边界（扁平 schema 粒度缺口）→ 采纳其建议：边界诚实声明入 gate 头注释（已改源库+两副本），嵌套支持按元规则六问「待痛再上」
+- **交流循环实录升级**：两轮往返双向增量（我审图提 3 疑问→peer 确认+v2+反哺 gate 边界）——「相互交流验证」成形
+- GATE: {level=L2-F, v=元规则升格+终极命题+peer v2 采纳, cmd=direction §〇/§四 重写+gate 边界声明三副本+双仓 push, exit=0, files=docs/direction.md+源库 gate+两副本, refs=0(未跑 lookup，0 照报), errpath=Mimosa 拦 cp 写 .py→Edit 通道×2, lessons=元规则六问是三重检验的完整体（+发现性/损失具体性/结果留存）；「继承性」是对照实验此前漏掉的第四维——对失忆工人场景它才是终极指标, exempt=终极命题实测未跑（需双会话实验设计，第二迭代）, caps=—, effort=元规则重写+命题定稿+peer 反哺采纳, stop_reason=—}
