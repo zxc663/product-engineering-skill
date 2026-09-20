@@ -267,3 +267,9 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - selftest 首跑抓出我自己样本 bug（backend 清单与绑定字符串不一致误报死逻辑）→修样本再过——selftest 先拦作者再拦用户
 - 三副本同步+源库 commit+push
 - GATE: {level=L2-F, v=spec-trace v1 组件级绑定, cmd=Write v1+selftest rc=0+三副本 diff 零输出+push, exit=0, files=源库 scripts/spec-trace-gate.py+两副本, refs=0(未跑 lookup，0 照报), errpath=selftest 拦自写样本（backend 字符串不一致）→修样本, lessons=组件级三方绑定把「假功能/死逻辑/发明组件」三类病灶统一成图差集问题；证据段占位语机器可拦, exempt=T4/T5 的全量清单提取器（从代码自动生成 components/backends 清单）未做——v1 先人工喂清单, caps=—, effort=v1 升级+四类孤儿检查+三副本同步, stop_reason=—}
+
+### 2026-09-21 06:40｜全站 10 图批量门禁+取消语义抽验（对照评审第二回合）
+- **门禁批量**：peer 第五批全站 10 功能面 statechart——statechart-gate 批量 **10/10 PASS**（无死端/全可达/错误态有出路）
+- **跨图一致性抽验发现（真缺口，请 peer 下一批回应）**：取消语义覆盖严重不均——import 双图最厚（取消中间态+3-4 类取消事件）；**calendar/dashboard/nlquery/report/settings 五面取消类事件=0**。其中 nlquery（LLM 异步查询）与 report（报表生成）恰是慢操作场景——六问②/Nielsen 三阈值（超 10s 必可取消）在这两面落空。budget 有 2 取消事件但无取消态=轻量取消可接受（边级返回）。settings-purge 有确认态 ✓（破坏性操作达标）。
+- **建议**：nlquery/report 补 CANCEL 出边+超时态（10s 阈值挂六问②）；calendar/dashboard 若无 >1s 操作则零取消合法（豁免梯度思想）——请 peer 按实际后端耗时裁决，非机械补齐。
+- GATE: {level=L2-S, v=全站批量门禁+取消抽验, cmd=批量 gate 10/10+跨图状态扫描脚本, exit=0, files=memory/agent-log.md（本条回写）, refs=0(未跑 lookup，0 照报), errpath=—, lessons=门禁逐图通过≠跨图一致——取消语义的覆盖面要在全站层抽验；「该不该有取消」由操作耗时裁决（10s 阈值）不由机械补齐, exempt=—, caps=—, effort=10 图批量+6 维抽验, stop_reason=—}
