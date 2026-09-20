@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.3.1（四调研含 ponytail 上游深读+问题定义+衰减链+品味与时序纪律） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链对策+时序纪律+agentic 对照验收 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.3.1（2026-09-21）**——A/B/C/D 四调研（D 含 ponytail 上游深读：基准方法论/hooks 注入/debt 账本/正交先例四吸收）+〇节问题定义+§六同类对照+§七衰减链+§八品味与时序纪律；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.4：**联通层=中心对象定稿**（用户重心校正） | level=L2-F | route=联通层（功能语义↔交互逻辑可判定契约：来源三合法+功能天生六问+双底双顶+spec-trace 双向门禁）；注册表降位为兑现查询基础设施 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=Edit direction.md 误伤：old_string 整段替换把 §八末两段删掉（自检发现）→原样恢复再接 §九
+- 当前阶段：**方向定稿 v0.4（2026-09-21）**——四调研+问题定义+衰减链+品味与时序纪律+§九联通层定稿（中心对象）；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader（paulgraham.com 同路成功）；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
-- 最近更新：2026-09-21 04:05
+- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
+- 最近更新：2026-09-21 04:09
+- 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
 
 ## 二、教训区
@@ -70,3 +71,11 @@ STATE: task=产品工程 Skill 立项——方向档 v0.3.1（四调研含 ponyt
 - 差异化表修正：账本位非全空白——ponytail-debt 占债务语义（记为何没写），decision-ledger 裁决语义（记为何这么定）仍空白
 - 四吸收落档：D 档 §6+direction §四验收升级（agentic 对照）+§八末六条；本机 ponytail-review 为独立 Skill 不在上游命令族内（本机化改动的痕迹，待后考）
 - GATE: {level=L2-S, v=ponytail 上游深读, cmd=web_reader 抓仓库全文+本机 ls 对照+D档§6+direction两处+agent-log+commit, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit D 档报 not read（#294 压缩后读态丢失）→重读再改成功, lessons=给 Skill 做对照实验是同类首创且可复制（真实 diff 计分+对照组+安全单列）；安全不来自口号来自白名单条款；账本有债务/裁决两种语义；hooks 注入>概率触发, exempt=本机 ponytail-review 与上游关系未深查（B 组已蒸馏其形态，不再重复）, caps=mcp__web_reader__webReader, effort=全文深读+本机副本对照+差异化表修正+四吸收落档, stop_reason=—}
+
+### 2026-09-21 04:09｜第七轮：联通层=中心对象定稿（用户重心校正，direction.md §九）
+- 用户校正「不是重复造轮子定义组件怎么写，而是定义产品设计与交互层的真正联通——不难用不难看、更好用更好看的交互逻辑怎么来怎么做」
+- 接受依据：§一四问题域中①③④全属联通层仅②注册表在组件域——重心确歪，此校正=聚焦非转向
+- **§九 定稿**：中心对象=功能语义↔交互逻辑的可判定契约；**双底双顶**（不难用/不难看=底线法律可门禁；更好用/更好看=上限劝导靠判定表+critic——现有调研素材按四象限整齐归位=定稿旁证）；**来源三合法**（用户心智最强源：惯例=预装交互逻辑，反人类高发机制=迫使用户为你的实现学新交互／功能语义推导／红线约束；非法源：组件库存、模型感觉、酷）；**功能天生六问**（输入什么/何时发生/成功长啥样落哪/失败怎么办出路/能否反悔/下次还认吗→逐问落交互原语=翻译表；六问=提问轴×六态=渲染轴不重复）；**联通工序**（功能句→翻译表→承诺清单+六态矩阵→spec-trace 双向门禁→走查→回写账本；真联通=双向可追溯+机器可验，文档联通=假联通）
+- 重心修正落地：注册表降位（落地兑现查询基础设施）；§三增 references/interaction-bridge.md；§四切片 1 改联通层路由+bridge 骨架；触发词改「难用/丑/交互逻辑怎么来」
+- 过程自检：Edit direction 误删 §八末两段（old_string 整段替换）→当场发现原样恢复——教训=追加场景禁用「整段替换」式 old_string，锚标题行即可
+- GATE: {level=L2-S, v=联通层中心定稿, cmd=校正归因+direction §九+§三/§四联动+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit 误删两段（old_string 过宽）→恢复成功并留教训, lessons=中心对象必须是「可判定契约」不是「领域知识」；惯例=预装在用户脑里的交互逻辑（用惯例=零学习成本）；六问是提问轴六态是渲染轴——平行分类法先查轴是否正交再入库, exempt=—, caps=—, effort=校正归因+四象限定稿+六问推导法+工序链, stop_reason=—}
