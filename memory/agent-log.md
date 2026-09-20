@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.4：**联通层=中心对象定稿**（用户重心校正） | level=L2-F | route=联通层（功能语义↔交互逻辑可判定契约：来源三合法+功能天生六问+双底双顶+spec-trace 双向门禁）；注册表降位为兑现查询基础设施 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=Edit direction.md 误伤：old_string 整段替换把 §八末两段删掉（自检发现）→原样恢复再接 §九
-- 当前阶段：**方向定稿 v0.4（2026-09-21）**——四调研+问题定义+衰减链+品味与时序纪律+§九联通层定稿（中心对象）；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.4.1：联通层中心定稿+联通层定向补扫完成 | level=L2-F | route=联通层（三合法+六问+双底双顶+spec-trace 双向门禁）；同类补扫确认组合仍无人占（spec-kit 管通用 spec/Code Connect 管组件映射/design lint 管样式/学术在验路线） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.4.1（2026-09-21）**——四调研（D 档 §1-7）+〇节问题定义+§七衰减链+§八品味时序+§九联通层中心；待用户点名开工第一迭代切片
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
-- 最近更新：2026-09-21 04:09
+- 最近更新：2026-09-21 04:16
+- 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
 
@@ -79,3 +80,11 @@ STATE: task=产品工程 Skill 立项——方向档 v0.4：**联通层=中心�
 - 重心修正落地：注册表降位（落地兑现查询基础设施）；§三增 references/interaction-bridge.md；§四切片 1 改联通层路由+bridge 骨架；触发词改「难用/丑/交互逻辑怎么来」
 - 过程自检：Edit direction 误删 §八末两段（old_string 整段替换）→当场发现原样恢复——教训=追加场景禁用「整段替换」式 old_string，锚标题行即可
 - GATE: {level=L2-S, v=联通层中心定稿, cmd=校正归因+direction §九+§三/§四联动+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit 误删两段（old_string 过宽）→恢复成功并留教训, lessons=中心对象必须是「可判定契约」不是「领域知识」；惯例=预装在用户脑里的交互逻辑（用惯例=零学习成本）；六问是提问轴六态是渲染轴——平行分类法先查轴是否正交再入库, exempt=—, caps=—, effort=校正归因+四象限定稿+六问推导法+工序链, stop_reason=—}
+
+### 2026-09-21 04:16｜第八轮：联通层定向补扫（用户「继续查同类项目」，D 档 §7）
+- 四组搜索+spec-kit 深读（web_reader）：**github/spec-kit**（官方 spec-driven：constitution→specify→plan→tasks→implement→converge 三过程+verdict 三态+工件落盘 .specify/+多 agent）——与本 Skill 最同构的业界形态：宪法=厂规形态、converge=正向追溯门禁同类、what/why 先于 how=时序纪律官方版；缺口=通用 spec 无交互域内容、单向收敛无反向发明检测、无品味无账本
+- **Figma Code Connect**：design↔code 组件级映射官方工程化（映射文件+属性映射+Figma MCP）——「映射文件」模式被市场验证；层级差异=组件级静态 vs 我们行为级契约，互补
+- **设计系统 lint 群**：Atlassian 官方 ESLint plugin/eslint-plugin-panda no-hardcoded-color/案例（401 组件 144 违规全源自粘贴代码）——证明 inline-style-gate=业界共识非首创，差异化校准
+- **Nielsen×agent 学术线**：arXiv 2026-05 CUA 重审 10 启发式——真渲染取证路线学术共振；Nielsen 列为判定表出处源（direction §六已补）
+- **结论：联通层组合仍无人占**——spec-kit 管通用 spec 不交互域/Code Connect 管组件不管行为/lint 管样式不管逻辑链；无 direction 实质修订
+- GATE: {level=L2-S, v=联通层定向补扫, cmd=WebSearch×4+web_reader 深读 spec-kit+D档§7+direction§六增补+commit, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=WebFetch github.com TLS 拦截（既往）→web_reader 成功, lessons=门禁②业界已成熟（诚实降级：非首创）；映射文件模式被 Code Connect 市场验证；converge 循环+verdict 三态可借给门禁输出；真联通组合空白依旧, exempt=Code Connect 仅浅读（映射形态已清楚，预算纪律）, caps=WebSearch+mcp__web_reader__webReader, effort=4 组搜索+1 仓库深读+差异化最终校准, stop_reason=—}

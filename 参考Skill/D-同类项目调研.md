@@ -58,3 +58,19 @@ awesome-claude-skills 三大目录（BehiSecc / travisvn ≈8.8k★ / ComposioHQ
 **对 §4 差异化表的修正**：「跨会话裁决账本全场空白」需弱化——ponytail-debt 是账本（债务语义：记「为何没写」待收割）；我们的 decision-ledger 是裁决语义（记「为何这么定」直接复用）。语义不同但机制位已被占，差异化表述改为「账本机制位已有债务先例，裁决语义+设计域仍空白」。
 
 **对本 Skill 的四条吸收（已并入 direction.md §八末）**：①三重检验升级为 ponytail 式 agentic 对照实测（真实 diff 计分+无 Skill 对照组+安全项单列）；②decision-ledger 写回采纳「ponytail: 注释+定期 harvest」轻量形态；③判定表补「阅读义务」条款（阶梯/查表在理解问题之后运行，禁跳过阅读直选档）；④caveman×ponytail 正交先例（管说的 Skill×管建的 Skill 零重叠可叠加）=工作流 Skill×产品工程 Skill 双架构的市场验证。
+
+## 7. 联通层定向补扫（2026-09-21，中心对象改联通层后的未扫象限）
+
+**7.1 github/spec-kit（深读，官方 spec-driven development 工具包）**——与本项目最同构的业界形态：
+- 三过程：SDD（`constitution`→`specify`→`plan`→`tasks`→`implement`→`converge`）／bug-fix（`assess`→`fix`→`test`，verdict 三态 verified/partial/failed，「**Missing verification is not a successful fix**」）／idea-assess（intake→research→define→shape→decide，go/clarify/kill）。宪法每项目一次，spec→converge 每特性一轮。
+- 同构点：what/why 先于 how=§八时序纪律的官方版；**constitution=厂规的项目宪法形态**；`converge`（实现→向 spec 收敛循环直到报 Converged）=spec-trace 正向门禁的同类；工件全部落盘 `.specify/`（抗压缩）；clarify/checklists/consistency 为可选质量门；多 agent（Copilot/Claude Code/Gemini CLI）。
+- 缺口（差异化仍立）：通用 spec 无交互域内容（六问/六态/双底双顶）；收敛单向（spec→code），无反向发明检测（code→spec「每个元素可回指功能行」）；无品味维度；无裁决账本。
+- 借鉴：converge 命名与循环形态；verdict 三态输出格式（门禁结果不二值化的中间态标注）；bug-fix 的 assess/fix/test 分离=治「顺手改」。
+
+**7.2 Figma Code Connect（官方，figma/code-connect）**——联通层「组件卡」的业界标准形态：映射文件把 Figma 设计组件↔仓库代码组件+属性级映射，Dev Mode 出准确片段，Figma MCP 集成后喂给 AI 代码生成。**证明「映射文件」模式可行且已被市场接受**；层级差异：Code Connect=设计↔代码组件级静态映射，我们=功能语义↔交互行为级行为契约——互补不重叠。registry 组件卡=其本地化翻版。
+
+**7.3 设计系统 lint 门禁（业界成熟形态，inline-style-gate 的先例群）**：Atlassian 官方 ESLint plugin（设计系统 props/用法规则）、eslint-plugin-panda `no-hardcoded-color`、案例研究（ofriperetz.dev）：4 条 lint 规则扫 401 组件出 144 违规、**每处颜色破坏都源自粘贴的代码**。证明：①P4 零魔数/inline-style 门禁=业界共识非我们发明；②「违规溯源到复制粘贴」与「发明视觉」病灶同源。
+
+**7.4 可用性启发式×agent（学术前沿）**：arXiv 2026-05 论文以 computer-use agents 视角重审 Nielsen 10 启发式；ResearchGate 2025-06 同向。**「真渲染取证+启发式判定」路线有学术共振**；Nielsen 10 启发式应列为判定表「业界共识」栏出处源（与 vercel 准则并列）。
+
+**结论：联通层组合仍无人占**——spec-kit 管通用 spec 不管交互域；Code Connect 管组件映射不管行为契约；design lint 管样式不管逻辑链；学术在验证路线但无工件化。我们的「交互域契约（六问六态双底双顶）+双向追溯+裁决账本」组合空白依旧。本轮无 direction 修订，仅出处源增补（Nielsen 启发式）。

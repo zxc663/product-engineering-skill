@@ -81,7 +81,7 @@ product-engineering/            ← 安装于 .agents/skills/
 4. **与 agent 纪律对接（GATE/复述/能力检索）**——无人做纪律与品味合流。
 
 **并入本 Skill 的同类借鉴（三条修订）**：
-- 判定表「业界共识」新增出处源：**vercel-labs/web-interface-guidelines**（100+ 条七类；互补条目：No dead ends／All states designed／错误信息给出路正反例／Never `transition: all`／tabular-nums／不单靠颜色传状态／Don't pre-disable submit）——与 ux-feature-design、ui-ux-pro-max 并列。
+- 判定表「业界共识」新增出处源：**vercel-labs/web-interface-guidelines**（100+ 条七类；互补条目：No dead ends／All states designed／错误信息给出路正反例／Never `transition: all`／tabular-nums／不单靠颜色传状态／Don't pre-disable submit）——与 ux-feature-design、ui-ux-pro-max 并列；2026-09-21 补扫再增 **Nielsen 10 可用性启发式**（NN/g 原典+arXiv 2026-05 以 computer-use agents 重审启发式的论文线=真渲染取证路线的学术共振）。
 - 命令形态借鉴 **Nutlope/hallmark**（Together AI，20 主题+57 道 slop-test gates）：门禁不只脚本，做成动词——`audit`（对既有代码出 punch list）／`study`（从人类指定设计提取 DNA 进注册表，产出 portable design.md 交接）。vercel 的 file:line findings 输出格式与 AGENTS.md 集成方式同采。
 - 结构验证：vercel 把「品牌选择」与「通用准则」分节隔离=taste-skill em-dash 教训的独立再发现——判定表两栏分离（业界共识 vs 本 Skill 风格）设计得到印证。
 
