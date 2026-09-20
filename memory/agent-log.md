@@ -33,3 +33,10 @@ STATE: task=产品工程 Skill 立项——项目骨架+全量本机 Skill 研�
 - **C 工具文档系 34 条快扫**：高价值 2（cms-skill-collection=注册表与共识素材源；web-gui-tester=③交互门禁取证执行器）、低 5、无关约 28。笔记=参考Skill/C-工具文档系快扫.md
 - **定向定稿** docs/direction.md：四问题域→机制映射表+反借口表 v1（9 条，含 taste-skill 对作者本人的教训「模型无视适度，写零容忍」）+Skill 结构定稿（SKILL.md<500 行+references 四件+scripts 三门禁）+防膨胀三闸+冲突裁决（既有组件优先 vs greenfield 反模板 vs brief 原话永远赢）+第一迭代切片四件
 - GATE: {level=L2-F, v=全量研读蒸馏+定向定稿, cmd=Explore×3 分组研读(51 Skill 条目) + 蒸馏笔记×3 + direction.md 落盘, exit=全量覆盖(51/51), files=参考Skill/{A,B,C}×3+docs/direction.md, refs=0(未跑 lookup，0 照报), errpath=skill-creator 用户级路径不存在实为插件 cache（重定位）；grill-me 本体缺失如实标注不可蒸馏, lessons=两套独立演化的 Skill 给出同一条复用链=该链是经过市场验证的成熟形态；模型无视「适度」类措辞——品味规则必须零容忍二元化；判定表两栏分离（业界共识 vs 本 Skill 风格）防风格冒充真理, exempt=Skill 本体未写（下一轮第一迭代切片）, caps=Explore×3（内联纪律包：只读+出处+统一蒸馏格式）, effort=51 Skill 全量研读+3 蒸馏笔记+1 定向档, stop_reason=—}
+
+### 2026-09-21 02:20｜第二轮：本质问题想透（用户追问「究竟解决什么」）
+- 用户指出上一轮直接给机制清单、跳过问题定义——想透后补进 direction.md 新增「〇、我们究竟解决什么问题」节
+- **问题定义**：每次会话的模型=失忆的局部优化工人，产品=需要对全局负责、持续兑现承诺的有机体；根因=模型与产品的成本结构逐项镜像颠倒（写新便宜vs最贵/复用贵vs最便宜/验证贵vs唯一真实/用户信任0vs一切）；产品=承诺的集合，四个症状统一为「承诺的不兑现/反直觉/冲突/无知」；本 Skill 本质=把兑现义务从交互时前移到生成时
+- 三件工具定名：地图（注册表）/厂规（判定表）/验收机（门禁）；反面校验四条（不写抽象原则/不追求模型拥有审美/厂规不写千条/工件必过失忆工人-成本-兑现三重检验）
+- 第一迭代验收校准：新增三重检验（失忆工人/成本/兑现——门禁必须能对 classifyNotice 式死代码给 exit 1）
+- GATE: {level=L2-S, v=问题定义定稿, cmd=思考+direction.md 修订, exit=〇节落档+四节校准, files=docs/direction.md, refs=0(未跑 lookup，0 照报), errpath=上一轮跳过问题定义直接给机制（用户追问纠正）——机制清单不等于问题定义, lessons=先答「病是什么」再开药；检验 Skill 设计的标准=「下个会话的失忆工人在哪个动作前以多少成本被什么机制强制使用它」, exempt=—, caps=—, effort=三层下挖（症状→能力→结构/承诺）+反面校验四条, stop_reason=—}
