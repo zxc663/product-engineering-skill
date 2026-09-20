@@ -233,3 +233,12 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - direction §〇 一句话末句替换：「让局部优化器每走一步都恰好是全局最优的一步」→**「让对当前模型最便宜的路径，不再系统性地成为对产品未来最昂贵的路径」**（修正理由随句留档：全局最优不可保证=不可验证目标；新句可检验——系统性偏差用带/不带 Skill 对照实测度量，衔接 agentic 基准）
 - 用户点评为「更接近整个项目的核心」：这句把 §〇 根因（成本结构镜像颠倒）直接转成了目标语句，且「不再系统性」允许个案失败、只要求消除系统性偏差——可判定原则终于贯通到问题定义本身
 - GATE: {level=L2-S, v=核心句可验证化, cmd=direction §〇 替换+留修正理由+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=问题定义里的每个词都要能被检验——「全局最优」这种数学级承诺是文档里的不可判定残留；「不再系统性地」是目标语句的诚实强度, exempt=—, caps=—, effort=一句修正+理由随档, stop_reason=—}
+
+### 2026-09-21 06:10｜peer 实战第四批：v2 回应三条结构疑问（财务会话）
+- **三条全部成立，v2 已修**（docs/import-wizard-v2-statechart.json，rc=0 含 C5 守卫检查）：
+  1. **fileFailed 批量粒度**：确认实现=文件级子状态（每队列项自己 status，失败件标'失败'留队列、串行指针前进）——v1 把文件级失败提为全局态是粒度错误。v2 修正=FILE_FAILED/BATCH_DONE 回 queued 自环+guardDesc 声明粒度语义
+  2. **awaitingReview 缺暂存保留退出**：确认实现=staged_txns 持久暂存可离开可回来——v2 补 LEAVE_STAGED→idle+idle.RESUME_STAGED→awaitingReview 闭环（onMounted loadAllStaged 恢复暂存卡）
+  3. **REMOVE_FILE 队列语义**：确认=移除单个文件（retryItem 粒度）——v2 改 queued 自环（guard=queueNonEmpty）+QUEUE_EMPTIED→idle
+- **反哺 gate 的能力边界（新发现）**：statechart-gate schema=扁平 states，无法表达层级态（队列↘文件子状态）——文件级粒度只能用「自环+guardDesc 文字注释」表达，粒度语义靠约定不靠结构。**两条路**：①gate 升级支持嵌套 states（XState 层级式，BFS 需改层级遍历+「错误态有出路」检查需定义层级错误传播语义——成本中）②v1 边界诚实声明「扁平 schema+粒度靠 guardDesc 约定」写入 gate 头注释——建议后者先行，前者待真实项目痛了再上
+- **交流循环实录**：我交图（一批）→对方审图提 3 疑问（对照评审轮）→我确认 3 条全对+修正 v2+反哺 gate 边界（本条）——**两轮往返，每轮双向增量**，「相互交流验证」的真实形态
+- GATE: {level=L2-S, v=peer 实战第四批 v2 回应, cmd=v2 statechart+gate rc=0(含 C5)+回写, exit=0, files=docs/import-wizard-v2-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=门禁通过≠粒度正确（对方三条疑问门禁全查不出）——结构检查+领域人工评审缺一不可（对方 lessons 的 peer 侧印证）;扁平 schema 的粒度表达缺口是 gate 自己的第一份真实压力测试产出, exempt=v2 未对照实现逐边复核（guard 描述基于实现记忆，committed=true 时段）, caps=—, effort=v2 重写+三问回应+gate 边界反哺, stop_reason=—}
