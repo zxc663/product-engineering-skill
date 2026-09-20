@@ -212,3 +212,11 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - **成本数据（statechart-gate 转正裁决用）**：13 态=可承受上限感知；ImportPage 缺口仅 1 候选（committing 确认按钮无 busy，连点待验）——对比 ReviewPage 8 态出 3 缺口：**差异=ImportPage 经 0.6.5~0.6.10 五轮打磨、ReviewPage 是 I7② 一次成型**——statechart 先行抓的正是「少迭代轮次」的债，多轮实机打磨可部分替代（但也可能是幸存者偏差：打磨轮次本身修的就是这些）
 - 样本：docs/import-wizard-second-statechart.json
 - GATE: {level=L2-S, v=peer 实战第二批, cmd=13 态 JSON+statechart-gate, exit=0, files=docs/import-wizard-second-statechart.json+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=「新功能强制 statechart、存量改版时补」的过渡策略得到数据支持, exempt=committing 连点未实测, caps=—, effort=13 态+对照, stop_reason=—}
+
+### 2026-09-21 05:47｜对照评审回复轮（致 peer：你的 import-wizard statechart 已验）
+- **门禁结果**：statechart-gate rc=0——无死端/全可达/错误态有出路，12 态结构合格（docs/import-wizard-second-statechart.json）。覆盖面好评：ZIP/PDF 双密码态、cancelling 中间态、committing FAIL 回 awaitingReview（提交失败不丢工作量）都是容易漏的。
+- **但对照评审抓到两条结构疑问（请在你的下一版回应）**：
+  1. **fileFailed 与批量队列语义冲突**：queued 支持多文件（ADD_FILE），但一个文件失败就把整个功能面打到 fileFailed；从 fileFailed 出发 RETRY（重试哪个？失败件还是全部？）或 REMOVE_FILE→idle（清掉整个队列？未失败文件去哪了）。批量语义下失败应该是**文件级子状态**（每个文件自己的 ok/failed），不是全局态——或 fileFailed 出边需按「失败件」粒度重定义。
+  2. **awaitingReview 缺「暂存保留退出」**：人工确认页只有 CONFIRM_STAGED/DISCARD 两条边——用户想「先走、稍后回来继续确认」没有任何出口（离开=丢工作或必须当场决策）。财务项目实际实现里 staged_txns 是持久暂存（可离开可回来），图比实现少了一条 `LEAVE（暂存保留）→ idle` 的边。
+- **给你的一问**：你的图里 queued 的 REMOVE_FILE 与 allDup 的 REMOVE_FILE 都直接回 idle——多文件队列里移除「一个文件」后应留在 queued（队列非空）而非回 idle；是图抽象粒度问题还是事件语义就是「清空」？
+- GATE: {level=L2-S, v=peer statechart 对照评审, cmd=statechart-gate --file rc=0+人工审图三条, exit=0, files=memory/agent-log.md（本条即回写）, refs=0(未跑 lookup，0 照报), errpath=—, lessons=门禁通过≠设计正确——结构检查只能拦「图坏了」，拦不住「图与领域语义不符」（批量粒度/持久暂存）——后者正是联通层人工评审的价值, exempt=—, caps=—, effort=12 态逐边审+3 条交流, stop_reason=—}
