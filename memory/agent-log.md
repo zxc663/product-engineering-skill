@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.6：**挂靠定稿**（工作流家族第四包）+源库钩子已埋（34c4a08 未 push） | level=L2-F | route=第四包 shisan-xinuo-product 落位源库 skill/（设计部=桌面项目）+条件钩子分合可用+agentic 验收套 EVIDENCE 格式 | confirm=无需 | gates_passed=钩子分态自检（条件限定 grep 全过）；合态待包落地实测 | last_errpath=promote-skill 路径直觉错（在启动包根非源库内）→舍弃非主线
-- 当前阶段：**方向定稿 v0.6（2026-09-21）**——五调研+问题定义（目的态）+衰减链+品味时序+联通层（§九）+强制边界（§十）+**挂靠架构定稿**（§三：第四包落位源库；§四：第一迭代含钩子合态实测）；源库已埋钩子本地 commit 34c4a08 未 push 未发行；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.7：**学科基线核实完成**（F 档）——六问挂 Norman 出处+强制 9 项（+可达性）+缺口 10 项登记 | level=L2-F | route=第四包挂靠源库+联通层（六问=Norman 七阶段工程压缩版，已挂出处）+双底双顶加第四底（WCAG POUR）+判定表出处源 7 个 | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=WebSearch 429 限流×多次→fallback 摘要+web_reader 直抓权威源（lawsofux/NNg）
+- 当前阶段：**方向定稿 v0.7（2026-09-21）**——六调研（A-F：F=成熟设计方法论对照，用户批评「空想不调研」触发）+问题定义（目的态）+衰减链+品味时序+联通层（§九 已挂学科出处）+强制边界（§十 9 项）+挂靠架构（§三/§四）；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；桌面红线：样本=真实账单不碰
-- 最近更新：2026-09-21 04:50
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch 常 429→换措辞/web_reader
+- 最近更新：2026-09-21 04:58
+- 遗留：第四包本体未写（第一迭代）；F 档缺口 2-9 项为劝导级未全部入 direction（判定表入库时逐条挂）
 - 遗留：第四包本体未写（第一迭代）；源库钩子未发行（用户发版流程）；工作流回补四条待实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
@@ -122,3 +123,10 @@ STATE: task=产品工程 Skill 立项——方向档 v0.6：**挂靠定稿**（�
 - **条件钩子实施**（源库本地 commit 34c4a08，未 push 未发行）：skill-usage §8（检测→在场三缝合点：计划检索位/GATE 门禁真值/收尾账本写回；未装→跳过+GATE exempt 声明；裁决优先序：底线门禁>流程纪律>品味裁决；单一权威不复制包内容）+SKILL §10 路由 dispatch 行+加载表行+CHANGELOG Unreleased
 - **分合验证**：分态自检过（grep 全部 product 引用均带「若在场/未装」条件限定——包未入库不悬空）；合态实测=第一迭代验收项（包落位后缝合点实触发）
 - GATE: {level=L2-F, v=源库核实+挂靠定稿+钩子实施, cmd=源库结构/git/发行件核实+三处钩子落位+分态 grep 自检+双仓 commit, exit=源库 34c4a08+本项目待提交, files=源库{skill-usage.md+SKILL.md+CHANGELOG.md}+本项目{E档§5+direction §三/§四+agent-log}, refs=0(未跑 lookup，0 照报), errpath=promote-skill 路径直觉错（在启动包根）→舍弃非主线; runlog=roadtest 自动产物不夹带（只 add 三文件）, lessons=条件式钩子是「引用不存在之物不悬空」的通用解（每处引用带在场限定）；家族分合范式复用 flows/roles 先例不发明；B 组蒸馏漏仓库工程层——蒸馏要分层（文本层/工程层）, exempt=合态缝合点未实测（包本体未产，第一迭代验收项）；源库未 push（用户批准制）, caps=—, effort=源库五件核实+三处钩子+双仓落档, stop_reason=—}
+
+### 2026-09-21 04:58｜第十三轮：学科基线核实（用户批评「空想不调研」触发，F 档+direction v0.7）
+- 用户批评成立：功能天生六问/联通层是「成熟框架的工程压缩版」却未挂出处=违反自己的设计铁律（设计前先调研成熟设计）
+- **对照裁定**：六问=Norman 行动七阶段+两个鸿沟的工程压缩（挂出处+压缩损失核查：情绪/认知负荷没进）；联通层=Garrett 五层「范围↔结构」接口+层间依赖=时序纪律学术版；双底双顶↔ISO 9241-1 1+Nielsen #8+Norman 三层。**真增量收窄为三件**：契约可判定化（exit code）/跨会话裁决账本/纪律缝合——其余转「成熟框架工程化移植」并挂出处
+- **缺口 10 项**（F 档 §2）：①可达性整体缺失（最严重——WCAG POUR 不在底线不在强制；已修：双底双顶加第四底+强制 8→9 项）②情绪轴（翻译表加劝导级第 7 列）③认知负荷挂靠（Hick/米勒）④性能三阈值挂 Nielsen（0.1/1/10s，超 1s 必进度超 10s 必可取消——已修入六问②）⑤错误预防先于恢复（六问④扩三层：防/恢复/出路——已修）⑥新手-专家路径（Nielsen #7）⑦帮助文档（#10）⑧Laws of UX 20+ 定律入出处库 ⑨工程弹性态（六问⑥扩「换环境」——已修）⑩出处源 3→7（+NNg/Laws of UX/WCAG/ISO 9241-11）
+- 流程教训：WebSearch 429 限流→fallback 摘要可用但须 web_reader 直抓权威源验证（lawsofux/NNg 原文到手）
+- GATE: {level=L2-F, v=学科基线核实+缺口修复, cmd=WebSearch×2(429 限流)+fallback+web_reader×2(lawsofux/NNg)+F 档落盘+direction §九/§十三处修订+依据行+agent-log+commit, exit=0, files=参考Skill/F-成熟设计方法论对照.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=WebSearch 429×多次→web_reader 直抓权威源成功, lessons=自制框架先查「是否成熟框架的压缩版」再入库（六问↔七阶段同构未挂出处=违规）；可达性是本次最大缺口（第三方白名单都有我却漏）；批评「你想的只是你想的」的解法=逐构件挂学科出处, exempt=Garrett/Norman 细节靠 fallback 摘要+知识（原文书未抓，属稳定经典）；缺口 6/7/8 未入 direction（判定表入库时挂）, caps=WebSearch+webReader, effort=7 构件对照+10 缺口挖出+4 处 direction 修复, stop_reason=—}
