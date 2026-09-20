@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.4.1：联通层中心定稿+联通层定向补扫完成 | level=L2-F | route=联通层（三合法+六问+双底双顶+spec-trace 双向门禁）；同类补扫确认组合仍无人占（spec-kit 管通用 spec/Code Connect 管组件映射/design lint 管样式/学术在验路线） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.4.1（2026-09-21）**——四调研（D 档 §1-7）+〇节问题定义+§七衰减链+§八品味时序+§九联通层中心；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.5：职责再收窄（不定义主题组件）+真强制八项+能力地图+缺口登记五项 | level=L2-F | route=联通层唯一职责（规定功能应怎么来）+强制/劝导分界（八项法律级过成本检验）+capability-map 路由层 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.5（2026-09-21）**——四调研（D 档 §1-7）+问题定义+衰减链+品味时序+联通层中心（§九）+强制边界与缺口登记（§十：强制八项/能力地图/新缺口五项/工作流回补四条）；待用户点名开工第一迭代切片
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader；ponytail 本机=单文件 6.7KB（~/.zcode/skills，无 ~/.agents 副本）
-- 最近更新：2026-09-21 04:16
+- 最近更新：2026-09-21 04:26
+- 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
 - 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
 - 遗留：Skill 本体未写；门禁脚本未产
@@ -88,3 +89,11 @@ STATE: task=产品工程 Skill 立项——方向档 v0.4.1：联通层中心定
 - **Nielsen×agent 学术线**：arXiv 2026-05 CUA 重审 10 启发式——真渲染取证路线学术共振；Nielsen 列为判定表出处源（direction §六已补）
 - **结论：联通层组合仍无人占**——spec-kit 管通用 spec 不交互域/Code Connect 管组件不管行为/lint 管样式不管逻辑链；无 direction 实质修订
 - GATE: {level=L2-S, v=联通层定向补扫, cmd=WebSearch×4+web_reader 深读 spec-kit+D档§7+direction§六增补+commit, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=WebFetch github.com TLS 拦截（既往）→web_reader 成功, lessons=门禁②业界已成熟（诚实降级：非首创）；映射文件模式被 Code Connect 市场验证；converge 循环+verdict 三态可借给门禁输出；真联通组合空白依旧, exempt=Code Connect 仅浅读（映射形态已清楚，预算纪律）, caps=WebSearch+mcp__web_reader__webReader, effort=4 组搜索+1 仓库深读+差异化最终校准, stop_reason=—}
+
+### 2026-09-21 04:26｜第九轮：职责再收窄+真强制清单+能力地图+缺口登记（direction.md §十，用户两问定稿）
+- 用户校正：主题/组件一概不定义（registry=纯检查者），唯一职责=规定「这个功能应怎么来」；「先检查再二次开发、可复用不完全复制」双重纪律（对模型+对 Skill 本体）；点名缺口=Skill 检索能力地图（工作流×产品工程互补路由层）；ponytail 对工作流有新补充；两问=真强制哪些+未意识到的新缺口
+- **强制判据**：可机器判定+决策/交付点拦截+成本检验（执行成本<防止的返工）——八项入选（六问无空格/六态缺态不开工/spec-trace 双向/查表归因/内联样式零容忍/dead-binding/取证存在性/账本写回存在性）；其余全降劝导裁决级（双上限=判定表+critic；三合法=裁决表；阅读义务/反借口=hook 危险词半自动）；防仪式爆炸=强制清单自身过成本检验宁缺毋滥
+- **能力地图**：references/capability-map.md，行=动作时点×症状→能力→出口产物；harvest 机制防地图腐化（无人维护的地图=第二个失忆）；工作流计划模板增检索位
+- **新缺口五项**：①同层 Skill 冲突无裁决（优先序：底线门禁>流程纪律>品味裁决）②豁免梯度缺（借 ponytail 模式分级，否则 L1 被六问淹没→糊弄温床）③出路活性缺（exit-existence gate 候选：出路指向死页查不出——dead-binding 姊妹件）④触发回归缺（测试集+N 口语命中统计）⑤用户验收面缺（联通行三列表=功能→交互→证据，spec-trace 用户可见形态）
+- **工作流回补四条**（ponytail 侧）：hooks 模式开关+subagent 注入正则/debt harvest 形态/agentic 对照基准（治合规不可测）/命令族化——待用户择期实施
+- GATE: {level=L2-S, v=强制边界+能力地图+缺口登记定稿, cmd=两问归因+direction §十+§三结构增 capability-map+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=强制与劝导的分界线=可机器判定×成本检验；registry 的正确角色是检查者不是定义者；无人维护的地图=第二个失忆（工件需要 harvest 机制）；豁免梯度不是松懈是防糊弄, exempt=—, caps=—, effort=强制筛分八项+缺口挖潜五项+能力地图 schema, stop_reason=—}
