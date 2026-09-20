@@ -197,3 +197,12 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - **statechart 样本**：docs/review-page-first-statechart.json（第一份真实项目样本——给 statechart-gate 的实测语料+interaction-bridge 六问→statechart 映射表的实证案例）
 - **实测发现的 Skill 缺口（对 direction §四校准）**：①Step2→Step3 断链实锤——六问答案到 states/transitions 的映射靠直觉，本次靠我的 UI 经验补——映射表需求真实且优先②statechart 手写 JSON 对 8 态已觉成本，15 态+页面会痛——「从既有组件抽态机」半自动工具需求真实③六问④⑤在「确认类操作」上产出最强（防错+反悔），在「查询展示类」功能面上问题偏弱——六问按功能类型给引导变体有价值
 - GATE: {level=L2-F, v=peer 实战 agentic 第一批, cmd=statechart-gate 实跑+3 缺口修复+build+UI 实测+回写, exit=0, files=docs/review-page-first-statechart.json+memory/agent-log.md(本条)+财务仓 0.6.38 五文件, refs=0(未跑 lookup，0 照报), errpath=excludedRows 重复声明编译拦（Vite 即时反馈 ✓ 门禁体系外的天然拦截）｜模板变量名 periodMonth vs exportMonth 不匹配致 disabled 恒真（build 不拦——运行时缺陷，模板绑定静态检查是缺口）, lessons=「设计前预设」不是教条是抓缺陷的钩子：statechart 一写实现缺口自己冒出来;模板绑定名不匹配类缺陷现有门禁全盲（dead-binding 候选扩展：模板标识符与 setup 声明 diff）, exempt=spec-trace 正反向全量对照未做（需要功能行清单工件，属第二迭代）, caps=—, effort=statechart 8 态+3 缺口修复+双仓回写, stop_reason=—}
+
+### 2026-09-21 05:40-05:45｜第二十轮：无限循环第一波迭代 v0.2→v0.3（对照实测+元品味入档）
+- 源库 push 落地：GitHub origin 成功（代理失效→明示绕过直连）；Gitee 两式认证均败→止损豁免（家族 syncer 流程后续走）
+- **真对照迭代（用户要的循环范式）**：registry-gate 对财务项目实测→暴露 v0.1 两缺陷（存量无标记全拦 13 文件不可用+范围过宽 pages/App 误判）→ v0.2 基线模式（--write-baseline 存量豁免只拦新增+components 目录默认）→ 三态 selftest+财务项目实测闭环（基线写入→复跑放行）→ 实测残留 .registry-baseline.json 清理（无关改动零容忍）
+- **v0.2 增量**：判定表 10→23 条（G 感知过渡 7/G 结构 4/H 节奏 2）+anti-excuses #10 探针借口转正+spec-trace-gate v0（T1 三段/T2 证据真值/T3 功能唯一）+usage-probe v0（使用率监控，零命中=衰减警报）+description 触发词密集化（口语 11 类+Use when）——四脚本 selftest 两态全过
+- **元品味 #0（用户 mid-turn 裁决）**：精致偷懒严格判据=最小化未来维护面而非最少行数——入判定表〇域最高权重（9831042）+direction §八 第六能力
+- 全部同步三副本+push（a3e2c6c/2bba3cc/dc40dd2/fc43ebd/9831042）
+- errpath：cp 路径误写致副本根多余文件→清理；diff 报差疑行尾实为缺 3 行注释→补齐；Gitee 认证止损
+- GATE: {level=L2-F, v=循环第一波 v0.2→v0.3, cmd=实测财务项目+基线模式修复+判定表扩容+双新门禁+元品味+五次 push, exit=0, files=源库 skill/shisan-xinuo-product/*+设计部 direction/agent-log, refs=0(未跑 lookup，0 照报), errpath=cp 错位清理；diff 缺注释补齐；Gitee 认证两式失败止损豁免, lessons=真对照暴露假想缺陷（基线模式是实测逼出来的不是想出来的）；行数少≠维护面小（抽象是负债）；对既有项目门禁必须有基线豁免否则不可用, exempt=peer 回写尚未出现（继续轮询）；agentic 对照未跑, caps=—, effort=实测闭环+13 条扩容+2 新门禁+元品味, stop_reason=—}
