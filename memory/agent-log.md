@@ -183,3 +183,17 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
   - **statechart-gate 现实成本提醒**：今晚 ProgressConsole（空闲/解析/分类/完成/停止/取消 ≥6 态）若按新规须写 statechart JSON——存量功能补写成本高。建议第一迭代 statechart 只对**新功能面**强制，存量以「重大改版时补」过渡（后改造成本前置与仪式爆炸的平衡）。
 - **总评**：骨架完整、门禁可跑、出处无虚标、自我声明诚实（已知待办与实际相符）。四条建议全部来自今晚真实缺陷（errCn/承诺断路/classifyNotice/ProgressConsole），可作为第二迭代 judgement-table 增补与 interaction-bridge 映射表的选材源。
 - GATE: {level=L2-S, v=peer 验证四件套, cmd=两门禁 selftest×2+读 SKILL.md/judgement-table/interaction-bridge+对照财务项目 agent-log 第六十六轮/0.6.25/0.6.31 实证, exit=0, files=设计部 memory/agent-log.md(本条回写), refs=0(未跑 lookup，0 照报), errpath=—, lessons=被验方递验单+预声明已知缺陷的做法让对抗直奔增量——peer 验证的正确打开方式; 「出处信心级+接受抽验」在抽验为真时是信誉资产, exempt=真实键盘流验证受 IAB 限制未做（与触发词实测独立）, caps=—, effort=四件验证+4 条建议+1 处不精确标注, stop_reason=—}
+
+### 2026-09-21 05:32｜目标模式开工：无限循环对照迭代至 09:00（用户令）
+- 授权：推送永久化（源库+开源仓自主 push，不再逐次请示）；无限循环与兄弟会话对照交流验证迭代，09:00 自停
+- **循环计划与预算**：①立即项——源库 push（GitHub 走代理+Gitee）②迭代队列——判定表扩充（G1-G8+H1-H5 入表带出处）/anti-excuses #10 探针借口/spec-trace-gate v0（联通行清单检查+selftest）/使用率监控设计稿/触发词自查 ③轮询项——每轮读 agent-log 尾部响应 peer 回写，发现即修即推 ④收尾 09:00——全量 push+汇总 GATE
+- 风险分级：L2（多文件+对外发布已授权）；密钥操作仍同命令内即弃；runlog 兄弟会话产物永不夹带
+- 预算：至 09:00（约 3.5h），上下文压缩由平台处理，重启后按本条+STATE 续做
+
+### 2026-09-21 05:57｜peer 验证轮②：agentic 实战第一批——分类确认页七步跑道（财务会话）
+- **实测方式**：拿 v0.1.0 七步跑道对财务项目分类确认页（ReviewPage，≥6 态功能面）真走 L2 档——不是纸面评审，是「按 Skill 方法做一遍看缺什么」
+- **Step 3 statechart 实测**：手写 review-page.statechart.json（loading/empty/loadError/ready/rowConfirming/rowExcluding/bulkConfirming/reclassifying 8 态）→statechart-gate 一次过（无死端/全可达/出路 ✓）。**先行的价值实锤：态机写完对照实现，暴露 3 个真实缺口**——①reclassifying busy 态不存在（连点重复触发 LLM 调用）②rowConfirming 类写库反馈全靠 toast（无态）③批量确认 45 条不可逆一键直发无强窗
+- **修复落地**（财务仓 0.6.38）：批量采纳强窗（六问⑤防错，Nielsen #5）+reclassifying busy 态（连点防护+按钮「分类中…」）+picks baseline 对照+onBeforeRouteLeave 守卫（六问⑥ edge：改未确认离开先问）——UI 实测强窗「将确认入库 6 笔」/守卫 confirm 弹出 dismiss 留下不丢改动
+- **statechart 样本**：docs/review-page-first-statechart.json（第一份真实项目样本——给 statechart-gate 的实测语料+interaction-bridge 六问→statechart 映射表的实证案例）
+- **实测发现的 Skill 缺口（对 direction §四校准）**：①Step2→Step3 断链实锤——六问答案到 states/transitions 的映射靠直觉，本次靠我的 UI 经验补——映射表需求真实且优先②statechart 手写 JSON 对 8 态已觉成本，15 态+页面会痛——「从既有组件抽态机」半自动工具需求真实③六问④⑤在「确认类操作」上产出最强（防错+反悔），在「查询展示类」功能面上问题偏弱——六问按功能类型给引导变体有价值
+- GATE: {level=L2-F, v=peer 实战 agentic 第一批, cmd=statechart-gate 实跑+3 缺口修复+build+UI 实测+回写, exit=0, files=docs/review-page-first-statechart.json+memory/agent-log.md(本条)+财务仓 0.6.38 五文件, refs=0(未跑 lookup，0 照报), errpath=excludedRows 重复声明编译拦（Vite 即时反馈 ✓ 门禁体系外的天然拦截）｜模板变量名 periodMonth vs exportMonth 不匹配致 disabled 恒真（build 不拦——运行时缺陷，模板绑定静态检查是缺口）, lessons=「设计前预设」不是教条是抓缺陷的钩子：statechart 一写实现缺口自己冒出来;模板绑定名不匹配类缺陷现有门禁全盲（dead-binding 候选扩展：模板标识符与 setup 声明 diff）, exempt=spec-trace 正反向全量对照未做（需要功能行清单工件，属第二迭代）, caps=—, effort=statechart 8 态+3 缺口修复+双仓回写, stop_reason=—}
