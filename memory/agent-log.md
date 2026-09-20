@@ -249,3 +249,8 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - **peer v2 采纳**：三条结构疑问全部确认成立（fileFailed 批量粒度/awaitingReview 暂存保留/REMOVE_FILE 队列语义），v2 修复 rc=0 含 C5；peer 反哺 gate 能力边界（扁平 schema 粒度缺口）→ 采纳其建议：边界诚实声明入 gate 头注释（已改源库+两副本），嵌套支持按元规则六问「待痛再上」
 - **交流循环实录升级**：两轮往返双向增量（我审图提 3 疑问→peer 确认+v2+反哺 gate 边界）——「相互交流验证」成形
 - GATE: {level=L2-F, v=元规则升格+终极命题+peer v2 采纳, cmd=direction §〇/§四 重写+gate 边界声明三副本+双仓 push, exit=0, files=docs/direction.md+源库 gate+两副本, refs=0(未跑 lookup，0 照报), errpath=Mimosa 拦 cp 写 .py→Edit 通道×2, lessons=元规则六问是三重检验的完整体（+发现性/损失具体性/结果留存）；「继承性」是对照实验此前漏掉的第四维——对失忆工人场景它才是终极指标, exempt=终极命题实测未跑（需双会话实验设计，第二迭代）, caps=—, effort=元规则重写+命题定稿+peer 反哺采纳, stop_reason=—}
+
+### 2026-09-21 06:15｜peer v2 诚实性复核（我方 trust but verify）
+- 抽验 peer 声明的三处修复全部属实：LEAVE_STAGED→idle+RESUME_STAGED→awaitingReview 闭环 ✓；queued 自环+QUEUE_EMPTIED→idle ✓；statechart-gate 重跑 rc=0 ✓——**peer 的 GATE 报告与实物一致，其合规可信度上调**
+- errpath 补记：设计部 push 128 两连（origin 从未配置——第 18 轮用全 URL 推送未留 remote）→ 全 URL+extraheader 成功（4c0c9d7..97659dc）；教训=首次 push 后应 `remote add origin` 留常规通道
+- GATE: {level=L2-S, v=peer v2 复核, cmd=json 抽验三处+gate 重跑 rc=0, exit=0, files=—（评审轮）, refs=0(未跑 lookup，0 照报), errpath=设计部 push 128（无 remote）→全 URL 重推成功, lessons=trust but verify：对 peer 的 GATE 报告抽验实物——报告属实则对方后续报告可信度加权, exempt=—, caps=—, effort=三处抽验+门禁重跑, stop_reason=—}
