@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.7.1：G 档（高密度层级与状态感知）落盘——判定表素材+六态矩阵升级「态+转换」 | level=L2-F | route=第四包挂靠源库+联通层（六问挂 Norman 出处）+强制 9 项+判定表出处源 7+G 档 8 条候选 | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=web_reader/WebSearch 均遇 429 限流→G 档基于稳定公开体系拆解+诚实声明视频未取到（待用户贴关键帧）
-- 当前阶段：**方向定稿 v0.7.1（2026-09-21）**——七调研（A-G：G=高密度层级与状态感知，用户推抖音触发）+问题定义+衰减链+品味时序+联通层（六态矩阵升级态+转换）+强制 9 项+挂靠架构；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.8：**蓝海定位定稿**（结构层=功能流程状态设计，statechart 载体，H 档） | level=L2-F | route=第四包挂靠源库+联通层核心交付=结构层（六问翻译表→statechart→矩阵视图→spec-trace→走查→账本）+强制候选 10 项（+statechart-gate 带作用域） | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=web_reader/WebSearch 间歇 429→稳定公开体系拆解+挂出处（statechart=Harel 1987/XState 稳定经典）
+- 当前阶段：**方向定稿 v0.8（2026-09-21）**——八调研（A-H：H=功能流程状态设计蓝海）+问题定义+衰减链+品味时序+联通层（§九 蓝海定位+statechart 载体）+强制边界（§十 9 项+候选第 10）+挂靠架构；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch/web_reader 间歇 429（账户级限流，间歇可用）
-- 最近更新：2026-09-21 05:06
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch/web_reader 间歇 429
+- 最近更新：2026-09-21 05:12
+- 遗留：第四包本体未写（第一迭代）；statechart-gate 待第一迭代实现（JSON 无死端/全可达/错误态恢复检查）；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；G 档 §6 留白待用户贴抖音关键帧逐帧拆解；缺口 6-9 未入 direction（判定表入库时挂）
 - 遗留：第四包本体未写（第一迭代）；F 档缺口 2-9 项为劝导级未全部入 direction（判定表入库时逐条挂）
 - 遗留：第四包本体未写（第一迭代）；源库钩子未发行（用户发版流程）；工作流回补四条待实施
@@ -138,3 +139,11 @@ STATE: task=产品工程 Skill 立项——方向档 v0.7.1：G 档（高密度�
 - **G 档产出**：层级系统（z 轴 elevation 语义/信息层级三因子/格式塔分组/留白与墨水比）+密度系统（高密度≠小字=灰阶分层/密度可切换/行内主操作收敛）+状态变化感知（认知根=变化盲视：无标记突变是缺陷；过渡语义 Material Motion 三式/骨架屏防跳版/乐观更新/禁纯颜色状态）+判定表候选 8 条（G1-G8 全带出处）
 - **体系升级**：六态矩阵升级「态+转换」矩阵（每条箭头标注过渡语义/时长/可中断性）——direction §九 联通工序已改；「不难用底线」吸收变化盲视条目
 - GATE: {level=L2-S, v=高密度层级与状态感知拆解, cmd=web_reader 抓抖音(429)+G 档落盘+direction §九接口+agent-log+commit, exit=0, files=参考Skill/G-高密度界面层级与状态感知.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=视频内容未取到（429+介质限制）→诚实声明+稳定体系拆解+留帧口, lessons=六态定义「有哪些态」不覆盖「态间转换感知」——变化盲视补上这块；高密度≠小字=灰阶分层+去装饰, exempt=抖音三连均未取到内容（7.17/9.71 用户转述已用；2.38 待贴帧）, caps=—, effort=3 系统 12 机制拆解+8 判定候选+六态矩阵升级, stop_reason=—}
+
+### 2026-09-21 05:12｜第十五轮：蓝海定位定稿——功能流程状态设计（用户裁决，H 档+direction v0.8）
+- 用户定位：「设计 Skill 只设计怎么做，不设计各功能的流程状态等」——红海=手法层（样式/组件/动效/文案，hallmark/taste/impeccable/vercel 全在此层）；蓝海=结构层（功能的流程与状态：有哪些态/怎么流转/流转怎么被感知/走不通怎么办）——升格为本 Skill 核心交付物
+- **学科挂靠（F 档规矩）**：statechart（Harel 1987《Statecharts: A Visual Formalism for Complex Systems》；XState 工业实现）——可执行的数学对象：可模拟/可模型检验/可生成测试
+- **技术路径升级**：翻译表/态+转换矩阵**源格式=statechart JSON/TS（机器读），表格只是渲染视图**；「出路」在状态机层的严格表述=无死端（非终态全有出边）+全可达+错误态有恢复转换——图算法可查
+- **新门禁候选 statechart-gate**（强制候选第 10 项，作用域=多状态功能面≥3 态，单态豁免）：①翻译表有 statechart 定义②无死端③全可达④错误态有恢复⑤守卫有行——①③④机器查 exit 1，②⑤半自动
+- 工件链闭环：功能句→翻译表→statechart→矩阵视图→spec-trace→走查→账本；statechart 成 spec-trace 反向追溯的数据源+走查路径生成器
+- GATE: {level=L2-S, v=蓝海定位+statechart 载体定稿, cmd=H 档落盘+direction §九蓝海段+agent-log+commit, exit=0, files=参考Skill/H-功能流程状态设计蓝海.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=红海教手法蓝海定义结构（手法治标结构治本）；statechart 让「契约可判定化」有了可执行载体（无死端=出路的严格表述）；源格式机器读+视图人读=双向工件的分层, exempt=statechart/XState 细节基于稳定经典知识未抓原文（Harel 1987 论文稳定）, caps=—, effort=蓝海定位+学科挂靠+门禁设计+工件链闭环, stop_reason=—}
