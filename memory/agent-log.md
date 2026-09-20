@@ -4,11 +4,11 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——骨架+全量本机 Skill 蒸馏+定向+外部同类项目调研（已齐） | level=L2-F | route=四问题域三件工具（地图=注册表/厂规=判定表/验收机=门禁）+裁决写回闭环；同类对照确认四增量域无人覆盖 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**调研全部完成（2026-09-21）**，待用户点名开工第一迭代切片（SKILL.md 骨架→anti-excuses.md→registry-gate→三重检验验收）
+STATE: task=产品工程 Skill 立项——四调研+问题定义+衰减链缺口命名完成（方向档 v0.2） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链五级对策映射（§七） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.2（2026-09-21）**——A/B/C/D 四调研+〇节问题定义+§六同类对照+§七效力衰减链（用户九问→缺口命名：劝导会衰减法律不会）+态机+工作流缝合三点；待用户点名开工第一迭代切片
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部仓库深读走 mcp web_reader
-- 最近更新：2026-09-21 02:50
+- 最近更新：2026-09-21 03:42
 - 遗留：Skill 本体未写；门禁脚本未产
 
 ## 二、教训区
@@ -48,3 +48,10 @@ STATE: task=产品工程 Skill 立项——骨架+全量本机 Skill 蒸馏+定�
 - 并入三修订进 direction.md §六：vercel 列为判定表「业界共识」出处源（No dead ends/All states designed/错误给出路正反例/Don't pre-disable submit 等互补条目）+hallmark audit/study 动词化命令形态+portable design.md 交接范式
 - 落档：参考Skill/D-同类项目调研.md+direction.md §六+依据行更新
 - GATE: {level=L2-S, v=外部同类调研, cmd=WebSearch×4+mcp web_reader 深读×2仓库+落档, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md, refs=0(未跑 lookup，0 照报), errpath=WebFetch github.com TLS 证书拦截（本机拦截环境）→改 mcp web_reader 服务端抓取成功；WebSearch 429 限流×2→换措辞重试成功, lessons=最直接同类（hallmark 57 门禁）只护视觉 slop 不护逻辑链与项目承诺——本 Skill 的「假理想功能门禁+裁决账本」是真空地带；命令动词化（audit/study）比裸脚本更有产品感, exempt=—, caps=WebSearch+mcp__web_reader__webReader, effort=2 仓库深读+4 组搜索+对照表, stop_reason=—}
+
+### 2026-09-21 03:42｜第四轮：用户九问→效力衰减链定稿（direction.md §七）
+- 九问（在场没被利用/能力不入计划/压缩失真/被用但只是规范/产出照旧反人类/偷懒怎么达成观念/各态变化/如何补进工作流/揭开什么缺口）逐一归因后收敛为**一条链**：Skill 效力五级衰减——①在场不触发（概率匹配非义务）②计划不引用（规划动作不规划检索）③压缩失真（上下文内终将失真=介质属性）④仪式化合规（读写间无强制函数，「合规靠 hooks 非自觉」实锤）⑤产出照旧（走查 5 缺陷时设计系 Skill 全在场=证据）
+- **缺口命名**：现有机制全作用在上下文（劝导生成者），无一作用在交付物（交付时拦截）+结论不复利；劝导会衰减法律不会——Skill=劝导（高带宽/低强制/易衰减），可复跑工件=法律（零带宽/全强制/抗压缩）
+- 三附属定稿：偷懒=定价问题非观念问题（给路定价让最便宜的路恰好正确）；态机（greenfield 拦发明/既有拦闲置/会话内拦仪式化/跨会话拦压缩/交付后回写）；工作流缝合三点（计划检索位/GATE cmd 吃门禁真值/收尾账本写回）
+- 本体三层与衰减链对齐：判定表治「不知什么是对」/注册表治「不知已有什么」/门禁治「知道也不做」/账本治「做了也白做」
+- GATE: {level=L2-S, v=九问缺口定稿, cmd=九问归因+direction.md §七+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit agent-log 报 modified（#294 bash heredoc 双通道）→重读实文再改成功, lessons=劝导会衰减法律不会；Skill 与工件是互补介质不是替代品；在场的 Skill 拦不住决策点的先验——只有决策点与交付点之间的机器判定拦得住, exempt=—, caps=—, effort=九问逐环归因+链条命名+对策映射, stop_reason=—}
