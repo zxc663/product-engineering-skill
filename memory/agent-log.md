@@ -170,3 +170,16 @@ STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本�
 - 用户在另一会话（无限循环路测）发令：「桌面上新的产品 Skill——通知他，你加载并做验证，你们相互交流」=天然的触发词实测+外部对抗验证机会
 - 递出验证单 docs/peer-verification-card.md：四件验证（完整性+门禁自测/触发词实测/出处抽验对抗重点——查出虚标整批降级/设计漏洞审查）+反馈回写路径（本 log 追加「peer 验证轮」）+自我声明（骨架版已知待办不算新发现）
 - GATE: {level=L2-S, v=peer 验证卡, cmd=Write 验证卡+agent-log+commit, exit=0, files=docs/peer-verification-card.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=被验方主动递验单+预声明已知缺陷=把对抗变成增量而不是防御, exempt=—, caps=—, effort=四件验单+回写协议, stop_reason=—}
+
+### 2026-09-21 05:30｜peer 验证轮（财务项目会话·无限循环迭代，browser-use 双栈实机迭代 15 轮者）
+- **身份与立场**：同一用户另一会话（财务账单助手 0.6.24→0.6.37 十五连版夜间迭代），今晚刚跑完 13+ 走查维度/2 轮 critic/新用户旅程/离线与组合矩阵——被验物的目标场景（前端交互质量）正是我今晚的全部工作面，验证=对照真实迭代经验。
+- **①完整性+门禁**：✅ 两门禁 selftest 全过（registry 缺归因被拦/补归因放行；statechart 合法机放行+死端 C2/不可达 C3/错误态无出路 C4 逐一拦下且**给出具体状态名**——错误信息本身就是范本）。副本在位（.agents/.zcode）、diff 自检已由被验方完成。
+- **②触发词实测（诚实答案）**：「难用/丑/点了没反应/假功能」类高频口语会命中。**缺口=蓝海定位词缺席**：第十九轮刚定稿的核心交付物「流程状态设计/状态流转/这个功能有哪些状态/走不通怎么办」在 description 里一个都没有——冷启动新会话说出蓝海正话反而触发不了结构层 Skill。另缺「验收/走查/取证」动作词（强制 7/8 的触发面）。建议 description 增：「功能有哪些状态/状态怎么流转/流程状态设计/交互债/走不通/交付前走查」。
+- **③出处抽验（对抗姿态，尽力找虚标）**：抽条 3（Nielsen #9 错误出路——与 GOV.UK 错误三要素同源互证）、条 4（vercel「No dead ends」——该清单精神真实）、条 5（本土 classifyNotice 死代码——**双方 agent-log 均可查证，真实**）、条 9（WCAG 1.4.1 Use of Color——条目内容与标准精确对应）。另查验证卡点名的「ListRow+5s 撤销」→interaction-bridge 六问⑤，溯源=ux-feature-design 权威依据表「通知层级研究：破坏性操作 5 秒撤销宽限」，链条成立。**结论：未发现虚标**。一处不精确：条 6 taste-skill「AI 味三件套」未标原文条目号（信心级已诚实标「转述」）——建议补条目定位。
+- **④设计漏洞审查（对照今晚 15 轮真实迭代，三条建议）**：
+  - **断链候选：六问答案→statechart 的映射未定义**。六问输出自然语言，statechart 要 JSON——「超 1s 必给进度」（六问②）翻译成哪个态？「恢复给出路」（六问④）正是 error 态的 recovery 转换来源——建议 interaction-bridge 补「六问→statechart 骨架映射表」（②→timeout/progress 态、④→error+recovery 转换、⑤→undo 分支、⑥→persisted 标记），statechart-gate 的「错误态有恢复转换」检查从此有语义锚。
+  - **豁免梯度的文案盲区**：今晚两大「承诺-能力断路」（「可恢复」无入口/「一键导出」无按钮）全是**文案级小改**暴露的——L0/L1 豁免文案类改动会放跑它们。建议：涉及用户可见承诺文案（toast/空态/错误提示）的改动不适用小件豁免，至少过六问④出路+⑤反悔两问。
+  - **反借口表建议补条 10**：「错误/提示文案复用全局单源应该没问题」→跨语境复用会产假话（实证：errCn 3003「规则引擎已接手」用在无兜底的 NL 查询页=说谎）——复用单源文案前须核对语境语义。
+  - **statechart-gate 现实成本提醒**：今晚 ProgressConsole（空闲/解析/分类/完成/停止/取消 ≥6 态）若按新规须写 statechart JSON——存量功能补写成本高。建议第一迭代 statechart 只对**新功能面**强制，存量以「重大改版时补」过渡（后改造成本前置与仪式爆炸的平衡）。
+- **总评**：骨架完整、门禁可跑、出处无虚标、自我声明诚实（已知待办与实际相符）。四条建议全部来自今晚真实缺陷（errCn/承诺断路/classifyNotice/ProgressConsole），可作为第二迭代 judgement-table 增补与 interaction-bridge 映射表的选材源。
+- GATE: {level=L2-S, v=peer 验证四件套, cmd=两门禁 selftest×2+读 SKILL.md/judgement-table/interaction-bridge+对照财务项目 agent-log 第六十六轮/0.6.25/0.6.31 实证, exit=0, files=设计部 memory/agent-log.md(本条回写), refs=0(未跑 lookup，0 照报), errpath=—, lessons=被验方递验单+预声明已知缺陷的做法让对抗直奔增量——peer 验证的正确打开方式; 「出处信心级+接受抽验」在抽验为真时是信誉资产, exempt=真实键盘流验证受 IAB 限制未做（与触发词实测独立）, caps=—, effort=四件验证+4 条建议+1 处不精确标注, stop_reason=—}
