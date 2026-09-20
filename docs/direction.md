@@ -1,6 +1,6 @@
 # 定向定稿 · 产品工程 Skill v0.1 方向
 
-> 2026-09-21。依据：参考Skill/ 三份蒸馏（A 设计品味系 7/B 工作流极简系 10/C 工具文档系 34）+ 上位调研档（财务项目 docs/design-specs/product-engineering-skill-research.md）。
+> 2026-09-21。依据：参考Skill/ 四份调研（A 设计品味系 7/B 工作流极简系 10/C 工具文档系 34/D 外部同类项目）+ 上位调研档（财务项目 docs/design-specs/product-engineering-skill-research.md）。
 > 本文=Skill 本体动工前的方向权威；本体落成后本文退位为设计档。
 
 ## 〇、我们究竟解决什么问题（问题定义，先于一切机制）
@@ -70,3 +70,16 @@ product-engineering/            ← 安装于 .agents/skills/
 ## 五、与既有技能的编排（不重造）
 
 前置调度沿用财务项目 AGENTS.md Skill 前置条模式：前端任务先 ux-feature-design/impeccable（六态/打磨），极简判断先 ponytail，灵感检索 ui-ux-pro-max，落地前 critic；本 Skill 负责**注册表/账本/门禁/裁决写回**这四个无人覆盖的增量域，并在收尾把新裁决回写进 decision-ledger。
+
+## 六、同类项目对照（2026-09-21 外部调研，全文=参考Skill/D-同类项目调研.md）
+
+**四个增量域全部无人覆盖，差异化成立**：
+1. **组件注册表+出处链**——anti-ui-slop 只有一句「extend them」原则无机制；shadcn registry 是通用分发非项目绑定。
+2. **跨会话裁决账本（写回协议）**——hallmark/Vercel 均无状态，全场空白，最独特。
+3. **假理想功能/逻辑链门禁**——仅 anti-ui-slop 一句 inert interactions 收尾检查，无系统化；先发优势明显。
+4. **与 agent 纪律对接（GATE/复述/能力检索）**——无人做纪律与品味合流。
+
+**并入本 Skill 的同类借鉴（三条修订）**：
+- 判定表「业界共识」新增出处源：**vercel-labs/web-interface-guidelines**（100+ 条七类；互补条目：No dead ends／All states designed／错误信息给出路正反例／Never `transition: all`／tabular-nums／不单靠颜色传状态／Don't pre-disable submit）——与 ux-feature-design、ui-ux-pro-max 并列。
+- 命令形态借鉴 **Nutlope/hallmark**（Together AI，20 主题+57 道 slop-test gates）：门禁不只脚本，做成动词——`audit`（对既有代码出 punch list）／`study`（从人类指定设计提取 DNA 进注册表，产出 portable design.md 交接）。vercel 的 file:line findings 输出格式与 AGENTS.md 集成方式同采。
+- 结构验证：vercel 把「品牌选择」与「通用准则」分节隔离=taste-skill em-dash 教训的独立再发现——判定表两栏分离（业界共识 vs 本 Skill 风格）设计得到印证。

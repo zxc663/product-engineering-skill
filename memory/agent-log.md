@@ -4,12 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——项目骨架+全量本机 Skill 研读蒸馏+定向 | level=L2-F | route=上轮调研档定稿三层工件（品味判定表/注册表+决策账本/门禁脚本）+裁决写回闭环 | confirm=无需（用户指令即执行；目录名「产品工程Skill」自定可改） | gates_passed=—（骨架轮） | last_errpath=—
-- 当前阶段：**第一轮（2026-09-21）**——骨架（AGENTS.md/参考Skill/docs/gates）+全量 Skill 分组研读（A 设计品味系/B 工作流极简系/C 工具文档系）+蒸馏笔记落盘+定向定稿（四问题域→机制映射+反借口表）
+STATE: task=产品工程 Skill 立项——骨架+全量本机 Skill 蒸馏+定向+外部同类项目调研（已齐） | level=L2-F | route=四问题域三件工具（地图=注册表/厂规=判定表/验收机=门禁）+裁决写回闭环；同类对照确认四增量域无人覆盖 | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**调研全部完成（2026-09-21）**，待用户点名开工第一迭代切片（SKILL.md 骨架→anti-excuses.md→registry-gate→三重检验验收）
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；Skill 分布两处：~/.zcode/skills（22 个）、~/.agents/skills（10 个）+插件 cache 官方技能
-- 最近更新：2026-09-21 01:40
-- 遗留：Skill 本体未写（本轮只蒸馏+定向）；门禁脚本未产
+- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部仓库深读走 mcp web_reader
+- 最近更新：2026-09-21 02:50
+- 遗留：Skill 本体未写；门禁脚本未产
 
 ## 二、教训区
 
@@ -40,3 +40,11 @@ STATE: task=产品工程 Skill 立项——项目骨架+全量本机 Skill 研�
 - 三件工具定名：地图（注册表）/厂规（判定表）/验收机（门禁）；反面校验四条（不写抽象原则/不追求模型拥有审美/厂规不写千条/工件必过失忆工人-成本-兑现三重检验）
 - 第一迭代验收校准：新增三重检验（失忆工人/成本/兑现——门禁必须能对 classifyNotice 式死代码给 exit 1）
 - GATE: {level=L2-S, v=问题定义定稿, cmd=思考+direction.md 修订, exit=〇节落档+四节校准, files=docs/direction.md, refs=0(未跑 lookup，0 照报), errpath=上一轮跳过问题定义直接给机制（用户追问纠正）——机制清单不等于问题定义, lessons=先答「病是什么」再开药；检验 Skill 设计的标准=「下个会话的失忆工人在哪个动作前以多少成本被什么机制强制使用它」, exempt=—, caps=—, effort=三层下挖（症状→能力→结构/承诺）+反面校验四条, stop_reason=—}
+
+### 2026-09-21 02:50｜第三轮：外部同类项目调研（用户：「这个应有同类相似项目，调研研读」）
+- WebSearch+web_reader 深读两最直接同类：**Nutlope/hallmark**（Together AI 反 AI-slop 设计技能：四动词 build/audit/redesign/study+20 主题+57 道 slop-test gates+pre-emit self-critique；本地 taste-skill 实为其衍生）+ **vercel-labs/web-interface-guidelines**（862★：100+ 条七类准则+`web-design-guidelines` skill 产出 file:line findings+AGENTS.md 集成）
+- 次要发现：awesome-claude-skills 目录群（BehiSecc/travisvn≈8.8k★/ComposioHQ）+rohitg00 toolkit=分发渠道；shadcn registry+MCP、anti-ui-slop、theme-factory（前轮已录）
+- **差异化校验：四增量域全部成立**（注册表+出处链/裁决账本写回/逻辑链门禁/纪律对接——同类均空白或仅一句原则）；vercel「品牌 vs 通用」分节=taste-skill em-dash 教训的独立再发现，两栏分离设计被印证
+- 并入三修订进 direction.md §六：vercel 列为判定表「业界共识」出处源（No dead ends/All states designed/错误给出路正反例/Don't pre-disable submit 等互补条目）+hallmark audit/study 动词化命令形态+portable design.md 交接范式
+- 落档：参考Skill/D-同类项目调研.md+direction.md §六+依据行更新
+- GATE: {level=L2-S, v=外部同类调研, cmd=WebSearch×4+mcp web_reader 深读×2仓库+落档, exit=0, files=参考Skill/D-同类项目调研.md+docs/direction.md, refs=0(未跑 lookup，0 照报), errpath=WebFetch github.com TLS 证书拦截（本机拦截环境）→改 mcp web_reader 服务端抓取成功；WebSearch 429 限流×2→换措辞重试成功, lessons=最直接同类（hallmark 57 门禁）只护视觉 slop 不护逻辑链与项目承诺——本 Skill 的「假理想功能门禁+裁决账本」是真空地带；命令动词化（audit/study）比裸脚本更有产品感, exempt=—, caps=WebSearch+mcp__web_reader__webReader, effort=2 仓库深读+4 组搜索+对照表, stop_reason=—}
