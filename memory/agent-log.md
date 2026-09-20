@@ -4,11 +4,11 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——四调研+问题定义+衰减链缺口命名完成（方向档 v0.2） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链五级对策映射（§七） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
-- 当前阶段：**方向定稿 v0.2（2026-09-21）**——A/B/C/D 四调研+〇节问题定义+§六同类对照+§七效力衰减链（用户九问→缺口命名：劝导会衰减法律不会）+态机+工作流缝合三点；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.3（四调研+问题定义+衰减链+§八品味与时序纪律） | level=L2-F | route=三件工具（地图/厂规/验收机）+裁决写回+衰减链对策+时序纪律（构想先于设计/复用归落地/权威序非瀑布） | confirm=无需 | gates_passed=—（本体未动工） | last_errpath=WebFetch github.com 本机 TLS 证书拦截→改 mcp web_reader 服务端抓取（成功）
+- 当前阶段：**方向定稿 v0.3（2026-09-21）**——A/B/C/D 四调研+〇节问题定义+§六同类对照+§七衰减链+§八工程品味与时序纪律（PG 原文一手引用）；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部仓库深读走 mcp web_reader
-- 最近更新：2026-09-21 03:42
+- 本机环境：Windows+ZCode；WebFetch 对 github.com 证书验证失败（本机 TLS 拦截），外部深读走 mcp web_reader（paulgraham.com 同路成功）
+- 最近更新：2026-09-21 03:51
 - 遗留：Skill 本体未写；门禁脚本未产
 
 ## 二、教训区
@@ -55,3 +55,11 @@ STATE: task=产品工程 Skill 立项——四调研+问题定义+衰减链缺�
 - 三附属定稿：偷懒=定价问题非观念问题（给路定价让最便宜的路恰好正确）；态机（greenfield 拦发明/既有拦闲置/会话内拦仪式化/跨会话拦压缩/交付后回写）；工作流缝合三点（计划检索位/GATE cmd 吃门禁真值/收尾账本写回）
 - 本体三层与衰减链对齐：判定表治「不知什么是对」/注册表治「不知已有什么」/门禁治「知道也不做」/账本治「做了也白做」
 - GATE: {level=L2-S, v=九问缺口定稿, cmd=九问归因+direction.md §七+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit agent-log 报 modified（#294 bash heredoc 双通道）→重读实文再改成功, lessons=劝导会衰减法律不会；Skill 与工件是互补介质不是替代品；在场的 Skill 拦不住决策点的先验——只有决策点与交付点之间的机器判定拦得住, exempt=—, caps=—, effort=九问逐环归因+链条命名+对策映射, stop_reason=—}
+
+### 2026-09-21 03:51｜第五轮：工程品味解剖+时序纪律定稿（direction.md §八，PG 原文一手）
+- 用户命题「真实交互逻辑应在设计前预设构想，落地时才考虑代码和源库复用」——拉《Taste for Makers》全文（paulgraham.com，web_reader 绕 TLS）逐条对过
+- **品味五能力定稿**：①换位提问（炉灶旋钮：问题在错的层面被解决）②识破装饰（「装饰常是说底下没东西的方式」→假功能/内联样式）③丑觉先于美觉（见丑易想象美难→否定性知识=判定表零容忍的理论根据，与 taste-skill 二值化合流）④敢于复用（对>原创）与敢于重画（好设计是重设计，速写=让认错便宜）⑤品味住在作坊不住在个体（佛罗伦萨 vs 米兰→Skill=给失忆工人搭的作坊）
+- **时序纪律裁定**：权威序成立（Norman 概念模型/Cooper 目标导向/双钻石+原型即法律实证）；两精确化——①「真实」=态完整（理想路径图=假功能前移到设计层；六态矩阵+承诺清单+失败出路，缺态不得开工）②复用落地执行但代价认知前置（设计读能力索引/落地读组件卡；禁止库的顺手悄悄重写承诺——反人类多是方便累积的）
+- 权威序≠瀑布序：设计=宪法/落地=执法/走查=司法审查（证据回写账本反哺下版）
+- Skill 后果三条：判定表加「组件驱动设计=一票否决」时序条目+注册表双视图（能力索引/组件卡）+设计档准入六态可数化（设计门禁雏形）
+- GATE: {level=L2-S, v=品味解剖+时序纪律定稿, cmd=web_reader 拉 PG 原文+五能力蒸馏+direction §八+agent-log+commit, exit=0, files=docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=Edit agent-log 再报 modified（#294 heredoc 后未重读）→重读再改成功, lessons=品味可执行部分全是否定性知识（美涌现不可枚举/丑可枚举可判定）；问题在错的层面被解决=无品味的原型症状；反人类设计大多不是决策出来的是方便累积出来的, exempt=联网未多轮（一手文献一轮即定，预算纪律）, caps=mcp__web_reader__webReader, effort=PG 十四条逐条蒸馏为五能力+命题两处严谨化+三条 Skill 后果, stop_reason=—}
