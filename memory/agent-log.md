@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill 立项——方向档 v0.7：**学科基线核实完成**（F 档）——六问挂 Norman 出处+强制 9 项（+可达性）+缺口 10 项登记 | level=L2-F | route=第四包挂靠源库+联通层（六问=Norman 七阶段工程压缩版，已挂出处）+双底双顶加第四底（WCAG POUR）+判定表出处源 7 个 | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=WebSearch 429 限流×多次→fallback 摘要+web_reader 直抓权威源（lawsofux/NNg）
-- 当前阶段：**方向定稿 v0.7（2026-09-21）**——六调研（A-F：F=成熟设计方法论对照，用户批评「空想不调研」触发）+问题定义（目的态）+衰减链+品味时序+联通层（§九 已挂学科出处）+强制边界（§十 9 项）+挂靠架构（§三/§四）；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
+STATE: task=产品工程 Skill 立项——方向档 v0.7.1：G 档（高密度层级与状态感知）落盘——判定表素材+六态矩阵升级「态+转换」 | level=L2-F | route=第四包挂靠源库+联通层（六问挂 Norman 出处）+强制 9 项+判定表出处源 7+G 档 8 条候选 | confirm=无需 | gates_passed=钩子分态自检过；合态待包落地实测 | last_errpath=web_reader/WebSearch 均遇 429 限流→G 档基于稳定公开体系拆解+诚实声明视频未取到（待用户贴关键帧）
+- 当前阶段：**方向定稿 v0.7.1（2026-09-21）**——七调研（A-G：G=高密度层级与状态感知，用户推抖音触发）+问题定义+衰减链+品味时序+联通层（六态矩阵升级态+转换）+强制 9 项+挂靠架构；源库钩子 34c4a08 未 push；待用户点名开工第一迭代切片
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch 常 429→换措辞/web_reader
-- 最近更新：2026-09-21 04:58
+- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（git 双远端，推送须用户批准）；WebFetch 对 github.com TLS 拦截→mcp web_reader；WebSearch/web_reader 间歇 429（账户级限流，间歇可用）
+- 最近更新：2026-09-21 05:06
+- 遗留：第四包本体未写（第一迭代）；G 档 §6 留白待用户贴抖音关键帧逐帧拆解；缺口 6-9 未入 direction（判定表入库时挂）
 - 遗留：第四包本体未写（第一迭代）；F 档缺口 2-9 项为劝导级未全部入 direction（判定表入库时逐条挂）
 - 遗留：第四包本体未写（第一迭代）；源库钩子未发行（用户发版流程）；工作流回补四条待实施
 - 遗留：Skill 本体未写；门禁脚本未产；工作流 Skill 回补四条待用户择期实施
@@ -130,3 +131,10 @@ STATE: task=产品工程 Skill 立项——方向档 v0.7：**学科基线核实
 - **缺口 10 项**（F 档 §2）：①可达性整体缺失（最严重——WCAG POUR 不在底线不在强制；已修：双底双顶加第四底+强制 8→9 项）②情绪轴（翻译表加劝导级第 7 列）③认知负荷挂靠（Hick/米勒）④性能三阈值挂 Nielsen（0.1/1/10s，超 1s 必进度超 10s 必可取消——已修入六问②）⑤错误预防先于恢复（六问④扩三层：防/恢复/出路——已修）⑥新手-专家路径（Nielsen #7）⑦帮助文档（#10）⑧Laws of UX 20+ 定律入出处库 ⑨工程弹性态（六问⑥扩「换环境」——已修）⑩出处源 3→7（+NNg/Laws of UX/WCAG/ISO 9241-11）
 - 流程教训：WebSearch 429 限流→fallback 摘要可用但须 web_reader 直抓权威源验证（lawsofux/NNg 原文到手）
 - GATE: {level=L2-F, v=学科基线核实+缺口修复, cmd=WebSearch×2(429 限流)+fallback+web_reader×2(lawsofux/NNg)+F 档落盘+direction §九/§十三处修订+依据行+agent-log+commit, exit=0, files=参考Skill/F-成熟设计方法论对照.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=WebSearch 429×多次→web_reader 直抓权威源成功, lessons=自制框架先查「是否成熟框架的压缩版」再入库（六问↔七阶段同构未挂出处=违规）；可达性是本次最大缺口（第三方白名单都有我却漏）；批评「你想的只是你想的」的解法=逐构件挂学科出处, exempt=Garrett/Norman 细节靠 fallback 摘要+知识（原文书未抓，属稳定经典）；缺口 6/7/8 未入 direction（判定表入库时挂）, caps=WebSearch+webReader, effort=7 构件对照+10 缺口挖出+4 处 direction 修复, stop_reason=—}
+
+### 2026-09-21 05:06｜第十四轮：高密度界面层级与状态感知（用户推抖音 2.38，G 档落盘）
+- 用户指令：分析补充「层级、功能处于各状态的变化动感知」——落在「不难看」底线+六态视觉表达域
+- 视频内容未取得（web_reader/WebSearch 均 429 限流+视频介质无法文本抓取）→**诚实声明**：基于该主题稳定公开体系拆解，全部挂出处；G 档 §6 留白待用户贴关键帧逐帧拆解
+- **G 档产出**：层级系统（z 轴 elevation 语义/信息层级三因子/格式塔分组/留白与墨水比）+密度系统（高密度≠小字=灰阶分层/密度可切换/行内主操作收敛）+状态变化感知（认知根=变化盲视：无标记突变是缺陷；过渡语义 Material Motion 三式/骨架屏防跳版/乐观更新/禁纯颜色状态）+判定表候选 8 条（G1-G8 全带出处）
+- **体系升级**：六态矩阵升级「态+转换」矩阵（每条箭头标注过渡语义/时长/可中断性）——direction §九 联通工序已改；「不难用底线」吸收变化盲视条目
+- GATE: {level=L2-S, v=高密度层级与状态感知拆解, cmd=web_reader 抓抖音(429)+G 档落盘+direction §九接口+agent-log+commit, exit=0, files=参考Skill/G-高密度界面层级与状态感知.md+docs/direction.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=视频内容未取到（429+介质限制）→诚实声明+稳定体系拆解+留帧口, lessons=六态定义「有哪些态」不覆盖「态间转换感知」——变化盲视补上这块；高密度≠小字=灰阶分层+去装饰, exempt=抖音三连均未取到内容（7.17/9.71 用户转述已用；2.38 待贴帧）, caps=—, effort=3 系统 12 机制拆解+8 判定候选+六态矩阵升级, stop_reason=—}
