@@ -4,11 +4,12 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill——**开源仓库上线+第四包已部署本机**（GitHub zxc663/product-engineering-skill；第四包三副本一致：源库/.agents/.zcode） | level=L2-F | route=联通层七步跑道+双门禁+能力地图+账本+注册表；钩子已埋源库 | confirm=豁免：用户授权（拿令牌建仓） | gates_passed=两门禁 selftest 两态过×2（源库+部署副本）；三副本 diff 零输出；push rc=0 | last_errpath=Mimosa 拦 bash 直写技能目录 .py→改 Write 通道（PreToolUse 可扫）
-- 当前阶段：**发布+部署完成（2026-09-21）**——GitHub 开源仓 product-engineering-skill（README+LICENSE+全设计档+调研 A-H）；第四包部署 .agents+.zcode 两技能目录（重启/新会话生效）；待办：①源库 workflow 未 push（批准制）②statechart-gate 转正待实测 ③agentic 对照实测 ④spec-trace 门禁（第二迭代）⑤触发词实测（需新会话）
+STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，限定 N=1）+第四包 v0.4 双仓在线** | level=L2-F | route=联通层七步跑道（含功能面盘点扩面）+判定表 29 条+四门禁+元规则六问+终极验收命题四维度 | confirm=豁免：用户授权（自裁决+推送永久化+实验执行） | gates_passed=四门禁 selftest 两态全过；10/10 全站图批量；三副本一致；实验度量×3 时点 | last_errpath=zcode CLI 402→子代理介质替换；Mimosa 拦 bash 写 .py→Write 通道；设计部 push 无 remote→全 URL
+- 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
-- 本机环境：Windows+ZCode；工作流源库=D:/Agent工作流启动包/shisan-xinuo-workflow（推送须批准）；PAT 来源=D:/Agent个人资源/机密资源（同命令内提取注入用毕即弃，零明文零落盘）
-- 最近更新：2026-09-21 05:35
+- 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
+- 最近更新：2026-09-21 08:22
+- 遗留（下一迭代队列）：①双会话实验扩样本（N=1→N≥3 消模型随机性）②spec-trace 清单自动提取器 ③触发词新会话实测 ④Gitee 同步 ⑤源库发行流程（RELEASE-CHECKLIST）⑥两组工具箱的浏览器人工走查（子代理共同盲区）
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：第四包本体未写（第一迭代）；statechart-gate 待第一迭代实现（JSON 无死端/全可达/错误态恢复检查）；G 档 §6 待用户贴抖音关键帧
