@@ -323,3 +323,10 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - **诚实对照**：乙组不是稻草人——QR 用 jsqr 独立解码闭环（验证巧思反超甲的结构自校验）、自审 8 项含移动端 dvh/theme-color；乙的总 token 还更低（1210 vs 1316 万）。**甲的优势集中在结构层工件带来的继承性与防线前置**，不在单点聪明
 - **噪声声明**：N=1 任务单次对照（模型随机性未消除）；甲组 prompt 点名技能（用户要求的「一个用一个不用」形态）；两组均无浏览器（渲染走查共同盲区，甲 unresolved 标注、乙声明未走查）
 - GATE: {level=L2-F, v=终极命题三轮实验收敛, cmd=双子代理×3轮+experiment-metrics×3时点+双仓留档, exit=0, files=D:/工具箱对照-{甲用Skill,乙不用}+docs/experiment-*, refs=0(未跑 lookup，0 照报), errpath=zcode CLI 402→子代理介质替换；乙组 git 身份/提交缺→补配补提, lessons=命题成立的最锋利证据不是债评分是「R1 遗留 bug 活到 R3」与「继承性自白」；前段投入 2.3 倍换边际递减；对照组的巧思反超项要如实报告否则实验成了自演, exempt=浏览器渲染走查双组未做；单次对照不消除模型随机性——结论限定「本实验中成立」, caps=Agent×2×3轮, effort=3 轮×2 会话全程+四维度量化+数据表, stop_reason=实验三轮完成+09:00 期限临近（用户令收敛）}
+
+### 2026-09-21 08:35｜人工走查第一枪：甲组 file:// 白屏（用户贴图）——诊断+出路修复
+- 用户浏览器双击 `D:/工具箱对照-甲用Skill/index.html`：侧栏壳渲染、工具列表空、主区白屏
+- **诊断实锤**：甲用 `<script type="module">`（file:// 被 CORS 拦截静默失败）→工具注册表空→白屏；README 第 7 行其实写了出路（npm start）——**出路在文档不在产品**，双击用户看到的是零提示空壳=判定表 #3「错误有出路」的环境面违例（功能面盘点环境面漏了「file:// 打开」场景）
+- **修复（最小维护面）**：index.html 加 protocol-guard——经典 script（诊断代码不能依赖会失败的 module 链）检测 file:// 弹横幅给出路（npm start/localhost）；commit 5deb393；起 http.server:8090 供用户验证
+- **实验结论修订（如实）**：乙组「经典 script+file:// 直开可用」是**场景预判的胜利**（R1 报告明示有意决策）——此项乙胜；甲的 ES modules 是主流工程形态但配了「文档里的出路」而非「产品里的出路」。四维度结论不变，补一条环境面预判差异
+- GATE: {level=L2-S, v=file:// 白屏诊断修复, cmd=诊断三步+Edit protocol-guard+commit 5deb393+http.server 8090, exit=0, files=D:/工具箱对照-甲用Skill/index.html+设计部 agent-log, refs=0(未跑 lookup，0 照报), errpath=—, lessons=诊断代码绝不能放在会失败的加载链里；「出路在文档」不等于「出路在产品」——错误出路要长在用户会看到的界面上；老技术（经典script/零环境依赖）在分发场景可能是更对的选型, exempt=localhost 下实际渲染仍待用户浏览器确认（curl 200 已验服务）, caps=—, effort=诊断三步+横幅修复+服务, stop_reason=—}
