@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 02:55 —— 三定义调研档落盘 docs/three-definitions.md（产品/工程/产品工程 加固定义 + 缺失逻辑可检出表述 + 与既有讨论接口）
+- 最近更新：2026-09-23 03:03 —— 讨论修正落地：本体（源库 2e618d7 + 两安装副本同步）四档风险矩阵/contract-schema 三件/定位加边界+蓝海降级；设计部（f591a4b）README/direction §十一/product-architecture/closed-loop 协议（载体=新建独立工作区）
 - 遗留（下一迭代队列）：①双会话实验扩样本（N=1→N≥3 消模型随机性）②spec-trace 清单自动提取器 ③触发词新会话实测 ④Gitee 同步 ⑤源库发行流程（RELEASE-CHECKLIST）⑥两组工具箱的浏览器人工走查（子代理共同盲区）
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
@@ -25,7 +25,11 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 
 ## 二、教训区
 
-（待积累）
+- **副本漂移：三副本一致性检查只覆盖 SKILL.md 会漏 references**（2026-09-23 发现）
+  - 症状：`diff -rq` 发现 `.agents/skills/shisan-xinuo-product/references/decision-ledger.md` 比源库多 11 行（2026-09-22 财务项目 0.6.48–0.6.50 裁决条目）；`.zcode` 副本与源库一致。
+  - 根因：包内 `references/decision-ledger.md` 被当项目账本使用（写回钩子③把裁决写进安装副本），源库未同步；历史一致性检查只比 SKILL.md 行数。
+  - 解决：本轮**不动**该文件（防误删真实裁决），登记遗留⑤待裁决（移回财务项目账本 or 认作样例）。
+  - 预防：①三副本一致性检查改用 `diff -rq` **全目录**；②包内 references 若承载「样例」，文件头应声明「本文件=schema+样例；项目裁决写项目自己的账本」。
 
 ## 三、偏好段
 
@@ -337,3 +341,12 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - 产出 `docs/three-definitions.md`（190 行）：①加固版三定义 ②核心推论一=缺陷三级成本阶梯（bug／逻辑错／缺失逻辑 = 判据完备性阶梯；「错误是可观测偏差，缺失是不可观测偏差」）③核心推论二=工程三判据（可判/可复/可继）④核心推论三=结构性缺口（产品判据正向完备 × 工程判据负向无错之间的无人区=缺失逻辑）⑤对用户三句定义的逐条裁决（保什么/偏在哪/加固版）⑥AI 时代：生成成本 vs 验证成本、失效模式→判据缺口表、可证伪 A/B 口径
 - 结论：用户三句方向成立，共同缺陷=静力学描述（结果态缺动作）；「产品工程=完整整体稳定的结构」缺「把完整性翻译成可判定性」这道工序
 - GATE: {level=L2-F, ev=exec+indep, v=三定义调研+调研档落盘, cmd=glm-vision search×5 + grep 校验 + git commit, exit=0, files=docs/three-definitions.md + memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=第 2 组检索含中文引号致 0 命中（返回无关古训）→换纯英文措辞重试命中, lessons=错误可观测/缺失不可观测=三级缺陷阶梯的判据完备性解释；工程定义自带「经济性+安全责任」——约束是构成要件非外部条件；行业侧「产品死在交接处」=本 Skill 联通层位置的外部印证；AI 压生成成本不压验证成本→稀缺性从「能做」迁移到「能证明做对」, exempt=经典引文为二级来源核证未逐字核原书；「模型生成空间缺省」为推论待验；未 push（本地 commit）, caps=glm-vision run_task search×5, effort=5 组核证+8 处信心级标注+190 行调研档+三句定义逐条裁决, stop_reason=—}
+
+### 2026-09-23 03:03｜修正落地：三定义+三方讨论 → 定位/叙事/schema/风险矩阵/实验载体（用户两轮五问对齐）
+- 触发：用户「根据定义还有附件的讨论，修正本项目，提问对齐」；先做差异分析 7 项（对照 three-definitions.md + 附呈三方讨论逐条）
+- 用户五裁决：①保留包名+边界+母架构路线档 ②实验载体=财务项目已定调排除→**新建独立高风险工作区** ③落四档矩阵+门禁加触发档位 ④schema 先落三件 ⑤本轮只出协议、实跑下一迭代
+- **本体**（源库 2e618d7 + 两安装副本已同步）：SKILL.md description/§定位加边界句（本包=交互工程=Product Contracts 第一垂直域，其余域未实现）；「蓝海」→「尚未形成成熟统一范式的工程层」；§7 三级→四档（L0 不启动/L1 轻量/L2 六问+trace/L3 全量+recovery+runtime evidence+regression）；§2.7 补 L3 第四件（回归）；§4 豁免梯度命名对齐（L1→L0 内部不一致修复）；§6 增 contract-schema 行；判定表新增「§风险档位」可数矩阵；新增 `references/contract-schema.md`（58 行：Interaction/Gate/Evidence 三件+硬层/软层分界+母架构占位）
+- **设计部**（f591a4b）：README 叙事降级+定位边界+构件表两行+仓库结构索引；direction §九加注+§十一修正记录（四条落地+已一致三条+遗留五条）；three-definitions §8 遗留回填；新增 docs/product-architecture.md（母架构七域/迭代次序/风险/待办）+ docs/closed-loop-experiment-protocol.md（九环+**反向注入检验**=「缺失可检出」的负对照；证据通道=browser-use 优先）
+- **已一致未改**（防重复劳动）：direction §〇「最便宜路径」表述（05:58 已自改）、元规则六问、强制清单宁缺毋滥
+- **发现并登记**：.agents 副本 decision-ledger.md 漂移（财务项目裁决 11 行，源库无）→ 教训区首条 + direction §十一 遗留⑤
+- GATE: {level=L2-F, ev=exec+cover+indep, v=讨论修正落地（本体+设计部；三副本 synced）, cmd=diff -rq 三副本（.zcode 全一致；.agents 仅既往漂移1件）+ grep 四档/契约/蓝海残留 + wc -l + git commit×2（2e618d7/f591a4b）, exit=0, files=<源库>skill/shisan-xinuo-product/{SKILL.md,references/judgement-table.md,references/contract-schema.md}；<设计部>README.md+docs/{direction,three-definitions,product-architecture,closed-loop-experiment-protocol}.md, refs=0(未跑 lookup，0 照报), errpath=首轮同步脚本 `set -e` 被 diff 预期非零码中断致后段校验未跑→去 set -e 显式允许已知漂移后复跑通过；.agents/decision-ledger.md 漂移=既往缺陷非本轮引入→登记不擅动, lessons=「蓝海」不可证伪而「缺一个统一抽象」可验证——叙事降级实质=把口号换成可证伪命题；schema 的价值在硬/软层分界（全链 JSON 化=为填表而填表）；四档矩阵把「正确但昂贵」变成可调度的预算问题；一致性检查必须全目录 diff（只看 SKILL.md 会漏 references 漂移）, exempt=本体 version 未动（0.1.0，家族发行流程另裁）；闭环实验实跑=下一迭代；两仓均本地 commit 未 push, caps=AskUserQuestion×4+×1（载体）; effort=差异分析7项+本体6处改+2新档(58+56行)+设计部4处改+三副本 diff 校验+实验协议九环设计+反向注入设计+2仓提交+教训区首条, stop_reason=—}
