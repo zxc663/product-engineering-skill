@@ -21,6 +21,24 @@ Product Decision → Product Scope → Page/Feature → Capability → Priority 
 - 上游细则 = 本体 `references/product-object.md`（六问+页面级闭环八组+可运营性清单+主次角色表）；判定表 J 域四条为其裁决级形态。
 - 上游与中游的分界：**对象六问管「该有什么」，功能六问管「这个怎么完整」**；前者缺答=停，不得进入后者。
 
+## 修正三：层栈 L0-L10 与层级门（2026-09-23 用户定稿）
+
+> 铁律：**实现层完整性 ≠ 产品工程完整性**——Feature/Interaction/State 全绿，不能补 Product Object/Capability/Priority/Completeness/Operability 的缺。完整裁决见 direction §十三；细则=本体 `references/layer-stack.md`。
+
+层栈=**母架构七域的纵向细分坐标**（判定「这是哪一层的问题」）：
+
+| 层段 | 母架构域 | 状态 |
+|---|---|---|
+| L0 产品目标 | Intent | 只检查是否被陈述，不生产（PE≠PI） |
+| L1 对象·职责 ｜ L2 能力与功能 ｜ L3 优先级与完整性 ｜ L4 运营·后台·权限·数据 | Intent / Scope / Runtime | **已落地**（六问+两级清单）＝**层级门必查段** |
+| L5 信息架构 | Structure | **未实现**（母架构 v2；本包只做上游检查） |
+| L6 交互 ｜ L7 状态 | Interaction | 已落地（本包核心） |
+| L8 UI ｜ L9 实现 | Implementation | 部分（判定表底线 + registry/capability-map） |
+| L10 验证 | Verification | 已落地（spec-trace / 取证 / 账本回写） |
+
+- **层级门**（跑道步骤 0a，先于产品对象六问）：先声明「在回答哪一层的问题」→ 逐层向上确认上游 → 未确认**停下回补**，不得越级下沉；项目工件中已有答案则读档引用、不打断用户。
+- **命名纪律**：裸「L+数字」=产品层级；风险深度=「档0-档3」（2026-09-23 由 L0-L3 改名，防混淆）；工作流判级写全称「判级 L2-F」。
+
 ## 母架构：Product Contracts
 
 ```
