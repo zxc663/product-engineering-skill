@@ -1,52 +1,56 @@
-# 交接档 · 产品工程 Skill（2026-09-23 · 入口索引式）
+# 交接档 · 产品工程 Skill（2026-09-23 夜班后 · 入口索引式）
 
 > 用途：任一会话冷启动的**入口索引**——只给指针与队列，不复制正文（防双权威/双份漂移）。
 > 开工必读仍是 `memory/agent-log.md` 状态段（一屏）；本档=现状一句话 + 必读清单 + 队列 + 未决 + 回滚基线 + 操作 SOP。
 
 ## 一、现状一句话
 
-第四包 `shisan-xinuo-product` 已双仓在线、三副本同步（本体：83 行 SKILL.md + 9 references + 4 scripts；源库 `D:\Agent工作流启动包\shisan-xinuo-workflow\skill\shisan-xinuo-product\`）。本轮完成三件大事：**①产品对象上游修正**（跑道步骤 0=产品对象六问；边界 PE≠PI；判定表 J 域四条+0b）**②高风险闭环试验实跑**（无头子代理 ×6，模型 GLM-5.3-Flash）——**正向十环成立**，核心命题「缺失可检出」**未获实证**（判据停在态级；候选 12/13 已在册）**③修正三：层级栈 L0-L10 与层级门**（方向控制：先定位在回答哪一层→检上游→才允许下沉；铁律=实现层完整性≠产品工程完整性；候选 14 在册）。
+第四包 `shisan-xinuo-product` **v0.2.0** 双仓在线（家族 **v3.3.0**）：上游层级门（L0-L10 层栈）+产品对象六问+中游交互工程+**C1-C7 门禁**全落地。夜班四线收口：①**「缺失可检出」首次实证**（四变异反向注入全拦、对照组全绿，可重跑 verify.py）②层×判据矩阵+一页纸人话规范③工作流 Skill 三高危修复+单安装根+5 平台注入重部署 HASH-OK④冷启动三条件×8 样本实验：**触发链断点（description 缺构建侧触发词）已定位→修复→N6c 复测闭环（命中即用+层级门+档3）**；显式条件 2/2 八步全链 PASS。剩余最后一环=**用户侧重启后的真实新会话验收锚**。
 
 ## 二、必读清单（按序）
 
-1. `memory/agent-log.md` 状态段（现役队列=14 项）
-2. `docs/direction.md` §〇（问题定义）/ §十一·§十二·§十三（三轮修正记录）
-3. `docs/product-architecture.md`（母架构与定位边界，含层栈映射）/ `docs/three-definitions.md`（产品/工程/产品工程 加固定义）；修正三细则=本体 `references/layer-stack.md`（层栈 L0-L10 + 层级门 + 触发拦截表）
-4. `docs/closed-loop-report.md`（试验判决全文：十环证据 + 反向注入 + 两类判据缺口 + 下一步规格草案）
-5. `docs/closed-loop-experiment-protocol.md`（协议：十环定义 + 反向注入方法）
-6. 本体与副本核对：`diff -rq <源库 product 包> C:/Users/zxc66/.zcode/skills/shisan-xinuo-product`（应零输出）
+1. `memory/agent-log.md` 状态段（现役队列=11 项）
+2. `docs/one-page-definition.md`（**一页纸人话规范**——是什么/不是什么/哪里还不牢）
+3. `docs/direction.md` §〇 / §十一·§十二·§十三（三轮修正记录）
+4. `docs/cold-start-report.md`（三条件×8 样本：触发链实验全文）/ `docs/reverse-injection/EVIDENCE.md`（缺失可检出实证，可重跑 verify.py）
+5. `docs/layer-judgement-matrix.md`（每层有哪些判据/空白）/ `docs/product-architecture.md` + `docs/three-definitions.md`
+6. 本体与安装根核对：`diff -rq <源库 product 包> C:/Users/zxc66/.agents/skills/shisan-xinuo-product`（应仅 decision-ledger.md 漂移；**安装根只剩 .agents 一处**）
 
 ## 三、遗留队列（按证据排序；与状态段同源）
 
-1. `statechart-gate` 补**引用完整性**（候选 13，一行级；验收用例=试验变体 C「删态留悬空入边，现 C1-C5 全绿」）
-2. **recovery 行 ↔ 转换双向对账**门禁（候选 12；验收=变体 A；规格草案=`closed-loop-report.md` §⑥.2）
-3. **层级声明与上游引用存在性**门禁（候选 14，2026-09-23 新增；验收用例=只写 L7 statechart 而 L1-L4 引用缺失的契约应 exit 1；规格=本体 `references/layer-stack.md` §4）
-4. 强变异 B + 报告证据标准（命令原文 + diff 留档）**进协议**
-5. **Q1-Q8 八条待用户裁决**（试验仓 `DEFINITION.md` §6：客户端权限非安全边界/500 阈值/主功能判定…）
-6. A/B 四指标口径冻结（defect_escape/rework/coverage/cost；需先定义「什么算遗漏状态」）
-7. 双会话实验扩样本 N=1→N≥3｜触发词新会话实测（含层级门冷启动是否被触发）｜spec-trace 清单自动提取器
-8. Gitee 同步｜源库发行流程（RELEASE-CHECKLIST）｜两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
-9. `.agents/decision-ledger.md` 漂移处置待裁（含财务项目裁决 11 行，源库无 —— 移回项目账本 or 认作样例）
+1. **用户侧最终验收锚**：重启 ZCode → 新会话验「在场提示 · v3.3.0＋373 条细则＋zxc663 应答」→ 说「做一个XX页面」看是否自动加载产品包（N6c 的真实版；hooks 通道只有真实会话有）
+2. **主功能唯一性计数**（层×判据矩阵识别的最便宜缺口：能力表主功能数≠1 → exit 1）
+3. 候选 14 层声明门禁（规格=`references/layer-stack.md` §4）
+4. 候选 11 产品对象定义存在性
+5. Q1-Q8 八条待真人裁决（试验仓 `DEFINITION.md` §6）
+6. A/B 四指标口径冻结（defect_escape/rework/coverage/cost；「什么算遗漏状态」）
+7. 双会话扩样本 N≥3（模板已备：三条件×N 工作区+CreateWorkflow 并行）
+8. Gitee 同步＋Release zip/npm（v3.3.0 GitHub 已推；按 RELEASE-CHECKLIST 剩余项）
+9. 两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
+10. `.agents/decision-ledger.md` 漂移处置待裁（财务项目 11 行，源库无——移回项目账本 or 认作样例）
 
 ## 四、待用户裁决（阻塞项）
 
 - 上表 5（Q1-Q8 八条）
-- 上表 9（副本漂移处置）
-- 本体 `version`（0.1.0）是否随修正二/三升版（家族发行流程另裁）
-- （非阻塞·可回退）风险四档命名 **L0-L3 → 档0-档3**（防与层栈 L+数字混淆，2026-09-23 修正三处置）——不认可则回退=全包 6 处文字
+- 上表 10（副本漂移处置）
+- （非阻塞·已执行待追认）风险四档命名 L0-L3→档0-档3；触发词第三次密集化（构建侧）——均有实验依据，不认可可回退
 
 ## 五、回滚基线
 
 | 仓 | 基线 | 备注 |
 |---|---|---|
-| 设计部（本仓） | `95f9a9c`（修正三落地；其后仅基线同步小提交） | 权威设计档 + agent-log |
-| 源库 | `01f1842`（修正三链：`c95251a` 主提交 + 判据补回） | **本地 commit，未 push**（发行走 RELEASE-CHECKLIST） |
+| 设计部（本仓） | `1945421`（+收尾提交） | 权威设计档 + agent-log；GitHub 已推 |
+| 源库（家族） | `b9e07a7`（v3.3.0） | **GitHub 已推**；Gitee/Release/npm 未动 |
 | 试验仓 | `D:/产品工程闭环实验/` HEAD `bbcea84` | 独立仓，不 push；只读参考 |
-| 三副本 | `.zcode` 与源库一致；`.agents` 仅 `decision-ledger.md` 已知漂移 | 全目录 `diff -rq` 为唯一判据 |
+| 冷启动实验区 | `D:/产品工程冷启动-20260923*/`（8 个） | 独立仓；实验原始语料，保留 |
+| 安装根 | **仅 `~/.agents/skills/`**（`.zcode` 侧家族包已处置，备份=`D:/Agent工作流启动包/skill-backups/zcode-side-family-skills-20260923.tar.gz`） | 一致性判据=`diff -rq` 全目录 |
+| 注入副本 | 5 平台 v3.3.0，`--check --hash` 5/5 HASH-OK（`b9b00ca712cc`） | 各带 `.bak-20260923-052926-pre-v3.3.0` |
 
-## 六、操作 SOP（本会话新增约束）
+## 六、操作 SOP（现行版）
 
-- **多会话并发**：本仓 `agent-log.md` 可能被他会话写入（已实测两次：04:29 并发写导致 Edit 报 modified）→ **编辑前必重读实文**（#294），且**合并而非覆盖**（教训区用追加）。
-- **本体改动 SOP**：改源库 → `cp` 到两安装副本（`.zcode` + `.agents`）→ `diff -rq` 全目录核验 → 源库本地 commit（**不 push**）。
-- **试验/对照类工作的记录纪律**：报告必须内联**命令原文 + 退出码 + 变异 diff**（否则「可重跑工件」在报告内不成立——本轮独立复核抓到的最大缺口）。
-- **门禁声明纪律**：任何门禁必须写清「检的是**存在性**还是**完整性**」；「缺失可检出」只有拿到**反向注入证据**才算成立。
+- **多会话并发**：编辑 `agent-log.md` 前必重读实文（#294），合并而非覆盖；教训区只追加。
+- **本体改动 SOP（v2，单安装根）**：改源库 → cp 到 `.agents`（唯一根；**.py 必须走 Write 工具**，bash cp 会被 Mimosa 拦）→ `diff -rq` 全目录核验 → 源库 commit → GitHub push（`git -c http.proxy= -c https.proxy= push origin HEAD`，本机代理失效需绕行）。
+- **随包脚本两处同步**：`risk_scan/agent_log_rotate/gate_audit/syncer` 权威=源库根 `scripts/`，分发副本=包内 `scripts/`——改任一处必须两处同步（发行前 diff 检查已入 RELEASE-CHECKLIST）。
+- **注入重部署**：`python scripts/deploy_injection.py --version <ver>`（写模式必须显式给版本）→ `--check --hash` 验收；改 injection-core.md 必须重部署。
+- **实验纪律**：触发类实验的实验单元=裸环境（单点子代理+独立空工作区）；工作流引擎只做样本间并行；判定以工作区实物为准（自述≠实物，教训区第 6 条）；注入模拟须带常驻清单（N6 教训）。
+- **写档时间戳**：先 `date` 取实时钟再落笔（估时会产生未来时间戳，已发生两次）。

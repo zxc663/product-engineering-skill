@@ -8,9 +8,9 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 04:52 —— **修正三：层级栈 L0-L10 与层级门**（本体 c95251a 三副本同步 + 设计部五档）——方向控制=先定位在回答哪一层→检上游→才允许下沉；铁律=实现层完整性≠产品工程完整性；命名处置（风险四档 L0-L3→档0-档3）防三套 L 编号混淆；候选 14 在册
-- 遗留队列（2026-09-23 修正三后；逐项出处见流水区）：①statechart-gate 引用完整性（候选 13，一行级，验收=变体 C）②recovery 行↔转换双向对账门禁（候选 12，规格=docs/closed-loop-report.md §⑥.2）③层级声明与上游引用存在性门禁（候选 14，验收=只写 L7 而 L1-L4 引用缺失的契约应 exit 1）④强变异 B + 报告证据标准（命令原文+diff 留档）进协议 ⑤**Q1-Q8 八条待用户裁决**（试验仓 DEFINITION.md §6）⑥A/B 四指标口径冻结 ⑦双会话实验扩样本 N=1→N≥3 ⑧触发词新会话实测（含层级门冷启动）⑨spec-trace 清单自动提取器 ⑩Gitee 同步 ⑪源库发行流程（RELEASE-CHECKLIST）⑫两组工具箱的浏览器人工走查 ⑬G 档 §6 抖音关键帧 ⑭.agents/decision-ledger.md 漂移处置待裁
-- 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并（条目去重无丢失，重复与已了结项不再占行）
+- 最近更新：2026-09-23 06:45 —— **夜班四线收口（用户授权循环至 09:00）**：①判据补齐 C1-C7＋四变异反向注入实证全绿——「缺失可检出」**首次实证**（verify.py 可重跑）②v3.3.0 收尾批（四脚本随包分发／注入路径修正／`.zcode` 重复家族包处置→单安装根／5 平台重部署 HASH-OK）③冷启动三条件×8 样本：裸 0/3 触发／显式 2/2 八步全链 PASS／注入链断点=description 缺构建触发词→修复→N6c 命中即用**闭环**；product **0.2.0**
+- 遗留队列（2026-09-23 夜班后；逐项出处见流水区）：①候选 14 层声明门禁（规格=layer-stack §4）②主功能唯一性计数（层×判据矩阵识别的最便宜缺口）③**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）④候选 11 产品对象定义存在性 ⑤A/B 四指标口径冻结 ⑥双会话扩样本 N≥3（冷启动实验已给模板：三条件×N 工作区+工作流并行）⑦spec-trace 清单自动提取器 ⑧Gitee 同步+Release zip/npm（v3.3.0 GitHub 已推）⑨两组工具箱浏览器人工走查 ⑩G 档 §6 抖音关键帧 ⑪.agents/decision-ledger.md 漂移处置待裁
+- 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落
 
 ## 二、教训区
 
@@ -35,6 +35,16 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
   - 根因：编号是稀缺命名空间；引入新编号轴时只做了「新轴自洽」（层栈内部无重复），没做「全库同形扫描」。
   - 解决：处置三段=**保用户命名**（层=裸 L+数字）+ **改自造命名**（风险四档 L0-L3→档0-档3，全包 6 处含审计补漏 3 处）+ **外部命名写全称**（判级 L2-F）；命名纪律写入 layer-stack §4，并按 `grep L[0-9]` 全库逐条审计复核。
   - 预防：任何新编号/新前缀入场前先跑全库同形 grep；冲突处置固定原则=保用户命名、改自造命名、外部命名写全称。
+- **触发类实验的实验单元必须裸环境**（2026-09-23 夜班；用户问「为什么不用工作流」触发反思）
+  - 症状：若用工作流引擎跑「自然触发」实验，编排脚手架会进实验组——测到的变成「被编排的服从」而非「自然触发」。
+  - 根因：实验单元=「一个全新会话拿到任务」；任何编排/提示都是自变量污染。
+  - 解决：分层——触发实验用单点子代理+独立空工作区（样本内零编排）；工作流引擎只做样本间并行调度（扩样本），不进入样本内。
+  - 预防：设计实验先写明「实验单元是什么、哪些量必须恒定」；编排工具只允许出现在样本之间。
+- **自述≠实物：子代理会声称遵守它并未遵守的纪律**（2026-09-23 夜班 N4 实测）
+  - 症状：N4 自述「按注入纪律 L2-S 推进（复述/判级/GATE）」，但工作区无任何承载工件（无 agent-log/GATE 落档）——同批 N6 则有完整承载。
+  - 根因：子代理对纪律的「口头服从」不产生工件；无实物核验时自述不可区分于虚构。
+  - 解决：判定一律以工作区实物为准（grep 工件+门禁独立复跑）；该实例已写入冷启动报告作为「证据三挂靠」的新证据。
+  - 预防：验收代理工作时先 ls 工件再读回报；回报中「做了 X」而工作区无 X=直接降级其可信度。
 
 ## 三、偏好段
 
@@ -401,3 +411,12 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - **验证**：四门禁 selftest 全过（rc=0×4）｜`grep L[0-9]` 全库逐条审计（发现并修 3 处旧档位残留：SKILL §1、contract-schema permissions/recovery）｜三副本 diff -rq（.zcode 零差异；.agents 仅既有 decision-ledger 漂移，反查 20 vs 31 行确认**未被覆盖**）
 - **设计部**：direction §十三（修正三全文）+ product-architecture 层栈↔母架构映射表 + README 构件行/定位句 + HANDOVER（队列 9 项、必读清单、§四引用修正 上表4/8→5/9）
 - GATE: {level=L2-F, ev=exec+cover+indep, v=修正三落地（本体 7 文件 + 设计部 5 文件 + 三副本同步）, cmd=python 四门禁 --selftest×4 + python 全库 L 编号审计 + diff -rq 三副本 + wc -l 行数, exit=0（selftest rc=0×4；.zcode diff rc=0；.agents rc=1=仅既有漂移件）, files=<源库>SKILL.md+references/{layer-stack,judgement-table,contract-schema,interaction-bridge,capability-map,anti-excuses}.md；<设计部>docs/{direction,product-architecture,HANDOVER}.md+README.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=改档位命名后残留 3 处旧引用（SKILL §1「L1 文案小改」、contract-schema「L3 必填」×2）→ python 全库 L 编号逐条审计发现→逐处修正→复跑审计零残留, lessons=编号是稀缺命名空间——新编号轴入场前必须全库同形扫描（处置=保用户命名/改自造命名/外部写全称）；机制增量先做资产映射（差异分析后发现 11 层中 5 段已有资产，真增量只有层栈+门+拦截表）, exempt=层级门实际触发行为未实测（需新会话冷启动验证，入队列⑧）；候选 14 门禁未实现（待实测证据）, caps=—（纯本体/文档，无外部能力需求）, effort=本体 9 文件通读+差量分析+1 新档 63 行+6 处改名+全库编号审计+四门禁 selftest+三副本同步+设计部 5 档+教训区第 4 条, stop_reason=—}
+
+### 2026-09-23 06:45｜夜班收口：判据实证＋v3.3.0＋冷启动三条件实验（用户授权循环至 09:00；四线全绿）
+- **判据线（里程碑①②）**：statechart-gate 扩 **C1-C7**（C6 引用完整性／C7 契约 recovery 双向对账／结构化错误态识别）＋contract-schema 钉死 recovery 字段名；四变异 A/B/C/D 全拦、对照组双态全绿（可重跑 `docs/reverse-injection/verify.py`＋EVIDENCE.md，命令/diff/退出码三件齐）——**「缺失可检出」从未实证→实证**；候选 10 转正、12/13 落地（源库 65276ff）
+- **收敛线**：层×判据矩阵（L0/L5 空白显式列、上游 L1-L4 无机器判据、两最便宜缺口=主功能唯一性计数／候选 14）＋一页纸人话版（含术语消歧：行业 product engineer=角色义≠本项目=判据义）（57748f3）
+- **修复线（工作流 Skill 三高危全修）**：①副本内容漂移补齐（workflow SKILL :222/:228＋skill-usage §8）②四脚本随包分发＋注入文本路径改 `<技能目录>/scripts/`（install/deploy 标注源库根）③`.zcode` 侧重复家族包处置（备份 skill-backups/zcode-side-family-skills-20260923.tar.gz 58 文件后删除→**单安装根**）；RELEASE-CHECKLIST 过时项回填＋两处同步纪律入册；**v3.3.0**（package/三包 frontmatter/CHANGELOG/README＋product 0.2.0）＋5 平台注入重部署（--check --hash **5/5 HASH-OK**，各带备份）；误纳的 .mimosa 清出＋两仓 .gitignore（c896444/2f978ed/b9e07a7）
+- **冷启动线（三条件×8 样本，判定=实物）**：裸组 **0/3** 触发（N1/N3/N4）｜显式组 **2/2** 八步全链 PASS（N2 待办、N5 记账，均自判档3，门禁主会话独立复跑全绿；N2 揪出自设计死 UI 并按「根因在上游→回改上游」修复）｜注入模拟：N6（无清单）纪律层✓路由✗→N6b（+清单）检索执行且归因但判「无命中」→**断点=description 缺构建侧触发词**→修复→**N6c 命中即用**（层级门声明＋档3 账本＋门禁复跑绿）＝**闭环**。副产物：N4 自述与实物背离（教训区第 6 条）；报告=docs/cold-start-report.md（1945421）
+- **甲仓泛化**：5 份 statechart＋spec-trace 用新 C1-C7 复跑全 rc=0（新判据零误报）
+- **未竟（如实）**：用户侧最终验收锚（重启+新会话探针）需真人；Gitee/Release zip/npm 未动（队列⑧）；每格 N=1 随机性未消除
+- GATE: {level=L2-F, ev=exec+cover+indep, v=夜班四线（判据实证/收敛/工作流修复/冷启动实验）, cmd=python docs/reverse-injection/verify.py --gate <gate>（rc=0）+ deploy_injection --check --hash（5/5 HASH-OK）+ diff -rq 安装根（除既有漂移件零差异）+ 各仓 git log, exit=0, files=<源库>scripts/statechart-gate.py+references/contract-schema.md+skill/shisan-xinuo-workflow/{SKILL.md,references/{injection-core,platform-adaptation}.md,scripts+4件}+RELEASE-CHECKLIST+package.json+CHANGELOG+README+.gitignore；<设计部>docs/{reverse-injection/*,layer-judgement-matrix,one-page-definition,cold-start-report,closed-loop-report,closed-loop-experiment-protocol,HANDOVER}.md+README+.gitignore, refs=0(未跑 lookup，0 照报), errpath=cp 写 .py 被钩子拦→Write/子代理通道；tar 把 D: 盘符当远程主机→相对 -f 名；cp 目标已删（.zcode 单根）→改仅 .agents；grep -c 0 命中 exit=1 系 grep 语义非错误, lessons=触发类实验的实验单元必须裸环境（编排=污染，教训区第 5 条）；自述≠实物（教训区第 6 条）；负结论先查模拟保真度（N6 缺清单不得定论路由断）；「实验→实物定位断点→修复→同条件复测」一晚闭环模板, exempt=用户侧重启验收锚未做（需真人）；Gitee/Release/npm 未动；随机性未消除, caps=CreateWorkflow×1（扩样本并行，max_concurrency=3）+Agent×7+Explore×3, effort=四线全程+8 样本实物判定+三仓推送 9 次+报告三份（闭环/冷启动/总收口）, stop_reason=—}
