@@ -39,8 +39,8 @@
 
 | 仓 | 基线 | 备注 |
 |---|---|---|
-| 设计部（本仓） | `f68aacb`（+本轮修正三提交） | 权威设计档 + agent-log |
-| 源库 | `c95251a` | **本地 commit，未 push**（发行走 RELEASE-CHECKLIST） |
+| 设计部（本仓） | `95f9a9c`（修正三落地；其后仅基线同步小提交） | 权威设计档 + agent-log |
+| 源库 | `01f1842`（修正三链：`c95251a` 主提交 + 判据补回） | **本地 commit，未 push**（发行走 RELEASE-CHECKLIST） |
 | 试验仓 | `D:/产品工程闭环实验/` HEAD `bbcea84` | 独立仓，不 push；只读参考 |
 | 三副本 | `.zcode` 与源库一致；`.agents` 仅 `decision-ledger.md` 已知漂移 | 全目录 `diff -rq` 为唯一判据 |
 
