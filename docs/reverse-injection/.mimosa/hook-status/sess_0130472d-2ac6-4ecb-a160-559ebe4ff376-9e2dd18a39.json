@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-22T21:11:18.185Z",
+  "sessionId": "sess_0130472d-2ac6-4ecb-a160-559ebe4ff376",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "C:\\Users\\zxc66\\.agents\\skills\\shisan-xinuo-product\\scripts\\statechart-gate.py",
+  "outcome": "inconclusive",
+  "coverage": "partial",
+  "findingCount": 0,
+  "durationMs": 16,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}
