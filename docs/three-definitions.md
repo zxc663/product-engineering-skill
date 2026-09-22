@@ -183,8 +183,9 @@
 | 本项目 direction.md §〇/§七/§九/§十 | §3.3、§4 | 项目内一手 |
 | 用户附呈三方讨论（GPT/DeepSeek，2026-09，微信临时档非仓库内）：硬层/软层、风险自适应、A/B 四指标、最小闭环优先 | §3.3、§4.3 | 用户一手 |
 
-## 8 遗留
+## 8 遗留（2026-09-23 修正后状态）
 
-- [ ] A/B 高风险最小闭环设计（四指标口径冻结）
-- [ ] 「缺失可检出」的机器判据清单归拢（现状 = statechart-gate 候选 + spec-trace 反向 + 九条强制清单；回指 direction.md §十）
-- [ ] 三定义是否升格进 SKILL.md 定位段（待用户裁决，避免定义与本体漂移）
+- [ ] A/B 高风险最小闭环：载体已定（新建独立工作区，财务项目排除）→ 协议档 = docs/closed-loop-experiment-protocol.md（九环 + 反向注入）；实跑下一迭代。四指标口径（defect_escape/rework/coverage/cost）仍待冻结「什么算遗漏状态」
+- [x] 「缺失可检出」判据归拢 → 已并入本体 `references/contract-schema.md`（Interaction 的 recovery 行 + Evidence verdict 必填 + spec-trace 反向）
+- [x] 三定义升格 → 已执行：SKILL.md description 加边界（本包=Product Contracts 第一垂直域）；母架构与定位档 = docs/product-architecture.md
+- 回指：本轮修正记录 = direction.md §十一
