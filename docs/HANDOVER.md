@@ -9,25 +9,24 @@
 
 ## 二、必读清单（按序）
 
-1. `memory/agent-log.md` 状态段（现役队列=11 项；§三并作 10 行——⑨⑩合并）
+1. `memory/agent-log.md` 状态段（现役队列=9 项）
 2. `docs/one-page-definition.md`（**一页纸人话规范**——是什么/不是什么/哪里还不牢）
 3. `docs/direction.md` §〇 / §十一·§十二·§十三（三轮修正记录）
 4. `docs/cold-start-report.md`（三条件×8 样本：触发链实验全文）/ `docs/reverse-injection/EVIDENCE.md`（缺失可检出实证，可重跑 verify.py）
 5. `docs/layer-judgement-matrix.md`（每层有哪些判据/空白）/ `docs/product-architecture.md` + `docs/three-definitions.md`
 6. 本体与安装根核对：`diff -rq "D:/Agent工作流启动包/shisan-xinuo-workflow/skill/shisan-xinuo-product" "C:/Users/zxc66/.agents/skills/shisan-xinuo-product"`（应仅 `references/decision-ledger.md` 一件漂移；**安装根只剩 `.agents` 一处**）
 
-## 三、遗留队列（按证据排序；与状态段同源）
+## 三、遗留队列（按证据排序；与状态段同源，共 9 项）
 
 1. **用户侧最终验收锚**：重启 ZCode → 新会话验「在场提示 · v3.3.0＋373 条细则＋zxc663 应答」→ 说「做一个XX页面」看是否自动加载产品包（N6c 的真实版；hooks 通道只有真实会话有）
-2. **主功能唯一性计数**（层×判据矩阵识别的最便宜缺口：能力表主功能数≠1 → exit 1）
-3. 候选 14 层声明门禁（规格=`references/layer-stack.md` §4）
-4. 候选 11 产品对象定义存在性
-5. Q1-Q8 八条待真人裁决（试验仓 `DEFINITION.md` §6）
-6. A/B 四指标口径冻结（defect_escape/rework/coverage/cost；「什么算遗漏状态」）
-7. 双会话扩样本 N≥3（模板已备：三条件×N 工作区+CreateWorkflow 并行）
-8. Gitee 同步＋Release zip/npm（v3.3.0 GitHub 已推；按 RELEASE-CHECKLIST 剩余项）
-9. 两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
-10. `.agents/skills/shisan-xinuo-product/references/decision-ledger.md` 漂移处置待裁（**实测在档**，31 行 vs 源库 20——财务项目 11 行裁决，移回项目账本 or 认作样例）
+2. **Q1-Q8 八条待真人裁决**（试验仓 `DEFINITION.md` §6）
+3. **product-object-gate 真实项目转正**（P1-P4 已实现：selftest 两态＋试验仓语料转写过；缺真实项目实测证据）
+4. A/B 四指标口径冻结（defect_escape/rework/coverage/cost；「什么算遗漏状态」）
+5. 注入+清单修复后扩样本（N6d/N6e 进行中，跨任务验证 N6c 闭环）
+6. spec-trace 清单自动提取器
+7. Gitee 同步＋Release zip/npm（v3.3.0 GitHub 已推；按 RELEASE-CHECKLIST 剩余项）
+8. 两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
+9. `.agents/skills/shisan-xinuo-product/references/decision-ledger.md` 漂移处置待裁（**实测在档**，31 行 vs 源库 20——财务项目 11 行裁决，移回项目账本 or 认作样例）
 
 ## 四、待用户裁决（阻塞项）
 
