@@ -4,7 +4,7 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，限定 N=1）+第四包 v0.4 双仓在线** | level=L2-F | route=联通层七步跑道（含功能面盘点扩面）+判定表 29 条+四门禁+元规则六问+终极验收命题四维度 | confirm=豁免：用户授权（自裁决+推送永久化+实验执行） | gates_passed=四门禁 selftest 两态全过；10/10 全站图批量；三副本一致；实验度量×3 时点 | last_errpath=zcode CLI 402→子代理介质替换；Mimosa 拦 bash 写 .py→Write 通道；设计部 push 无 remote→全 URL
+STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋层级栈层级门＋product 0.2.0＋冷启动触发链闭环）；剩=用户侧重启验收锚 | level=L2-F | route=层级门(0a)+产品对象六问(0b)+八步跑道+判定表 38 条(〇/J/K 域)+C1-C7 门禁+反向注入实证 | confirm=豁免：用户无限授权（至 09:00 硬停，已收口） | gates_passed=四变异全拦对照组绿；显式组 2/2 全链 PASS（独立复跑）；5 平台注入 HASH-OK；交接自检 5 缺口已修 | last_errpath=cp 写 .py 被拦→Write 通道；tar D: 当远程→相对 -f；cp 目标已删→单安装根
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃

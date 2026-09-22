@@ -9,12 +9,12 @@
 
 ## 二、必读清单（按序）
 
-1. `memory/agent-log.md` 状态段（现役队列=11 项）
+1. `memory/agent-log.md` 状态段（现役队列=11 项；§三并作 10 行——⑨⑩合并）
 2. `docs/one-page-definition.md`（**一页纸人话规范**——是什么/不是什么/哪里还不牢）
 3. `docs/direction.md` §〇 / §十一·§十二·§十三（三轮修正记录）
 4. `docs/cold-start-report.md`（三条件×8 样本：触发链实验全文）/ `docs/reverse-injection/EVIDENCE.md`（缺失可检出实证，可重跑 verify.py）
 5. `docs/layer-judgement-matrix.md`（每层有哪些判据/空白）/ `docs/product-architecture.md` + `docs/three-definitions.md`
-6. 本体与安装根核对：`diff -rq <源库 product 包> C:/Users/zxc66/.agents/skills/shisan-xinuo-product`（应仅 decision-ledger.md 漂移；**安装根只剩 .agents 一处**）
+6. 本体与安装根核对：`diff -rq "D:/Agent工作流启动包/shisan-xinuo-workflow/skill/shisan-xinuo-product" "C:/Users/zxc66/.agents/skills/shisan-xinuo-product"`（应仅 `references/decision-ledger.md` 一件漂移；**安装根只剩 `.agents` 一处**）
 
 ## 三、遗留队列（按证据排序；与状态段同源）
 
@@ -27,7 +27,7 @@
 7. 双会话扩样本 N≥3（模板已备：三条件×N 工作区+CreateWorkflow 并行）
 8. Gitee 同步＋Release zip/npm（v3.3.0 GitHub 已推；按 RELEASE-CHECKLIST 剩余项）
 9. 两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
-10. `.agents/decision-ledger.md` 漂移处置待裁（财务项目 11 行，源库无——移回项目账本 or 认作样例）
+10. `.agents/skills/shisan-xinuo-product/references/decision-ledger.md` 漂移处置待裁（**实测在档**，31 行 vs 源库 20——财务项目 11 行裁决，移回项目账本 or 认作样例）
 
 ## 四、待用户裁决（阻塞项）
 
