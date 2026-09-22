@@ -1,0 +1,11 @@
+# ── 工具 / 客户端运行期产物（不入库）────────────────────────
+# Mimosa 安全扫描 hook 的运行期状态（每个被扫目录会生成一份）
+.mimosa/
+# ZCode 客户端会话产物（plans / workflow-drafts / workflow-runs）
+.zcode/
+# ZCode 客户端的文件搜索忽略配置（自动生成）
+.zcodeignore
+
+# ── Python ────────────────────────────────────────────────
+__pycache__/
+*.pyc
