@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 03:03 —— 讨论修正落地：本体（源库 2e618d7 + 两安装副本同步）四档风险矩阵/contract-schema 三件/定位加边界+蓝海降级；设计部（f591a4b）README/direction §十一/product-architecture/closed-loop 协议（载体=新建独立工作区）
+- 最近更新：2026-09-23 03:12 —— 修正二（产品对象上游）：本体（源库 d165e1f + 两副本同步）跑道步骤 0=产品对象六问/J 域四条+0b/第五类管理面/PE≠PI 边界；设计部（9ca41d7）direction §十二/product-architecture 修正二/定义档补记/README/闭环协议补环 0
 - 遗留（下一迭代队列）：①双会话实验扩样本（N=1→N≥3 消模型随机性）②spec-trace 清单自动提取器 ③触发词新会话实测 ④Gitee 同步 ⑤源库发行流程（RELEASE-CHECKLIST）⑥两组工具箱的浏览器人工走查（子代理共同盲区）
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
@@ -30,6 +30,11 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
   - 根因：包内 `references/decision-ledger.md` 被当项目账本使用（写回钩子③把裁决写进安装副本），源库未同步；历史一致性检查只比 SKILL.md 行数。
   - 解决：本轮**不动**该文件（防误删真实裁决），登记遗留⑤待裁决（移回财务项目账本 or 认作样例）。
   - 预防：①三副本一致性检查改用 `diff -rq` **全目录**；②包内 references 若承载「样例」，文件头应声明「本文件=schema+样例；项目裁决写项目自己的账本」。
+- **产品工程收窄偏移（2026-09-23 用户诊断，四偏移）**
+  - 症状：讨论越走越窄——从「产品是什么」收到「功能怎么实现」；六问/statechart 的默认前提=功能已被正确确定，而 AI 的真问题常常是功能本身没被完整定义（「什么都有，但什么都不重要」「UI 上画出来了 ≠ 产品能力」）。
+  - 根因：机制扩展沿「Feature Contract 往外扩」，没有向上游承担「页面职责/能力清单/主次/完整性/可运营性」；把产品工程当成了交互工程的同义词。
+  - 解决：跑道插**步骤 0=产品对象六问**（缺答=停）+ 判定表 J 域四条 + 0b 孤立能力债务 + 盘点第五类管理面 + 边界句 PE≠PI（本体 d165e1f，三副本同步）。
+  - 预防：任何新机制先过元规则六问的变体——**「它在对象链的哪一段？（上游定义 / 中游交互 / 下游验证）」答不出=定位不清，先定段再动机制**。
 
 ## 三、偏好段
 
@@ -350,3 +355,10 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - **已一致未改**（防重复劳动）：direction §〇「最便宜路径」表述（05:58 已自改）、元规则六问、强制清单宁缺毋滥
 - **发现并登记**：.agents 副本 decision-ledger.md 漂移（财务项目裁决 11 行，源库无）→ 教训区首条 + direction §十一 遗留⑤
 - GATE: {level=L2-F, ev=exec+cover+indep, v=讨论修正落地（本体+设计部；三副本 synced）, cmd=diff -rq 三副本（.zcode 全一致；.agents 仅既往漂移1件）+ grep 四档/契约/蓝海残留 + wc -l + git commit×2（2e618d7/f591a4b）, exit=0, files=<源库>skill/shisan-xinuo-product/{SKILL.md,references/judgement-table.md,references/contract-schema.md}；<设计部>README.md+docs/{direction,three-definitions,product-architecture,closed-loop-experiment-protocol}.md, refs=0(未跑 lookup，0 照报), errpath=首轮同步脚本 `set -e` 被 diff 预期非零码中断致后段校验未跑→去 set -e 显式允许已知漂移后复跑通过；.agents/decision-ledger.md 漂移=既往缺陷非本轮引入→登记不擅动, lessons=「蓝海」不可证伪而「缺一个统一抽象」可验证——叙事降级实质=把口号换成可证伪命题；schema 的价值在硬/软层分界（全链 JSON 化=为填表而填表）；四档矩阵把「正确但昂贵」变成可调度的预算问题；一致性检查必须全目录 diff（只看 SKILL.md 会漏 references 漂移）, exempt=本体 version 未动（0.1.0，家族发行流程另裁）；闭环实验实跑=下一迭代；两仓均本地 commit 未 push, caps=AskUserQuestion×4+×1（载体）; effort=差异分析7项+本体6处改+2新档(58+56行)+设计部4处改+三副本 diff 校验+实验协议九环设计+反向注入设计+2仓提交+教训区首条, stop_reason=—}
+
+### 2026-09-23 03:12｜修正二：产品对象上游（纠正四偏移；PE≠PI 边界）——本体+设计部
+- 触发：用户第二轮纠正（四层分析：页面职责→能力清单→主次→能力完整性→可运营性；四偏移命名；边界 PE≠PI；「精致偷懒」重解=不造孤立能力）
+- **本体**（源库 d165e1f + 两安装副本已同步）：SKILL.md 跑道插「步骤 0=产品对象六问（Purpose/Responsibility/Capability/Priority/Completeness/Operability，缺答不得进后续步）」，跑道改称八步（0-7）；description/§1 不用/Not for 加产品创新边界（创新属产品决策侧）与触发词（该有什么功能/什么最重要/后台能不能管理）；§4 候选 11（产品对象定义存在性）；§6 增 product-object 行；新增 `references/product-object.md`（59 行：六问表+页面级闭环八组+可运营性清单+主次角色表+与下游衔接）；判定表 v0.5·34 条——**J 域四条**（职责句/主功能唯一/页面级闭环/假能力）+ **0b 行**（为局部页面新造孤立产品能力=最高权重债务）；interaction-bridge 盘点加**第五类管理面**+上游指针
+- **设计部**（9ca41d7）：direction §十二（四偏移命名+对象链+边界+落地物）；product-architecture 修正二节（上游「产品对象定义」/中游「交互工程」分界）；three-definitions §3.3 补记（产品工程的第一性问题）；README 构件行+边界句改写；closed-loop 协议补**环 0**（九环→十环）
+- **边界声明固化**（用户原话）：Product Engineering ≠ Product Innovation；本包核心敌人=「产品已决定，但 AI 把它做歪了」；既有六问/六态/statechart/spec-trace/gate 不推翻，成为对象链中后段
+- GATE: {level=L2-F, ev=exec+cover+indep, v=产品对象上游修正（本体 4 改+1 新档；设计部 5 改；三副本同步）, cmd=diff -rq 三副本（.zcode 全一致；.agents 仅既往 decision-ledger 漂移）+ grep 校验（产品对象六问×2/边界句×2/J域×1/0b×1/第五类×2）+ wc -l（SKILL 82/新档 59/判定表 89）+ git commit×2（d165e1f/9ca41d7）, exit=0, files=<源库>skill/shisan-xinuo-product/{SKILL.md,references/product-object.md,references/judgement-table.md,references/interaction-bridge.md}；<设计部>README.md+docs/{direction,product-architecture,three-definitions,closed-loop-experiment-protocol}.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=产品工程≠产品创新——工程的核心敌人是「已决定，但被做歪了」；「什么都有但什么都不重要」=不知主次的必然结果；「UI 上画出来了」≠「产品能力」；精致偷懒的正解是不造孤立能力；新机制先定段（上游定义/中游交互/下游验证）, exempt=候选 11 的门禁实现未做（能力清单/主功能标记可查性，转正待实测）；闭环实跑=下一迭代；未 push, caps=—（本轮纯本体/文档改，无外部能力需求）, effort=四层分析映射逐条+本体 4 文件改+1 新档(59行)+判定表 5 行新增+设计部 5 文件改+三副本同步校验+2 仓提交+教训区第 2 条, stop_reason=—}
