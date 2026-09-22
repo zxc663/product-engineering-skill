@@ -5,7 +5,21 @@
 
 ## 一句话定位
 
-`shisan-xinuo-product` 是一个 **Product Interaction Engineering（交互工程）包**——Product Contracts 规范层的**第一垂直域**，已落地；母架构的其余域**均未实现**。
+`shisan-xinuo-product` 是**产品工程包**——Product Contracts 规范层的**第一垂直域**。已落地两段：**上游「产品对象定义」（2026-09-23 加：页面职责/能力清单/主次/能力完整性/可运营性）** + **中游「交互工程」（六问/状态/追溯/门禁/账本）**；母架构其余域**未实现**。
+
+## 修正二：上游产品对象链（2026-09-23 用户定稿）
+
+> 边界：**Product Engineering ≠ Product Innovation**——创新回答「应该创造什么」（产品决策侧）；产品工程回答「既然决定做，它具体应该是什么」。核心敌人=「产品已决定，但 AI 把它做歪了」。四处偏移（产品是什么≠功能怎么实现｜页面职责≠页面交互｜功能优先级≠功能完整性｜产品闭环≠前端闭环）与完整裁决见 direction §十二。
+
+```
+Product Decision → Product Scope → Page/Feature → Capability → Priority → Completeness → Operation
+                                    └────────── 上游：产品对象六问（已落地·盘点级）──────────┘
+→ Interaction → State/Runtime → Implementation → Verification/Evidence
+   └────────── 中游：交互工程（已落地·契约级：六问/statechart/spec-trace/gate/账本）──────────┘
+```
+
+- 上游细则 = 本体 `references/product-object.md`（六问+页面级闭环八组+可运营性清单+主次角色表）；判定表 J 域四条为其裁决级形态。
+- 上游与中游的分界：**对象六问管「该有什么」，功能六问管「这个怎么完整」**；前者缺答=停，不得进入后者。
 
 ## 母架构：Product Contracts
 
