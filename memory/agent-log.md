@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 03:12 —— 修正二（产品对象上游）：本体（源库 d165e1f + 两副本同步）跑道步骤 0=产品对象六问/J 域四条+0b/第五类管理面/PE≠PI 边界；设计部（9ca41d7）direction §十二/product-architecture 修正二/定义档补记/README/闭环协议补环 0
+- 最近更新：2026-09-23 04:29 —— 闭环试验（dwfrun-aaaaf612）中途核查：正向十环全绿、反向注入失明（两条均独立复现）；报告回写与候选 12 登记待运行 settle
 - 遗留（下一迭代队列）：①双会话实验扩样本（N=1→N≥3 消模型随机性）②spec-trace 清单自动提取器 ③触发词新会话实测 ④Gitee 同步 ⑤源库发行流程（RELEASE-CHECKLIST）⑥两组工具箱的浏览器人工走查（子代理共同盲区）
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
 - 遗留：见待办①-⑤；G 档 §6 待用户贴抖音关键帧
@@ -35,6 +35,11 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
   - 根因：机制扩展沿「Feature Contract 往外扩」，没有向上游承担「页面职责/能力清单/主次/完整性/可运营性」；把产品工程当成了交互工程的同义词。
   - 解决：跑道插**步骤 0=产品对象六问**（缺答=停）+ 判定表 J 域四条 + 0b 孤立能力债务 + 盘点第五类管理面 + 边界句 PE≠PI（本体 d165e1f，三副本同步）。
   - 预防：任何新机制先过元规则六问的变体——**「它在对象链的哪一段？（上游定义 / 中游交互 / 下游验证）」答不出=定位不清，先定段再动机制**。
+- **图性质门禁挡不住「契约承诺的多重出路被削」**（2026-09-23 子代理试验实测 + 本会话独立复现）
+  - 症状：statechart-gate 对「export_failed 的两条恢复出路被抽掉一条（RETRY_EXPORT）」返回 `OK exit=0`——缺失未检出。
+  - 根因（读源码所定）：C4 只判「错误态**至少有一条**非错误态出边」（`if not recover` 才报），不判「契约承诺的每条出路是否都在」；**契约 recovery 行 ↔ statechart 边之间没有对账**。
+  - 解决：独立复现确认（复制 statechart、删 RETRY_EXPORT→`exit=0`）；登记为候选门禁——契约 recovery 行 ↔ 边**双向对账**（每条 recovery 行须能映射到一条边，反之亦然）。
+  - 预防：门禁能力声明必须写清「检的是**存在性**还是**完整性**」；「缺失可检出」只有拿到**反向注入证据**才算成立——图性质检查挡不住含多重出路的契约。
 
 ## 三、偏好段
 
@@ -362,3 +367,11 @@ STATE: task=产品工程 Skill——**终极命题实验完成（命题成立，
 - **设计部**（9ca41d7）：direction §十二（四偏移命名+对象链+边界+落地物）；product-architecture 修正二节（上游「产品对象定义」/中游「交互工程」分界）；three-definitions §3.3 补记（产品工程的第一性问题）；README 构件行+边界句改写；closed-loop 协议补**环 0**（九环→十环）
 - **边界声明固化**（用户原话）：Product Engineering ≠ Product Innovation；本包核心敌人=「产品已决定，但 AI 把它做歪了」；既有六问/六态/statechart/spec-trace/gate 不推翻，成为对象链中后段
 - GATE: {level=L2-F, ev=exec+cover+indep, v=产品对象上游修正（本体 4 改+1 新档；设计部 5 改；三副本同步）, cmd=diff -rq 三副本（.zcode 全一致；.agents 仅既往 decision-ledger 漂移）+ grep 校验（产品对象六问×2/边界句×2/J域×1/0b×1/第五类×2）+ wc -l（SKILL 82/新档 59/判定表 89）+ git commit×2（d165e1f/9ca41d7）, exit=0, files=<源库>skill/shisan-xinuo-product/{SKILL.md,references/product-object.md,references/judgement-table.md,references/interaction-bridge.md}；<设计部>README.md+docs/{direction,product-architecture,three-definitions,closed-loop-experiment-protocol}.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=—, lessons=产品工程≠产品创新——工程的核心敌人是「已决定，但被做歪了」；「什么都有但什么都不重要」=不知主次的必然结果；「UI 上画出来了」≠「产品能力」；精致偷懒的正解是不造孤立能力；新机制先定段（上游定义/中游交互/下游验证）, exempt=候选 11 的门禁实现未做（能力清单/主功能标记可查性，转正待实测）；闭环实跑=下一迭代；未 push, caps=—（本轮纯本体/文档改，无外部能力需求）, effort=四层分析映射逐条+本体 4 文件改+1 新档(59行)+判定表 5 行新增+设计部 5 文件改+三副本同步校验+2 仓提交+教训区第 2 条, stop_reason=—}
+
+### 2026-09-23 04:29｜闭环试验（dwfrun-aaaaf612）中途核查：正向十环全绿；反向注入失明（已独立复现）
+- 运行状态（GetWorkflowRun；跨会话，属项目日志）：1h13m，第 10/11 阶段（独立复核→复盘员逐条补写中），30/31 步结算，健康（last_progress 5m33s、未停滞、0 连续失败）；已耗 752 万 token（其中实现阶段 627 万）
+- **运行已产出的正向十环**：环 0-1 上游定义（职责句「收藏清单管理·完整生命周期」/主功能=浏览清单/能力 8 条/未决 8 条待真人复核）→ 环 2-4 契约（11 态扁平、7 处 guardDesc、六问全答+16 承诺+3 recovery 行）→ statechart 门禁**首次 exit=0** → 环 5-6 实现 11 文件（证据类型 render+command，含 ui-render.png/dom-dump/serve-fetch）→ spec-trace 门禁首次 **exit=1（127 项 T4 孤儿）**，1 轮修复后 exit=0 → 环 0-7 提交 `4182576` → 反向注入（移除 `export_failed --RETRY_EXPORT--> exporting`）→ **门禁 exit=0 未标红** → git 恢复后复跑 exit=0
+- **本会话独立复现（亲跑，非转述）**：① spec-trace 复跑 → `OK：39 行/无孤儿/无死逻辑 exit=0`，且 components.txt=19 行真人可读组件名（证明首轮 127 项是真缺陷、修复非假绿——127 项系误把源码正文当组件清单）② 自建注入件（复制 statechart 删 RETRY_EXPORT）→ statechart-gate `OK exit=0`——**失明确认**
+- **修复方向**：契约 recovery 行 ↔ statechart 边**双向对账**门禁（候选 12）：缺边=承诺落空；多边=未登记发明
+- 待办：运行 settle 后——报告回写设计部（docs/closed-loop-report.md）+ 候选 12 登记进本体 + 两仓提交（本 fork 无父会话完成通知，用 GetWorkflowRun 复查）
+- GATE: {level=L2-S, v=闭环试验中途核查+两条结论独立复现, cmd=GetWorkflowRun + python 复跑 spec-trace-gate + 自建注入件跑 statechart-gate + find 工作区, exit=0（复跑 exit=0；注入件 exit=0=失明证据）, files=memory/agent-log.md + D:/产品工程闭环实验/*（只读；临时件 _inject_probe.json 已清理）, refs=0(未跑 lookup，0 照报), errpath=Edit 锚点字符串「四层分析逐条映射」与实际「四层分析映射逐条」不符致 not found→按 #294 读尾部实文校正锚点后成功, lessons=门禁须声明「检存在性还是完整性」；「缺失可检出」必须有反向注入证据才算成立；锚点用记忆复述会失手，尾部实读才可靠, exempt=运行未 settle（第 10 阶段）；报告回写与候选 12 登记未做, caps=GetWorkflowRun + Bash 独立复现×2, effort=状态核查+工作区清单+两处独立复现+源码归因+教训区第 3 条, stop_reason=—}
