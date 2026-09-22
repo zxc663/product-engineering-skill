@@ -15,6 +15,8 @@
 
 **定位边界（2026-09-23 裁决）**：本仓库=设计部；包本体=**产品工程**（Product Contracts 规范层的**第一垂直域**）——层级门（先定位在回答哪一层）+ 上游「产品对象定义」+ 中游「交互工程」已落地，母架构其余域**未实现**；**产品工程≠产品创新**（创新属产品决策侧，不是工程的必要任务）。详见 [docs/product-architecture.md](docs/product-architecture.md)。
 
+**先读这张纸**：[docs/one-page-definition.md](docs/one-page-definition.md)——一页说完「是什么 / 不是什么 / 哪里还不牢」（人话版规范；术语消歧也在里面）。
+
 ## 核心构件
 
 | 构件 | 一句话 | 出处挂靠 |
@@ -34,11 +36,14 @@
 ## 仓库结构
 
 ```
+docs/one-page-definition.md ← **一页纸：这个 Skill 是什么**（人话版规范，冷启动先读）
 docs/direction.md          ← 方向档（问题定义/衰减链/品味与时序/联通层/强制边界/修正记录）——权威设计档
 docs/product-architecture.md ← 母架构与定位边界（Product Contracts 七域；已落地=Interaction）
 docs/three-definitions.md  ← 三定义调研（产品/工程/产品工程 加固定义 + 缺失逻辑可检出表述）
+docs/layer-judgement-matrix.md ← 层×判据矩阵（11 层各自有哪些判据/人工裁决域/空白）
+docs/reverse-injection/EVIDENCE.md ← 「缺失可检出」反向注入实证（可重跑：verify.py）
 参考Skill/A~H              ← 八份调研蒸馏（设计品味系/工作流极简系/工具文档系/外部同类/桌面项目/成熟方法论/高密度界面/结构层蓝海）
-skill/…（在家族主仓）       ← 第四包本体：SKILL.md+references 七件+scripts 四门禁
+skill/…（在家族主仓）       ← 第四包本体：SKILL.md+references 九件+scripts 四门禁
 memory/agent-log.md        ← 工作流水（诚实留档：含每轮 GATE 与教训）
 ```
 
