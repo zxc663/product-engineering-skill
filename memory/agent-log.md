@@ -9,7 +9,7 @@ STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋�
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
 - 最近更新：2026-09-23 06:45 —— **夜班四线收口（用户授权循环至 09:00）**：①判据补齐 C1-C7＋四变异反向注入实证全绿——「缺失可检出」**首次实证**（verify.py 可重跑）②v3.3.0 收尾批（四脚本随包分发／注入路径修正／`.zcode` 重复家族包处置→单安装根／5 平台重部署 HASH-OK）③冷启动三条件×8 样本：裸 0/3 触发／显式 2/2 八步全链 PASS／注入链断点=description 缺构建触发词→修复→N6c 命中即用**闭环**；product **0.2.0**
-- 遗留队列（2026-09-23 07:0x 更新；product-object-gate 落地后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③product-object-gate 真实项目转正（selftest+语料转写已过，缺真实项目实测）④A/B 四指标口径冻结 ⑤注入+清单修复后扩样本（N6d/N6e 跑着）⑥spec-trace 清单自动提取器 ⑦Gitee 同步+Release zip/npm ⑧两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑨.agents/decision-ledger.md 漂移处置待裁
+- 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
 ## 二、教训区
