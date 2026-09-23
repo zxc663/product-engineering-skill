@@ -11,6 +11,8 @@
 | F2 | 中（假阳=误拦合法交付，已修复） | spec-trace-gate 清单文件用 `read_text().split()` 按空白切块加载，与绑定字段整串比对不对称——多词 backend id（`GET /favorites`）合法清单必假阳 T5；selftest 直调 check() 绕过文件入口故未发现（自测路径≠真实入口） | 变异电池 m6 对照组修复前 exit=1 假阳（m0-m5 正常）；根因 file:line=spec-trace-gate.py:96-97（修复前） | **已修复+双副本同步**：源库 commit 03f7ab2（git 即回滚点）＝安装根（Write 同步，diff -q 一致）；selftest 增文件全路径回归 ok3/ok4；电池 7 格复跑全绿 | ✅ 已修复（mutation-batteries/spec-trace/RESULTS.md） |
 | F3 | 低（清单卫生） | ponytail 与 ux-feature-design 双目录重复注册（C:\Users\zxc66\.zcode\skills\ 与 C:\Users\zxc66\.agents\skills\ 各一份）——技能清单出现同条目双份 | NR4 真会话自检报告（NR4-02-answer.png）+本机 ls 双目录证实（2026-09-24 02:45） | 平台侧注册卫生；影响=清单噪音+加载歧义；处置建议=单一目录去重（待用户裁决哪个为准） | 🟡 记账待裁决 |
 | F4 | 中（触发可靠性——已修复待验证） | 产品包在真会话自然语言任务中未被模型选择加载（NR1 实测：任务精确命中 description 触发词但未触发）；可见性/注入/hooks 三断点经 NR4 排除，断点=选择层显著性 | docs/real-session/nr-batch1-judgment.md §二；NR1 工作区无产品包流程工件（grep 实证） | **v0.2.2 description 触发词前置**（源库 4837f5e=安装根）；NR6 同任务对照实验验证中 | 🟡 修复待 NR6 判定 |
+| F5 | 中（新门禁假阳反面：漏报——已修复） | l0-l5-gate 对「goal 文件存在但 north_star 键缺失」静默放行（None 落空全部检查）——发现渠道恰是 NR6 真会话工件的独立复跑：statechart JSON 被误喂给 l0-l5 时本应拦却 OK | 复跑记录 02:55（l0-l5 收到 statechart JSON 输出 OK 0 warning）；夹具 g7 补后 exit=1 | **已修复+双副本一致+selftest ok5+夹具 g7**；源库 5e478f9（含两新脚本补入库纠正：git add -u 漏收 untracked=虚假提交风险，已 git show --stat 验真） | ✅ 已修复 |
+| F6 | 低（门禁人机工学） | statechart-gate 只收 --file 命名参数，位置参数报错——NR6 真会话首次调用即踩中并自行改用 --file | NR6 转录截图（evidence-01-early.png：「参数形态不对，改用 --file」） | 候选：门禁统一支持位置参数；低优 | 🟡 记账 |
 
 ## 系统体检（2026-09-24 01:55 实测）
 
