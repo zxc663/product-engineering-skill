@@ -8,7 +8,7 @@
 
 | 条款 | 门禁 | 反例拦截（变异） | 预演运行（无头） | 真实载体运行 | 状态 |
 |---|---|---|---|---|---|
-| statechart C1-C7 | statechart-gate.py（--selftest 两态） | 四变异 A-D 全拦（reverse-injection/EVIDENCE.md，2026-09-23） | N6d 投票/N6e 书签独立复跑绿 | **NR1 番茄钟真会话（进行中）** | 🟡 |
+| statechart C1-C7 | statechart-gate.py（--selftest 两态） | 四变异 A-D 全拦（reverse-injection/EVIDENCE.md，2026-09-23） | N6d 投票/N6e 书签独立复跑绿 | **✅ NR6 真会话（pomodoro-statechart.json 自跑+独立复跑双 exit=0，988bf66）** | ✅ 三有齐 |
 | product-object P1-P4 | product-object-gate.py（selftest+语料正负） | 甲仓语料忠实转写检出 10 项真实缺口 | 试验仓语料转写 | **NR1 真会话** | 🟡 |
 | spec-trace T4/T5 | spec-trace-gate.py（selftest 4 断言含 F2 回归） | **✅ 变异电池 m1-m5 全拦+m6 假阳回归锚（mutation-batteries/spec-trace/，2026-09-24；F2 假阳已修：源库 03f7ab2=安装根）** | 闭环试验十环内用过（closed-loop-report） | **NR1 真会话** | 🟡 |
 | registry 查表归因 | registry-gate.py（selftest） | 待补变异记录 | 闭环试验内 | 待排 | 🟡 |
@@ -67,6 +67,6 @@
 | NR2 | 财务仓 exp/nr2-account-delete | 账户删除+撤销+回收站（档3） | 运行中 | 设计档先行+AccountsPage+router+storage 回收站层+tests | 待完案 |
 | NR3 | 博客 exp/nr3-archive-page | 归档页年份×标签（档2） | 工作流核心✅（跳过声明/RE 格式/实机走查自捕 2 bug） | verify 全绿 1085 测试+9 文件改动+project-info | 待完案（registry 需 baseline） |
 | NR4 | （诊断会话） | 可见性/注入/hooks 三问 | — | **可见✅ 注入✅（zxc663+sha256 实测）hooks✅（双通道）** | — |
-| NR6 | D:\产品工程真会话-20260924\NR6 | **与 NR1 逐字同任务（v0.2.2 处理组）** | 运行中（02:47 发） | — | — |
+| NR6 | D:\产品工程真会话-20260924\NR6 | **与 NR1 逐字同任务（v0.2.2 处理组）** | **产品包触发✅**（能力检索命中自证；流水 NR6-P1） | 轻量契约六问/六态矩阵/spec-trace+statechart JSON+实机走查 6 验收+真缺陷修复回归+988bf66 | statechart-gate 自跑+独立复跑双 exit=0 ✅ |
 
-> 判定档=docs/real-session/nr-batch1-judgment.md；队列①前半（工作流核心真会话生效链）**已闭合**；产品包触发断点=选择层→v0.2.2 修复→NR6 验证中。
+> 判定档=docs/real-session/nr-batch1-judgment.md；队列①前半（工作流核心真会话生效链）**已闭合**；产品包触发断点=选择层→v0.2.2 修复→**NR6 验证通过（F4 ✅，限定 N=1）**。
