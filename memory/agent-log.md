@@ -506,3 +506,10 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **十三样本总表**：NR1 对照失败→NR4 诊断→v0.2.2→NR6/NR8/NR12 触发 3/3（三任务域）｜NR7 档3 四件套｜NR9/NR11 审查族（含跨项目）｜NR10 档0 豁免｜NR2 大项目档3｜NR3 大仓档2｜NR13 冷启动档3 自治闭环。触发族×档位×项目规模三维全覆盖。
 - errpath：Edit not-read×2（外部 python 改后须重读）；sleep 超 2 分钟上限被断（拆分）。
 - GATE: {level=L2-F, ev=indep, v=战役收官（NR13+Release 验证+终批文档）, cmd=NR13 三门禁独立复跑（初检 3 项真红→终验全绿）+Release zip 八 selftest 8/8+全仓一致性扫描, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/verification-ledger.md+docs/HANDOVER.md+memory/agent-log.md+docs/real-session/evidence（36 件）, refs=1（#294 重读）, errpath=Edit not-read→重读；sleep 超限→拆分, lessons=完整自治闭环（判档→产件→自检见红→修→绿→走查）是真会话验收的最高形态——十三样本中 NR13/NR7/NR6 三次出现；门禁对会话与对判定者同等执法, exempt=A/B 口径实测/工具箱人工走查/Gitee（用户侧）；NR13 触屏未验, caps=CUA 全程（13 会话）, effort=十三样本×三源判定+全部独立复跑+四 Release 端到端, stop_reason=—}
+
+
+### 2026-09-24 07:55｜战役终局补遗：NR15 第六任务域（07:46 完案，23e36fc）
+- 配色板工具：OKLCH 11 档色阶+三格式复制+CSS/JSON 导出+75 行数学单测；RE 决策留档（被否 HSL 插值，对标 Tailwind/Radix）。
+- **冷启动处理组终局 4/4**（NR6/NR8/NR12/NR15，四任务域）vs 对照 0/1——触发修复（v0.2.2）证据链闭合。
+- 判定档 NR14/NR15 行已入表（十四→十五样本全景）；HANDOVER/README A/B 数字同步。
+- GATE: {level=L2-S, ev=exec, v=NR15 末样本判定+数字同步, cmd=git show NR15 提交+log 终报核验, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/HANDOVER.md+README.md+memory/agent-log.md, refs=0, errpath=—, lessons=—, exempt=—, caps=—, effort=—, stop_reason=—}
