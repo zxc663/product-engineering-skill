@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-24 03:08 —— 战役批二：M1 判定档（队列①前半闭合+产品包触发失败断点定位）+v0.2.2 触发词前置+NR6 对照触发成功+队列⑤提取器+F5 修复+两真载体电池；推送至 a30a026（详见流水区 03:08 条）
+- 最近更新：2026-09-24 04:38 —— 战役批三：十真会话样本全判定（三触发族×四档位×A/B 2:1）+v0.2.3 实践条款蒸馏+七门禁台账全行有着落+证据 34 件入仓；推送至 b45ec5b（详见流水区 04:38 条）
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -465,3 +465,17 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **审计新增**：F3（ponytail/ux-feature-design 双目录重复注册，NR4 报告+ls 证实，待裁决）+F6（statechart-gate 只收 --file，NR6 实踩）。
 - errpath：管道后 $?=末命令（两次踩，改重定向取真码）；Bash 写 .py/.tsx 夹具被拦→Write 通道；NR6 独立复跑发现 F5=「判定轮本身也是测试轮」实证。
 - GATE: {level=L2-F, ev=indep, v=批二（M1 判定档+v0.2.2+队列⑤+F5+registry 电池）, cmd=statechart-gate --file NR6 工件（exit=0）+l0-l5 selftest（5 断言）+g7（exit=1）+registry 五格电池+diff -rq 双副本×3, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/mutation-batteries/{spec-extract,registry-blog}/RESULTS.md+docs/workflow-skill-audit.md+源库 SKILL/l0-l5-gate/spec-trace-extract, refs=3（#294 残留警惕+#233 实测+#348 死代码自查）, errpath=NR5 三败止损→A/B 替代；add -u 漏新文件→show --stat 验真；F5 由复跑暴露→当日修, lessons=真实会话的工件复跑会暴露自测夹具缺口（F2/F5 同族：自测路径≠真实入口）；description 头部 40 字决定触发生死；CUA 受控输入不可写→实验设计改 A/B 而非读回, exempt=NR2 未完案（档3 大库属正常时长）；NR6 终版验收未完（运行中）, caps=CUA+原生对话框 a11y+后台窗口 a11y 树, effort=六门禁×三载体复跑+双电池+selftest 三次扩展, stop_reason=—}
+
+
+### 2026-09-24 04:38｜战役批三：NR7-NR10 判定+实践条款 v0.2.3+七门禁收口（03:08-04:35）
+- **NR7 档3 四件套首次真会话全兑现**（7f3535e）：恢复矩阵（损坏 JSON 弃用/Storage 抛错降级/软删 7s 撤销/连删显式裁决）+回归 golden sample（既有 6 验收全重跑+新旧双图 statechart-gate）+runtime 走查（5 新验收+窄屏+3 截图）+spec-trace；任务清单追加触发升档3（不沿用旧档位）。
+- **NR8 档1 自适配触发**（98249f3）：记分板判档1 轻量契约仍产六问/六态矩阵/验收前置；出处信心级惯例级；6 验收+4 截图。**F4 达 N=2**（档2+档1 双样本 vs 对照 0/1）。
+- **NR9 审查触发族实证**（703dbce）：「别扭/不好用」→走查 5 处（Enter/ESC 收尾/队名溢出 339px/撤销热区 17→45px/touch-action/aria-live）→定点修+复验 7 项+回归；「别大改」被遵守。
+- **NR10 档0 豁免梯度实证**：README 单句换风格→L1 快速通道自declared+极简 GATE+单行变更+46 秒——「正确但昂贵」防线成立。
+- **v0.2.3 实践条款蒸馏**（1101bdc）：反借口 #12 通道归因隔离实验（NR6/NR7 判例：先隔离定性 IAB Enter 通道缺陷，页面侧仍修真实缺陷，两头不豁免）+judgement-table 档位判例 N8-1（纯展示态不计状态数）/N7-1（追加按新增风险定档）；§5 行数漂移顺手修正（九条→十二条）。
+- **F6 修复**（b206266）：statechart-gate 补位置参数兼容（NR6/NR7 重复实踩）；双形态复跑全绿。
+- **七门禁台账全行有着落**：C7 真载体契约对账电池（NR7 恢复矩阵忠实转写正例+抽行/发明双变异精确命中，09b34d8）；product-object 真语料转写正例+四变异（a340b02；首版自造字段形态被 17 项全拦=**#233 命名直觉现行**，读 gate schema 重转写后过；file: 引用验实存连散文后缀都拦）；usage-probe 真载体双跑（真会话工作区 90 提及/9 近窗命中；财务仓 7 天零提及→衰减警报实弹 exit=1，佐证 NR2 归因诚实标注 bfdf527）。
+- **NR2 完案独立复核**（62d6072，财务仓 exp 分支）：17 新用例+全量 369 全过（venv 复跑）；删除确认窗/8s 撤销/30 天回收站/强清除/惰性清扫+critic 8 项；机器工件缺（md 设计档无 statechart JSON）——归因诚实标注：项目自有轮次文化 vs 产品包不可拆分。errpath：裸 python 缺 fastapi→.venv 复跑。
+- **证据 34 件入仓**（docs/real-session/evidence/，3.8MB）——判定档自含；「自述≠实物」抽检：NR7 声称的 3 张走查截图实物在盘（472KB 级真图）。
+- errpath：CUA 帧过期（action_sent=false→重观察重发）；fs 未 import 致证据写盘失败（动作已完成，补拍）；git add -u 漏 untracked（批二已纠，本批 git add 路径+show --stat 验真成为固定动作）。
+- GATE: {level=L2-F, ev=indep, v=批三（NR7-NR10+实践条款+七门禁收口）, cmd=statechart 双图独立复跑+C7 双向电池+product-object 四变异+usage-probe 双跑+venv 全量 pytest 369, exit=0, files=docs/real-session/**+docs/mutation-batteries/**+源库 SKILL/anti-excuses/judgement-table/statechart-gate, refs=2（#233 转写现行+#348 死代码自查在先批）, errpath=帧过期重发；venv 缺依赖；#233 首版转写被全拦, lessons=「判定轮自己的转写也会踩命名直觉」——门禁对判定者同样执法；豁免梯度是真采用机制（NR10 46 秒 vs NR7 档3 完整流程=成本自适应实证）, exempt=NR5 description 读回未定案（止损，触发修复已由 A/B 覆盖）；队列⑥ Gitee/npm 与⑦真人走查如实延后, caps=CUA（双实例+原生对话框+后台窗口 a11y）, effort=十样本判定+四电池+七门禁 selftest×2 轮+三 Release, stop_reason=—}
