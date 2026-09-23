@@ -23,11 +23,11 @@
 | 2 | 六态缺态不开工 | 人工+矩阵模板 | 冷启动显式组全链 PASS（预演） | NR1 矩阵实物 | 🟡 |
 | 3 | spec-trace 双向 | spec-trace-gate | 同 A | 同 A | 🟡 |
 | 4 | 查表归因 | registry-gate | 同 A（博客仓电池） | 同 A（博客仓 194 组件） | ✅ |
-| 5 | 内联样式/硬编码零容忍 | 🔴 无专属门禁（grep 类可脚本化） | 无 | 待排 | 🔴→候选门禁 |
-| 6 | dead-binding（死代码/空 catch） | 🔴 无专属门禁 | 无 | 待排 | 🔴→候选门禁 |
+| 5 | 内联样式/硬编码零容忍 | **✅ frontend-lint-gate R1/R2**（regex 子集，基线豁免存量） | **✅ 博客仓电池**（mutation-batteries/frontend-lint/） | **✅ 博客仓 194 组件**（20 存量豁免+四规则夹具全中） | ✅（v1 regex 口径） |
+| 6 | dead-binding（死代码/空 catch） | **✅ frontend-lint-gate R3/R4**（空 catch+console 子集；AST 级 dead export 未做） | 同上电池 R3/R4 | 同上 | 🟡→✅（子集口径，AST 留待） |
 | 7 | 取证存在性 | spec-trace-gate 证据段 | 部分 | NR1 截图+DOM | 🟡 |
 | 8 | 账本写回存在性 | 人工 grep decision-ledger | 无 | NR1 | 🟡 |
-| 9 | 可达性静态底线 | 🔴 axe 子集无脚本 | 无 | 待排 | 🔴→候选门禁 |
+| 9 | 可达性静态底线 | 🔴 axe 子集无脚本（启发式误报风险高，诚实保留待做） | 无 | 待排 | 🔴（唯一残留） |
 
 ## C. 跑道八步（§2 流程条款，真实会话合规性）
 
