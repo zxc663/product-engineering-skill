@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-24 06:08 —— 战役批四（终局）：NR11 跨项目审查+NR12 冷启动 N=3（A/B 终局 0/1 vs 3/3）+v0.2.4 第七门禁 frontend-lint-gate（强制5/6 机器化）+白名单回收+十二样本全判定；推送至 55a36c7（详见流水区 06:08 条）
+- 最近更新：2026-09-24 06:45 —— 战役收官：NR13 冷启动×档3 完整自治质量闭环（自判档3→原生三件套→自跑三门禁见真红→修→绿→10+ 走查）+Release 包端到端验证 8/8+十三样本全判定；推送至终批（详见流水区 06:45 条）
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -497,3 +497,12 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **收口状态**：七门禁台账全行有着落（6✅+1🟡 子集口径）；十二真会话样本全判定；四 Release（v0.2.1-v0.2.4）；判定档/台账/HANDOVER/一页纸/README 全链刷新一致。
 - errpath：python 字符串 \N unicode escape 两次（改 r-string/Edit 工具）；CUA 帧过期×3（action_sent=false 后必须重观察再重发）；NR12 补发变排队重复→删排队+清输入框恢复单发。
 - GATE: {level=L2-F, ev=indep, v=批四终局（NR11/NR12+lint 门禁+回收）, cmd=statechart 三真会话独立复跑（NR6/NR7/NR12 全 exit=0）+lint 五格电池+C7 双向电池+usage-probe 双跑, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/verification-ledger.md+docs/mutation-batteries/product-object+C7+frontend-lint+源库 SKILL/anti-excuses/judgement-table/statechart-gate/frontend-lint-gate/spec-trace-extract, refs=1（#233 转写现行）, errpath=帧过期×3→新帧重发；排队重复→删队清框；unicode escape→r-string, lessons=触发修复的终局验证形态=「同任务文本跨任务域重复」——3/3 比单样本强一个量级；审查触发族与构建触发族同样可靠（NR9/NR11）, exempt=A/B 四指标实测待口径追认；NR12 音效/触屏听感未验, caps=CUA 全程（12 会话）+无动态工作流（确定性验证 bash 足够）, effort=十二样本×三源判定+八格电池×2+四 Release+全链文档一致化, stop_reason=—}
+
+
+### 2026-09-24 06:45｜战役收官：NR13 冷启动档3 完整自治闭环+Release 端到端验证（06:08-06:45）
+- **NR13（a40ceb9，冷启动×档3 终样本）**：便签墙（增/拖/删可撤销/持久化）——冷启动自判**档3** 正确→原生三件套（object/statechart/contract JSON）→**会话自跑三门禁见真红**（log 实锤：「statechart-gate 报 recovery 行状态 None；object-gate 报主功能数=2」）→修契约（recovery 字段补全/核心任务唯一）→复跑绿→10+ 项实机走查+4 截图。主会话独立复跑互证全绿。**「产出→门禁检出→修复→绿」首次全链在原生工件上闭环**——门禁不仅拦变异，拦截真实会话的原生缺陷并驱动自修，这是全战役最强单条证据。
+- **台账升格**：product-object 行升 ✅ 三有齐（原生正例为 fail→修→绿 形态，强于纯放行）；statechart 行已含 NR6/NR7/NR13 三真会话。
+- **Release 包端到端验证**：GitHub Release 下载 v0.2.4 zip→解压→八脚本 selftest 终验 **8/8 PASS**（首轮 8/8 FAIL 为解压后瞬时现象，复跑即绿，如实记审计——分发件确认可用）。
+- **十三样本总表**：NR1 对照失败→NR4 诊断→v0.2.2→NR6/NR8/NR12 触发 3/3（三任务域）｜NR7 档3 四件套｜NR9/NR11 审查族（含跨项目）｜NR10 档0 豁免｜NR2 大项目档3｜NR3 大仓档2｜NR13 冷启动档3 自治闭环。触发族×档位×项目规模三维全覆盖。
+- errpath：Edit not-read×2（外部 python 改后须重读）；sleep 超 2 分钟上限被断（拆分）。
+- GATE: {level=L2-F, ev=indep, v=战役收官（NR13+Release 验证+终批文档）, cmd=NR13 三门禁独立复跑（初检 3 项真红→终验全绿）+Release zip 八 selftest 8/8+全仓一致性扫描, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/verification-ledger.md+docs/HANDOVER.md+memory/agent-log.md+docs/real-session/evidence（36 件）, refs=1（#294 重读）, errpath=Edit not-read→重读；sleep 超限→拆分, lessons=完整自治闭环（判档→产件→自检见红→修→绿→走查）是真会话验收的最高形态——十三样本中 NR13/NR7/NR6 三次出现；门禁对会话与对判定者同等执法, exempt=A/B 口径实测/工具箱人工走查/Gitee（用户侧）；NR13 触屏未验, caps=CUA 全程（13 会话）, effort=十三样本×三源判定+全部独立复跑+四 Release 端到端, stop_reason=—}
