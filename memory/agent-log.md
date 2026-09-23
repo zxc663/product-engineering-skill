@@ -4,11 +4,11 @@
 
 ## 一、状态段
 
-STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋层级栈层级门＋product 0.2.0＋冷启动触发链闭环）；剩=用户侧重启验收锚 | level=L2-F | route=层级门(0a)+产品对象六问(0b)+八步跑道+判定表 38 条(〇/J/K 域)+C1-C7 门禁+反向注入实证 | confirm=豁免：用户无限授权（至 09:00 硬停，已收口） | gates_passed=四变异全拦对照组绿；显式组 2/2 全链 PASS（独立复跑）；5 平台注入 HASH-OK；交接自检 5 缺口已修 | last_errpath=cp 写 .py 被拦→Write 通道；tar D: 当远程→相对 -f；cp 目标已删→单安装根
+STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）：真会话探针批（CUA 三并行）+漏洞账本+判据空白闭合+分发件 | level=L2-F | route=计划模式四问对齐→CUA 真会话探针→变异电池→蒸馏入库双副本同步 | confirm=豁免：用户无限授权（09-24 09:00 硬停；push 范围=设计部仓；删除=白名单制先归档） | gates_passed=六门禁 selftest 全绿；spec-trace 电池 7 格+l0-l5 电池 11 格全绿；三真会话 L0 缺失检出 3/3 | last_errpath=Bash 写受保护脚本被拦→Read+Write 通道；matrix Edit not-read→TOP#294 重 Read；for+[ -f ] 沙箱假象→ls 直取真值
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 18:12 —— 全项目措辞纠正：设计部 8 处「人话」系表述→正式表述（README×2/HANDOVER×2/one-page-definition 标题/plan 档/本档 417 行；「人话版规范」→「简明版规范」），已 commit+push；夜班收口详情见流水区 06:45 条
+- 最近更新：2026-09-24 02:29 —— 战役批一：速裁包+验证台账+漏洞账本（F1 CLI 记账/F2 已修）+L0/L5 双层闭合（v0.2.1）+Release v0.2.1 发布+推送 e385159..6971783；三真会话探针并行运行中（详见流水区 02:29 条）
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -439,3 +439,15 @@ STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋�
 - **财务项目 20 处**（另行 commit）：docs 7（roadmap 日志可读化/错误码⇄可读文案/通俗改写等）+agent-log 现役 2+归档 11（历史条目措辞纠正、事实内容零改动，留痕于本条）；平台记忆 finance-bill-assistant-project.md 1 处（不入 git）。
 - **方法**：python 精确串替换（29+1 条，每条命中数必须==1 否则跳过），首跑 28 OK+1 FAIL（清单误重 README 已改串，无害）+残留复查 1（ITERATIONS.md:66 前两轮窗口未覆盖）→补改；终态全范围 grep「人话」残留=0。
 - GATE: {level=L2-S, ev=exec, v=两仓+平台记忆措辞纠正（设计部 8+财务 20+记忆 1=29 处）, cmd=python fix_wording_20260923.py（28 ok/1 fail 复核无害）+ 补改 ITERATIONS:66 + 残留 grep=0, exit=0, files=README.md+docs/HANDOVER.md+docs/one-page-definition.md+memory/agent-log.md+.zcode/plans/plan-sess_0130472d.md（设计部，本仓）；财务仓 docs×7+memory×2 另行提交, refs=0(未跑 lookup，0 照报), errpath=清单误重一条 FAIL(0)（无害）+ITERATIONS:66 窗口遗漏→残留复查兜住补改, lessons=全量措辞纠正必须有「命中数==1 断言+改后残留复查」两道闸——窗口脚本截断会漏行尾命中; 历史流水档案的措辞纠正（非事实篡改）需在流水留痕声明「事实不动」, exempt=ux-feature-design 三副本不动（设计原则术语+外部内容）；ux 文档归档历史 commit 中旧词仍在（不可改史）, caps=—, effort=两轮窗口勘察+29 条替换表+两道复核闸, stop_reason=—}
+
+
+### 2026-09-24 02:29｜无限加固战役批一：三真会话探针+F2 修复+L0/L5 双层闭合+Release（01:38-02:28）
+- **开局对齐（计划模式四问）**：9点停=09-24 09:00（用户凌晨一点多起跑）｜CUA=双实例无限（用户不用电脑）｜载体=真实改动+回滚基线（财务 exp/nr2-account-delete、博客 exp/nr3-archive-page 建分支）｜验收=三有判据+四列验证台账（docs/verification-ledger.md）。速裁包落 docs/ruling-package.md（Q1-Q8+AB 追认+账本漂移两案，批复不阻塞）。
+- **F1（记账）**：ZCode CLI 0.16.9 缺 built-in provider 配置无法独立启动（补造需动密钥=红线禁）→真会话走 GUI 路线；已入 docs/workflow-skill-audit.md。
+- **三真会话并行探针（M1 主证）**：CUA 驱动主窗 Ctrl+N 开三新会话——NR1 番茄钟（D 盘真会话工作区，档2）/NR2 账户删除恢复（财务仓，档3）/NR3 博客归档页（cms-blog-starter，档2）。中间实证：NR1 输出标准复述格式（收到X｜理解为Y｜边界Z=注入核心 hooks 通道生效）；NR3 转录见「跳过声明」（URL 参数同步不做+理由）与「RE 决定/依据/影响」格式、自起 dev server+Edge 实机走查自捕 2 真 bug（Invalid Date/标签 slug 挂空）；NR2 设计档先行（account-delete-recycle 调研档）+新 router+tests。三会话均自建 AGENTS.md/memory/docs 承载（NR1 实证）。**发现**：三会话全部未产出产品目标工件（L0 静默下沉）→已蒸馏成新条款入触发拦截表（无人值守禁静默下沉）。
+- **F2（修复+证据链）**：spec-trace 门禁清单文件按空白切块 vs 绑定整串比对不对称→合法清单假阳 T5（m6 对照组抓住）；根因=selftest 直调 check() 绕过文件入口（自测路径≠真实入口）。修复+按行整串加载+selftest 全路径回归；源库 03f7ab2=安装根（diff 一致）；电池 7 格全绿归档 mutation-batteries/spec-trace/。errpath：Bash 写受保护脚本被拦→Read+Write 通道合规同步。
+- **L0/L5 双层闭合（v0.2.1）**：调研代理产 14+13 候选判据（A/B/C 信心级+8 被否，design-specs 调研档）；主会话裁决六项（形态/内容划线入 C4/C5；tree testing 阈值=项目自定+保守 warning；L5 结构底线归本包、方案生产归 v2 等）；新第六门禁（L0 合格线+L5 结构底线机器子集）selftest 4 断言+11 格电池全绿；**三真会话工作区 L0-C10 缺失检出 3/3**（「缺失可检出」首证于 L0×真实会话）；SKILL 版本 0.2.1+层栈 L0/L5 行+触发拦截表两行，源库 f381bd1=安装根。
+- **分发（队列⑥部分闭合）**：Release v0.2.1 发布（zip+notes+六门禁自检命令）：github.com/zxc663/product-engineering-skill/releases/tag/v0.2.1。
+- **推送**：设计部仓 e385159..6971783（速裁包/台账/F2/L0L5 四批）。
+- errpath：本机 shell for+[ -f ] 复合循环输出不可信（两案例：仅末项 OK 其余全 MISSING 假象）→一律 ls 目录取地面真值；matrix Edit not-read→TOP#294 重 Read。
+- GATE: {level=L2-F, ev=invariant, v=战役批一（探针批运行中+两漏洞处置+双层判据闭合+分发）, cmd=六门禁 selftest×6+两电池重跑（mutation-batteries 两目录）+diff -rq 双副本+新门禁三真会话检出, exit=0, files=设计部 docs 五件+agent-log+源库四件（两门禁脚本+SKILL+层栈）, refs=2（#294 双通道+#233 实测）, errpath=F1 CLI→GUI 改道；F2 假阳→修复+回归锚；for-test 假象→ls 真值；Bash 写保护→Write 通道, lessons=自测路径与真实入口分叉=假绿新形态（F2）；无人值守会话会静默下沉上游缺答（三案例）→条款化；CUA 主窗 Ctrl+N+项目选择器+原生对话框 setValue=真会话标准开法, exempt=NR 会话判定未完（transcript 全量不可达，判定=实物+门禁复跑+UI 截图三源）；队列⑥ Gitee/npm 未动, caps=CUA（computer-use 0.6.3）；变异电池用确定性脚本未用动态工作流（按 Token 精算，仪式不用）, effort=11 格+7 格电池构建+selftest 扩展+三仓基线+双副本同步验证, stop_reason=—}
