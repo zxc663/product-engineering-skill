@@ -5,12 +5,12 @@
 
 ## 一、现状一句话
 
-第四包 `shisan-xinuo-product` **v0.2.0** 双仓在线（家族 **v3.3.0**）：上游层级门（L0-L10 层栈）+产品对象六问+中游交互工程+**C1-C7 门禁**全落地。夜班四线收口：①**「缺失可检出」首次实证**（四变异反向注入全拦、对照组全绿，可重跑 verify.py）②层×判据矩阵+一页纸人话规范③工作流 Skill 三高危修复+单安装根+5 平台注入重部署 HASH-OK④冷启动三条件×8 样本实验：**触发链断点（description 缺构建侧触发词）已定位→修复→N6c 复测闭环（命中即用+层级门+档3）**；显式条件 2/2 八步全链 PASS。剩余最后一环=**用户侧重启后的真实新会话验收锚**。
+第四包 `shisan-xinuo-product` **v0.2.0** 双仓在线（家族 **v3.3.0**）：上游层级门（L0-L10 层栈）+产品对象六问+中游交互工程+**C1-C7 门禁**全落地。夜班四线收口：①**「缺失可检出」首次实证**（四变异反向注入全拦、对照组全绿，可重跑 verify.py）②层×判据矩阵+一页纸简明规范③工作流 Skill 三高危修复+单安装根+5 平台注入重部署 HASH-OK④冷启动三条件×8 样本实验：**触发链断点（description 缺构建侧触发词）已定位→修复→N6c 复测闭环（命中即用+层级门+档3）**；显式条件 2/2 八步全链 PASS。剩余最后一环=**用户侧重启后的真实新会话验收锚**。
 
 ## 二、必读清单（按序）
 
 1. `memory/agent-log.md` 状态段（现役队列=8 项）
-2. `docs/one-page-definition.md`（**一页纸人话规范**——是什么/不是什么/哪里还不牢）
+2. `docs/one-page-definition.md`（**一页纸简明规范**——是什么/不是什么/哪里还不牢）
 3. `docs/direction.md` §〇 / §十一·§十二·§十三（三轮修正记录）
 4. `docs/cold-start-report.md`（三条件×8 样本：触发链实验全文）/ `docs/reverse-injection/EVIDENCE.md`（缺失可检出实证，可重跑 verify.py）
 5. `docs/layer-judgement-matrix.md`（每层有哪些判据/空白）/ `docs/product-architecture.md` + `docs/three-definitions.md`

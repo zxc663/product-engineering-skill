@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋�
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-23 06:45 —— **夜班四线收口（用户授权循环至 09:00）**：①判据补齐 C1-C7＋四变异反向注入实证全绿——「缺失可检出」**首次实证**（verify.py 可重跑）②v3.3.0 收尾批（四脚本随包分发／注入路径修正／`.zcode` 重复家族包处置→单安装根／5 平台重部署 HASH-OK）③冷启动三条件×8 样本：裸 0/3 触发／显式 2/2 八步全链 PASS／注入链断点=description 缺构建触发词→修复→N6c 命中即用**闭环**；product **0.2.0**
+- 最近更新：2026-09-23 18:12 —— 全项目措辞纠正：设计部 8 处「人话」系表述→正式表述（README×2/HANDOVER×2/one-page-definition 标题/plan 档/本档 417 行；「人话版规范」→「简明版规范」），已 commit+push；夜班收口详情见流水区 06:45 条
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -414,7 +414,7 @@ STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋�
 
 ### 2026-09-23 06:45｜夜班收口：判据实证＋v3.3.0＋冷启动三条件实验（用户授权循环至 09:00；四线全绿）
 - **判据线（里程碑①②）**：statechart-gate 扩 **C1-C7**（C6 引用完整性／C7 契约 recovery 双向对账／结构化错误态识别）＋contract-schema 钉死 recovery 字段名；四变异 A/B/C/D 全拦、对照组双态全绿（可重跑 `docs/reverse-injection/verify.py`＋EVIDENCE.md，命令/diff/退出码三件齐）——**「缺失可检出」从未实证→实证**；候选 10 转正、12/13 落地（源库 65276ff）
-- **收敛线**：层×判据矩阵（L0/L5 空白显式列、上游 L1-L4 无机器判据、两最便宜缺口=主功能唯一性计数／候选 14）＋一页纸人话版（含术语消歧：行业 product engineer=角色义≠本项目=判据义）（57748f3）
+- **收敛线**：层×判据矩阵（L0/L5 空白显式列、上游 L1-L4 无机器判据、两最便宜缺口=主功能唯一性计数／候选 14）＋一页纸简明版（含术语消歧：行业 product engineer=角色义≠本项目=判据义）（57748f3）
 - **修复线（工作流 Skill 三高危全修）**：①副本内容漂移补齐（workflow SKILL :222/:228＋skill-usage §8）②四脚本随包分发＋注入文本路径改 `<技能目录>/scripts/`（install/deploy 标注源库根）③`.zcode` 侧重复家族包处置（备份 skill-backups/zcode-side-family-skills-20260923.tar.gz 58 文件后删除→**单安装根**）；RELEASE-CHECKLIST 过时项回填＋两处同步纪律入册；**v3.3.0**（package/三包 frontmatter/CHANGELOG/README＋product 0.2.0）＋5 平台注入重部署（--check --hash **5/5 HASH-OK**，各带备份）；误纳的 .mimosa 清出＋两仓 .gitignore（c896444/2f978ed/b9e07a7）
 - **冷启动线（三条件×8 样本，判定=实物）**：裸组 **0/3** 触发（N1/N3/N4）｜显式组 **2/2** 八步全链 PASS（N2 待办、N5 记账，均自判档3，门禁主会话独立复跑全绿；N2 揪出自设计死 UI 并按「根因在上游→回改上游」修复）｜注入模拟：N6（无清单）纪律层✓路由✗→N6b（+清单）检索执行且归因但判「无命中」→**断点=description 缺构建侧触发词**→修复→**N6c 命中即用**（层级门声明＋档3 账本＋门禁复跑绿）＝**闭环**。副产物：N4 自述与实物背离（教训区第 6 条）；报告=docs/cold-start-report.md（1945421）
 - **甲仓泛化**：5 份 statechart＋spec-trace 用新 C1-C7 复跑全 rc=0（新判据零误报）
@@ -432,3 +432,10 @@ STATE: task=产品工程 Skill——夜班四线收口（C1-C7 判据实证＋�
 - 落地（62434ef，**已推 GitHub** e255537..62434ef→main）：README 以用户文本为主叙事骨架（保留原仓导航功能）——一句话/两层来源（经验四症状+结构层成本镜像表）/三层收敛（症状=承诺集合→机制=兑现义务时点→结构=判据无人区+缺陷三级成本阶梯「没人报 bug，因为那功能根本不存在」）/老办法为何不行（衰减链+劝导会衰减法律不会）/答案与边界（工匠三件套+联通层+PE≠PI+三不管+第一垂直域诚实占位+目的态+核心句引用块）；新增**实证状态诚实栏**（缺失可检出已实证 verify.py/双会话对照 N=1 债 13vs50/上游首获机器判据/还不牢四条）；门禁清单两台→**五台**（补 spec-trace/product-object/usage-probe 用法）；仓库导航补 cold-start-report/ab-four-metrics 两行；构件表产品对象六问与层级门提到最前（反映修正二三后的重心）
 - errpath：push 首推 Connection reset→改直连 `-c http.proxy=` 亦超时（本机零活代理：git/env 均无代理配置+7 常见端口探测全闭）→如实登记未完成不假推；用户令「再尝试」→代理已开→`git push origin HEAD` rc=0（Mimosa scanner_enobufs 提示按兼容策略放行，未宣称安全扫描通过）
 - GATE: {level=L2-S, ev=exec, v=README 门面重构+推送, cmd=Write README.md + git add/commit（62434ef）+ git push origin HEAD（rc=0，e255537..62434ef）, exit=0, files=README.md+memory/agent-log.md, refs=0(未跑 lookup，0 照报), errpath=push 两通道齐断（代理 reset+直连超时）→停手登记待用户；用户重试令后 rc=0, lessons=门面档主叙事与导航功能分层不冲突——用户供稿做「为什么」章，构件/结构/门禁做「是什么/怎么用」章；推送通道断时先探测（端口/netstat）定位是环境阻塞再决定停手, exempt=家族主仓 README（shisan-xinuo-workflow）未同步此叙事（用户只令本项目）；源库未动, caps=—, effort=旧 README 通读+供稿无损整合+诚实栏实证数据回填（自 agent-log 三处）+两波折 push, stop_reason=—}
+
+### 2026-09-23 18:12｜全项目措辞纠正：「人话」系表述→正式表述（用户令「全开发机全项目……纠正并推送」）
+- **动机与裁决**：用户指「人话版」类自我描述口语不好听。两类命中分治——A 类=文档自我描述口语（必改）；B 类=产品功能叙事中的「人话」（「日志人话化/错误码⇄人话」等，同为口语措辞一并纠正为「可读化/可读文案/通俗」）；**不改**：ux-feature-design 三副本的「文案像人话/人话化」——那是 humane copywriting 的设计原则术语（UI 文案应面向用户口语化），非自我描述，属外部技能内容。
+- **设计部 8 处**：README×2+HANDOVER×2（「人话版规范/一页纸人话规范」→「简明版规范/一页纸简明规范」）+one-page-definition.md 标题+.zcode/plans 存档×1+本档 417 行（历史流水措辞纠正，事实不动）；状态段最近更新行刷新。
+- **财务项目 20 处**（另行 commit）：docs 7（roadmap 日志可读化/错误码⇄可读文案/通俗改写等）+agent-log 现役 2+归档 11（历史条目措辞纠正、事实内容零改动，留痕于本条）；平台记忆 finance-bill-assistant-project.md 1 处（不入 git）。
+- **方法**：python 精确串替换（29+1 条，每条命中数必须==1 否则跳过），首跑 28 OK+1 FAIL（清单误重 README 已改串，无害）+残留复查 1（ITERATIONS.md:66 前两轮窗口未覆盖）→补改；终态全范围 grep「人话」残留=0。
+- GATE: {level=L2-S, ev=exec, v=两仓+平台记忆措辞纠正（设计部 8+财务 20+记忆 1=29 处）, cmd=python fix_wording_20260923.py（28 ok/1 fail 复核无害）+ 补改 ITERATIONS:66 + 残留 grep=0, exit=0, files=README.md+docs/HANDOVER.md+docs/one-page-definition.md+memory/agent-log.md+.zcode/plans/plan-sess_0130472d.md（设计部，本仓）；财务仓 docs×7+memory×2 另行提交, refs=0(未跑 lookup，0 照报), errpath=清单误重一条 FAIL(0)（无害）+ITERATIONS:66 窗口遗漏→残留复查兜住补改, lessons=全量措辞纠正必须有「命中数==1 断言+改后残留复查」两道闸——窗口脚本截断会漏行尾命中; 历史流水档案的措辞纠正（非事实篡改）需在流水留痕声明「事实不动」, exempt=ux-feature-design 三副本不动（设计原则术语+外部内容）；ux 文档归档历史 commit 中旧词仍在（不可改史）, caps=—, effort=两轮窗口勘察+29 条替换表+两道复核闸, stop_reason=—}

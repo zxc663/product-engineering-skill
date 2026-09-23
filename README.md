@@ -2,7 +2,7 @@
 
 > 十三希诺工作流家族第四包 `shisan-xinuo-product` 的**设计源**（设计部）：问题定义、方向档、八份调研蒸馏、可判定门禁与实证。
 > 包本体随家族主仓发行：[shisan-xinuo-workflow](https://github.com/zxc663/shisan-xinuo-workflow)（`skill/shisan-xinuo-product/`，包版本 0.2.0）。
-> 冷启动先读：[docs/one-page-definition.md](docs/one-page-definition.md)——一页说完「是什么 / 不是什么 / 哪里还不牢」（人话版规范，术语消歧也在里面）。
+> 冷启动先读：[docs/one-page-definition.md](docs/one-page-definition.md)——一页说完「是什么 / 不是什么 / 哪里还不牢」（简明版规范，术语消歧也在里面）。
 
 ---
 
@@ -108,7 +108,7 @@
 ## 仓库结构
 
 ```
-docs/one-page-definition.md ← **一页纸：这个 Skill 是什么**（人话版规范，冷启动先读）
+docs/one-page-definition.md ← **一页纸：这个 Skill 是什么**（简明版规范，冷启动先读）
 docs/direction.md          ← 方向档（问题定义/衰减链/品味与时序/联通层/强制边界/修正记录 §十一-十三）——权威设计档
 docs/product-architecture.md ← 母架构与定位边界（Product Contracts 七域；已落地=Interaction）
 docs/three-definitions.md  ← 三定义调研（产品/工程/产品工程 加固定义 + 缺失逻辑可检出表述）
