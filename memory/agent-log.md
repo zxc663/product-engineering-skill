@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-24 04:38 —— 战役批三：十真会话样本全判定（三触发族×四档位×A/B 2:1）+v0.2.3 实践条款蒸馏+七门禁台账全行有着落+证据 34 件入仓；推送至 b45ec5b（详见流水区 04:38 条）
+- 最近更新：2026-09-24 06:08 —— 战役批四（终局）：NR11 跨项目审查+NR12 冷启动 N=3（A/B 终局 0/1 vs 3/3）+v0.2.4 第七门禁 frontend-lint-gate（强制5/6 机器化）+白名单回收+十二样本全判定；推送至 55a36c7（详见流水区 06:08 条）
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -487,3 +487,13 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **保留**：`D:/产品工程闭环实验/`（verify.py 对账源 favorites.json）｜`D:/工具箱对照-甲/乙`｜NR1-NR10 真会话工作区（判定档引用，证据已入仓 34 件）｜桌面旧快照/迁移包（非实验区，未授权不碰）。
 - errpath：计划写的 `D:\skill-backups\` 不存在（mkdir 也从未执行）→改用家族约定 `D:/Agent工作流启动包/skill-backups/`；tar 的 `D:` 被解析为远程主机→`/d/` 形态；rm 一处相对路径笔误漏删 N3→补删并 `ls | wc -l` 验 0 残留。
 - GATE: {level=L2-S, ev=exec, v=白名单回收（归档 1.7MB+删 12 项）, cmd=tar -tzf 验 850 条目+ls 残留=0+删前内容验证, exit=0, files=D 盘 10 目录+桌面 2 项, refs=0, errpath=见上三条, lessons=删除前「验证内容+归档验真+删后验残留」三步缺一不可；计划里的路径也要实测存在, exempt=博客项目空目录被占用未删（无害）, caps=—, effort=删前验证×2+归档验真+删后复查, stop_reason=—}
+
+
+### 2026-09-24 06:08｜战役批四（终局）：NR11/NR12+v0.2.4 第七门禁+回收（04:38-06:03）
+- **NR11 审查触发×跨项目泛化**（93c5fb6，财务仓 121 轮）：「统计页别扭」→IAB 真实库副本三视图×双主题走查→两修（echarts6 labelLine 锚点截断/峰值标注粒度对称）+**发现未修 3 项诚实入册**+vite build 0 error；+36/-6 行；L-011 隐私清理自应用（删真实数据临时副本）。归因诚实标注：产品包 vs 项目自有文化不可拆分（caps 六技能在册无产品包名；usage-probe 财务仓零提及警报互证）。
+- **NR12 冷启动 N=3**（59b4111，第四任务域）：记忆翻牌游戏——契约档+statechart JSON+承载三件；statechart-gate 自跑+独立复跑双 exit=0；8 项 GWT 实测全过+修 2 坑（emoji 渐变块/720p 滚动条）+3 截图。**触发 A/B 终局：对照（v0.2.1）0/1 vs 处理（v0.2.2+）3/3，三任务域**。
+- **v0.2.4 第七门禁 frontend-lint-gate**（59098ea）：强制 5/6 机器子集——内联样式/硬编码色/console/空 catch 四规则；基线豁免存量只拦新增（registry-gate 同款模式）；style 块色值合法不误报。selftest 3 断言+博客仓五格电池全绿（20 存量豁免+四规则夹具全中）。§4 强制 5/6 由 🔴 升 ✅（regex 子集口径）；9 可达性诚实保留 🔴。Release v0.2.4 已发。
+- **白名单回收**（4ad164f）：D 盘冷启动 10 目录 tar 归档验真（850 条/1.7MB）后删除；桌面 tx-ob-test-vault 删除；博客项目空目录被进程占用未删（无害留用户）；闭环实验仓/NR 工作区按白名单保留。
+- **收口状态**：七门禁台账全行有着落（6✅+1🟡 子集口径）；十二真会话样本全判定；四 Release（v0.2.1-v0.2.4）；判定档/台账/HANDOVER/一页纸/README 全链刷新一致。
+- errpath：python 字符串 \N unicode escape 两次（改 r-string/Edit 工具）；CUA 帧过期×3（action_sent=false 后必须重观察再重发）；NR12 补发变排队重复→删排队+清输入框恢复单发。
+- GATE: {level=L2-F, ev=indep, v=批四终局（NR11/NR12+lint 门禁+回收）, cmd=statechart 三真会话独立复跑（NR6/NR7/NR12 全 exit=0）+lint 五格电池+C7 双向电池+usage-probe 双跑, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/verification-ledger.md+docs/mutation-batteries/product-object+C7+frontend-lint+源库 SKILL/anti-excuses/judgement-table/statechart-gate/frontend-lint-gate/spec-trace-extract, refs=1（#233 转写现行）, errpath=帧过期×3→新帧重发；排队重复→删队清框；unicode escape→r-string, lessons=触发修复的终局验证形态=「同任务文本跨任务域重复」——3/3 比单样本强一个量级；审查触发族与构建触发族同样可靠（NR9/NR11）, exempt=A/B 四指标实测待口径追认；NR12 音效/触屏听感未验, caps=CUA 全程（12 会话）+无动态工作流（确定性验证 bash 足够）, effort=十二样本×三源判定+八格电池×2+四 Release+全链文档一致化, stop_reason=—}
