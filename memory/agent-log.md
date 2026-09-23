@@ -8,7 +8,7 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-24 02:29 —— 战役批一：速裁包+验证台账+漏洞账本（F1 CLI 记账/F2 已修）+L0/L5 双层闭合（v0.2.1）+Release v0.2.1 发布+推送 e385159..6971783；三真会话探针并行运行中（详见流水区 02:29 条）
+- 最近更新：2026-09-24 03:08 —— 战役批二：M1 判定档（队列①前半闭合+产品包触发失败断点定位）+v0.2.2 触发词前置+NR6 对照触发成功+队列⑤提取器+F5 修复+两真载体电池；推送至 a30a026（详见流水区 03:08 条）
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -451,3 +451,17 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **推送**：设计部仓 e385159..6971783（速裁包/台账/F2/L0L5 四批）。
 - errpath：本机 shell for+[ -f ] 复合循环输出不可信（两案例：仅末项 OK 其余全 MISSING 假象）→一律 ls 目录取地面真值；matrix Edit not-read→TOP#294 重 Read。
 - GATE: {level=L2-F, ev=invariant, v=战役批一（探针批运行中+两漏洞处置+双层判据闭合+分发）, cmd=六门禁 selftest×6+两电池重跑（mutation-batteries 两目录）+diff -rq 双副本+新门禁三真会话检出, exit=0, files=设计部 docs 五件+agent-log+源库四件（两门禁脚本+SKILL+层栈）, refs=2（#294 双通道+#233 实测）, errpath=F1 CLI→GUI 改道；F2 假阳→修复+回归锚；for-test 假象→ls 真值；Bash 写保护→Write 通道, lessons=自测路径与真实入口分叉=假绿新形态（F2）；无人值守会话会静默下沉上游缺答（三案例）→条款化；CUA 主窗 Ctrl+N+项目选择器+原生对话框 setValue=真会话标准开法, exempt=NR 会话判定未完（transcript 全量不可达，判定=实物+门禁复跑+UI 截图三源）；队列⑥ Gitee/npm 未动, caps=CUA（computer-use 0.6.3）；变异电池用确定性脚本未用动态工作流（按 Token 精算，仪式不用）, effort=11 格+7 格电池构建+selftest 扩展+三仓基线+双副本同步验证, stop_reason=—}
+
+
+### 2026-09-24 03:08｜战役批二：M1 断点定位+v0.2.2+队列⑤+F5（02:29-03:05）
+- **M1 判定档落档**（docs/real-session/nr-batch1-judgment.md）：①队列①「工作流核心真会话生效链」**闭合**——NR4 实测 zxc663 彩蛋全项（硬注入 agent-app global+v3.3.0=副本 sha256 实测+Base directory 判据）+hooks 双通道（SessionStart/UserPromptSubmit）+NR1 标准复述+NR3 跳过声明/RE 格式+三会话自建承载。②**产品包自然触发失败**（NR1 关键失败样本：任务精确命中触发词但未加载；工作区无层级门/六问/statechart JSON 实证）。
+- **断点定位**：NR4 三问排除可见性（清单可见✅含路径）/注入✅/hooks✅ → 断点=模型选择层显著性；NR5 description 读回三次发送失败（composer 为 React 受控输入，setValue/typeText/坐标全不达）→止损，改走 NR6 同任务 A/B。
+- **v0.2.2**：description 触发词前置（「做一个XX页面」+「先加载本包再动手」提到头部）；源库 4837f5e=安装根。
+- **NR6 对照（02:47 发，同逐字任务）**：触发成功——产出 pomodoro-statechart.json+spec 档，自跑 statechart-gate（踩 --file 参数后自纠）；主会话独立复跑 **exit=0**（无死端/全可达/错误态有出路/引用完整）；验收 #4 抓真缺陷（fill 只改值不触发 change→「输入后直接点开始」真实用户断路）定性非自动化假象→commit-on-start 修复→修复路径复测全通道过；自扩验收至 6 项、双负载形状（#266）。
+- **队列⑤闭合**：spec-trace-extract.py（装饰器/route.ts 路径/行内三路提取）；真载体=博客仓 194 组件+121 端点；开发中两次自查出「定义未调用」死代码（_extract_inline/_extract_next_routes）由 selftest 夹具缺口暴露→修复入库（T5 现场教材）。
+- **F5 修复**：l0-l5-gate 对「goal 文件在、north_star 键缺失」静默放行——发现渠道=NR6 工件独立复跑误喂 statechart JSON；补键缺失必拦+selftest ok5+夹具 g7。源库 5e478f9。
+- **虚假提交风险纠正**：git add -u 漏收 untracked 新文件（l0-l5-gate/spec-trace-extract 两脚本在 f381bd1/85b9ca5 提交信息里但未入库）→5e478f9 补入并 git show --stat 验真。教训=新增文件必须 add 路径+提交后 show --stat 验真。
+- **registry-gate 真载体电池**（博客仓 194 组件）：基线前存量如实报 exit=1→write-baseline 201 豁免→注入未标记新组件 exit=1 精确命中→清理无残留。发现 gate 隐式自动装载 <path>/.registry-baseline.json。
+- **审计新增**：F3（ponytail/ux-feature-design 双目录重复注册，NR4 报告+ls 证实，待裁决）+F6（statechart-gate 只收 --file，NR6 实踩）。
+- errpath：管道后 $?=末命令（两次踩，改重定向取真码）；Bash 写 .py/.tsx 夹具被拦→Write 通道；NR6 独立复跑发现 F5=「判定轮本身也是测试轮」实证。
+- GATE: {level=L2-F, ev=indep, v=批二（M1 判定档+v0.2.2+队列⑤+F5+registry 电池）, cmd=statechart-gate --file NR6 工件（exit=0）+l0-l5 selftest（5 断言）+g7（exit=1）+registry 五格电池+diff -rq 双副本×3, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/mutation-batteries/{spec-extract,registry-blog}/RESULTS.md+docs/workflow-skill-audit.md+源库 SKILL/l0-l5-gate/spec-trace-extract, refs=3（#294 残留警惕+#233 实测+#348 死代码自查）, errpath=NR5 三败止损→A/B 替代；add -u 漏新文件→show --stat 验真；F5 由复跑暴露→当日修, lessons=真实会话的工件复跑会暴露自测夹具缺口（F2/F5 同族：自测路径≠真实入口）；description 头部 40 字决定触发生死；CUA 受控输入不可写→实验设计改 A/B 而非读回, exempt=NR2 未完案（档3 大库属正常时长）；NR6 终版验收未完（运行中）, caps=CUA+原生对话框 a11y+后台窗口 a11y 树, effort=六门禁×三载体复跑+双电池+selftest 三次扩展, stop_reason=—}
