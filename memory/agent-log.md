@@ -479,3 +479,11 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **证据 34 件入仓**（docs/real-session/evidence/，3.8MB）——判定档自含；「自述≠实物」抽检：NR7 声称的 3 张走查截图实物在盘（472KB 级真图）。
 - errpath：CUA 帧过期（action_sent=false→重观察重发）；fs 未 import 致证据写盘失败（动作已完成，补拍）；git add -u 漏 untracked（批二已纠，本批 git add 路径+show --stat 验真成为固定动作）。
 - GATE: {level=L2-F, ev=indep, v=批三（NR7-NR10+实践条款+七门禁收口）, cmd=statechart 双图独立复跑+C7 双向电池+product-object 四变异+usage-probe 双跑+venv 全量 pytest 369, exit=0, files=docs/real-session/**+docs/mutation-batteries/**+源库 SKILL/anti-excuses/judgement-table/statechart-gate, refs=2（#233 转写现行+#348 死代码自查在先批）, errpath=帧过期重发；venv 缺依赖；#233 首版转写被全拦, lessons=「判定轮自己的转写也会踩命名直觉」——门禁对判定者同样执法；豁免梯度是真采用机制（NR10 46 秒 vs NR7 档3 完整流程=成本自适应实证）, exempt=NR5 description 读回未定案（止损，触发修复已由 A/B 覆盖）；队列⑥ Gitee/npm 与⑦真人走查如实延后, caps=CUA（双实例+原生对话框+后台窗口 a11y）, effort=十样本判定+四电池+七门禁 selftest×2 轮+三 Release, stop_reason=—}
+
+
+### 2026-09-24 04:43｜白名单回收执行（计划缺口#7 落地）
+- **归档先行**：D 盘冷启动 10 目录（20260923 批，N6 系语料已摘录入 cold-start-report）→ tar 验真（850 条目/1.7MB，10 目录全在清单）→ `D:/Agent工作流启动包/skill-backups/cold-start-20260923-batch-archived-20260924.tar.gz`。
+- **已删**：D 盘冷启动 10 目录（0 残留）＋桌面 `tx-ob-test-vault`（删前验证=纯测试残留）。**桌面「博客项目」空目录**：rmdir 两次「Device or resource busy」（进程占用，空目录无碍）——留给用户随手删。
+- **保留**：`D:/产品工程闭环实验/`（verify.py 对账源 favorites.json）｜`D:/工具箱对照-甲/乙`｜NR1-NR10 真会话工作区（判定档引用，证据已入仓 34 件）｜桌面旧快照/迁移包（非实验区，未授权不碰）。
+- errpath：计划写的 `D:\skill-backups\` 不存在（mkdir 也从未执行）→改用家族约定 `D:/Agent工作流启动包/skill-backups/`；tar 的 `D:` 被解析为远程主机→`/d/` 形态；rm 一处相对路径笔误漏删 N3→补删并 `ls | wc -l` 验 0 残留。
+- GATE: {level=L2-S, ev=exec, v=白名单回收（归档 1.7MB+删 12 项）, cmd=tar -tzf 验 850 条目+ls 残留=0+删前内容验证, exit=0, files=D 盘 10 目录+桌面 2 项, refs=0, errpath=见上三条, lessons=删除前「验证内容+归档验真+删后验残留」三步缺一不可；计划里的路径也要实测存在, exempt=博客项目空目录被占用未删（无害）, caps=—, effort=删前验证×2+归档验真+删后复查, stop_reason=—}
