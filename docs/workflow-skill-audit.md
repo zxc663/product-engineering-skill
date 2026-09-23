@@ -8,6 +8,7 @@
 | # | 严重度 | 症状 | 证据 | 处置 | 状态 |
 |---|---|---|---|---|---|
 | F1 | 高（无人值守入口失效） | ZCode CLI 无法独立启动：缺 built-in provider 配置，报「无法定位 CLI ZCode Built-in Provider Config」两路路径均不存在；手工补造需从应用存储取密钥材料=红线禁止 | 实测 2026-09-24 01:47：`node zcode.cjs --version`→0.16.9 OK；无参启动→报错退出（NR1/evidence 前终端截图）；`resources/glm/provider/` 目录不存在；env 名 `ZCODE_BUILTIN_PROVIDER_BUNDLED_CONFIG_FILE`/`ZCODE_BUILTIN_PROVIDER_CONFIG_FILE`（zcode.cjs 内 grep 实证） | 平台侧缺陷（非 Skill 本体）；影响=CLI 场景（CI/无人值守/真会话自动化）全部走 GUI；Skill 文档若引用 CLI 工作流须标注「当前平台版本不可用」 | 🟡 记账（平台问题，Skill 侧防御性标注待排） |
+| F2 | 中（假阳=误拦合法交付，已修复） | spec-trace-gate 清单文件用 `read_text().split()` 按空白切块加载，与绑定字段整串比对不对称——多词 backend id（`GET /favorites`）合法清单必假阳 T5；selftest 直调 check() 绕过文件入口故未发现（自测路径≠真实入口） | 变异电池 m6 对照组修复前 exit=1 假阳（m0-m5 正常）；根因 file:line=spec-trace-gate.py:96-97（修复前） | **已修复+双副本同步**：源库 commit 03f7ab2（git 即回滚点）＝安装根（Write 同步，diff -q 一致）；selftest 增文件全路径回归 ok3/ok4；电池 7 格复跑全绿 | ✅ 已修复（mutation-batteries/spec-trace/RESULTS.md） |
 
 ## 系统体检（2026-09-24 01:55 实测）
 

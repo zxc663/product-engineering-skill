@@ -10,7 +10,7 @@
 |---|---|---|---|---|---|
 | statechart C1-C7 | statechart-gate.py（--selftest 两态） | 四变异 A-D 全拦（reverse-injection/EVIDENCE.md，2026-09-23） | N6d 投票/N6e 书签独立复跑绿 | **NR1 番茄钟真会话（进行中）** | 🟡 |
 | product-object P1-P4 | product-object-gate.py（selftest+语料正负） | 甲仓语料忠实转写检出 10 项真实缺口 | 试验仓语料转写 | **NR1 真会话** | 🟡 |
-| spec-trace T4/T5 | spec-trace-gate.py（selftest） | 待补变异记录 | 闭环试验十环内用过（closed-loop-report） | **NR1 真会话** | 🟡 |
+| spec-trace T4/T5 | spec-trace-gate.py（selftest 4 断言含 F2 回归） | **✅ 变异电池 m1-m5 全拦+m6 假阳回归锚（mutation-batteries/spec-trace/，2026-09-24；F2 假阳已修：源库 03f7ab2=安装根）** | 闭环试验十环内用过（closed-loop-report） | **NR1 真会话** | 🟡 |
 | registry 查表归因 | registry-gate.py（selftest） | 待补变异记录 | 闭环试验内 | 待排 | 🟡 |
 | usage-probe 衰减 | usage-probe.py（selftest） | —（监控类，反例=零命中警报演练） | 待排 | 待排 | 🟡 |
 
