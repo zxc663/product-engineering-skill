@@ -8,7 +8,7 @@
 
 | 条款 | 门禁 | 反例拦截（变异） | 预演运行（无头） | 真实载体运行 | 状态 |
 |---|---|---|---|---|---|
-| statechart C1-C7 | statechart-gate.py（--selftest 两态） | 四变异 A-D 全拦（reverse-injection/EVIDENCE.md，2026-09-23） | N6d 投票/N6e 书签独立复跑绿 | **✅ NR6 真会话（pomodoro-statechart.json 自跑+独立复跑双 exit=0，988bf66）** | ✅ 三有齐 |
+| statechart C1-C7 | statechart-gate.py（--selftest 两态） | 四变异 A-D 全拦（reverse-injection/EVIDENCE.md，2026-09-23）+ **✅ C7 真载体双向对账电池**（NR7 契约正例+m1/m2 变异，product-object/C7-RESULTS.md） | N6d 投票/N6e 书签独立复跑绿 | **✅ NR6+NR7 真会话双 statechart（pomodoro/task-list 独立复跑双 exit=0；NR7 含 C7 契约对账）** | ✅ 三有齐 |
 | product-object P1-P4 | product-object-gate.py（selftest+语料正负） | **✅ NR6 真语料四变异全拦且归因精确**（mutation-batteries/product-object/，2026-09-24） | 试验仓语料转写+甲仓检出 10 缺口 | **✅ 真实语料正例 exit=0**（NR6 忠实转写；会话原生正例待真实项目档2+） | 🟡→✅（按诚实标注口径：转写正例升半格，原生正例缺项如实留） |
 | spec-trace T4/T5 | spec-trace-gate.py（selftest 4 断言含 F2 回归） | **✅ 变异电池 m1-m5 全拦+m6 假阳回归锚（mutation-batteries/spec-trace/，2026-09-24；F2 假阳已修：源库 03f7ab2=安装根）** | 闭环试验十环内用过（closed-loop-report） | **NR1 真会话** | 🟡 |
 | registry 查表归因 | registry-gate.py（selftest） | 待补变异记录 | 闭环试验内 | 待排 | 🟡 |
