@@ -12,7 +12,7 @@
 | product-object P1-P4 | product-object-gate.py（selftest+语料正负） | **✅ NR6 真语料四变异全拦且归因精确**（mutation-batteries/product-object/，2026-09-24） | 试验仓语料转写+甲仓检出 10 缺口 | **✅ 真实语料正例 exit=0**（NR6 忠实转写；会话原生正例待真实项目档2+） | 🟡→✅（按诚实标注口径：转写正例升半格，原生正例缺项如实留） |
 | spec-trace T4/T5 | spec-trace-gate.py（selftest 4 断言含 F2 回归） | **✅ 变异电池 m1-m5 全拦+m6 假阳回归锚（mutation-batteries/spec-trace/，2026-09-24；F2 假阳已修：源库 03f7ab2=安装根）** | 闭环试验十环内用过（closed-loop-report） | **NR1 真会话** | 🟡 |
 | registry 查表归因 | registry-gate.py（selftest） | 待补变异记录 | 闭环试验内 | 待排 | 🟡 |
-| usage-probe 衰减 | usage-probe.py（selftest） | —（监控类，反例=零命中警报演练） | 待排 | 待排 | 🟡 |
+| usage-probe 衰减 | usage-probe.py（selftest） | **✅ 警报实弹演练：财务仓 7 天零提及→exit=1 衰减警报如实触发**（2026-09-24；v0 语义=文本提及非真实触发，自带诚实边界） | — | **✅ 真会话工作区目录 90 提及/近窗 9 命中**（NR1-NR8 语料） | ✅ 三有齐（v0 口径） |
 | **L0 目标合格线 + L5 结构底线（v0.2.1 新增）** | l0-l5-gate.py（selftest 4 断言） | **✅ 11 格变异电池全绿**（mutation-batteries/l0-l5/，2026-09-24） | — | **✅ 三真会话工作区 L0-C10 缺失全检出**（NR1/NR2/NR3，2026-09-24——检出即证据） | 🟡（缺正例：真会话产出合格目标工件的样本待补） |
 
 ## B. §4 九项强制清单
