@@ -12,7 +12,7 @@
 | F3 | 低（清单卫生） | ponytail 与 ux-feature-design 双目录重复注册（C:\Users\zxc66\.zcode\skills\ 与 C:\Users\zxc66\.agents\skills\ 各一份）——技能清单出现同条目双份 | NR4 真会话自检报告（NR4-02-answer.png）+本机 ls 双目录证实（2026-09-24 02:45） | 平台侧注册卫生；影响=清单噪音+加载歧义；处置建议=单一目录去重（待用户裁决哪个为准） | 🟡 记账待裁决 |
 | F4 | 中（触发可靠性） | 产品包在真会话自然语言任务中未被模型选择加载（NR1 实测：任务精确命中 description 触发词但未触发）；可见性/注入/hooks 三断点经 NR4 排除，断点=选择层显著性 | docs/real-session/nr-batch1-judgment.md §二；NR1 工作区无产品包流程工件（grep 实证） | **v0.2.2 description 触发词前置**（源库 4837f5e=安装根）；**NR6 同任务对照验证通过**（触发成功+全流程工件，03:16 完案） | ✅ 已修复验证（N=1 限定） |
 | F5 | 中（新门禁假阳反面：漏报——已修复） | l0-l5-gate 对「goal 文件存在但 north_star 键缺失」静默放行（None 落空全部检查）——发现渠道恰是 NR6 真会话工件的独立复跑：statechart JSON 被误喂给 l0-l5 时本应拦却 OK | 复跑记录 02:55（l0-l5 收到 statechart JSON 输出 OK 0 warning）；夹具 g7 补后 exit=1 | **已修复+双副本一致+selftest ok5+夹具 g7**；源库 5e478f9（含两新脚本补入库纠正：git add -u 漏收 untracked=虚假提交风险，已 git show --stat 验真） | ✅ 已修复 |
-| F6 | 低（门禁人机工学） | statechart-gate 只收 --file 命名参数，位置参数报错——NR6 真会话首次调用即踩中并自行改用 --file | NR6 转录截图（evidence-01-early.png：「参数形态不对，改用 --file」） | 候选：门禁统一支持位置参数；低优 | 🟡 记账 |
+| F6 | 低→中（门禁人机工学，两个独立真会话重复实踩） | statechart-gate 只收 --file 命名参数，位置参数报错——NR6 与 NR7 两个真实会话首次调用均踩中，均自行纠错重跑（未致命但每次浪费一轮工具调用） | NR6 evidence-01-early.png；NR7 evidence-nr7-mid.png（「参数形态是 --file，修正重跑」） | 候选：门禁统一支持位置参数（file=argv[1] 兼容）；修法简单，随下版 | 🟡 记账（复踩实证） |
 
 ## 系统体检（2026-09-24 01:55 实测）
 
