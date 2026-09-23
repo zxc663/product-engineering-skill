@@ -1,54 +1,62 @@
-# 交接档 · 产品工程 Skill（2026-09-23 夜班后 · 入口索引式）
+# 交接档 · 产品工程 Skill（2026-09-24 战役后 · 入口索引式）
 
 > 用途：任一会话冷启动的**入口索引**——只给指针与队列，不复制正文（防双权威/双份漂移）。
 > 开工必读仍是 `memory/agent-log.md` 状态段（一屏）；本档=现状一句话 + 必读清单 + 队列 + 未决 + 回滚基线 + 操作 SOP。
 
 ## 一、现状一句话
 
-第四包 `shisan-xinuo-product` **v0.2.0** 双仓在线（家族 **v3.3.0**）：上游层级门（L0-L10 层栈）+产品对象六问+中游交互工程+**C1-C7 门禁**全落地。夜班四线收口：①**「缺失可检出」首次实证**（四变异反向注入全拦、对照组全绿，可重跑 verify.py）②层×判据矩阵+一页纸简明规范③工作流 Skill 三高危修复+单安装根+5 平台注入重部署 HASH-OK④冷启动三条件×8 样本实验：**触发链断点（description 缺构建侧触发词）已定位→修复→N6c 复测闭环（命中即用+层级门+档3）**；显式条件 2/2 八步全链 PASS。剩余最后一环=**用户侧重启后的真实新会话验收锚**。
+第四包 `shisan-xinuo-product` **v0.2.3** 双仓在线（家族 **v3.3.0**）。**2026-09-24 战役（01:38-09:00 无限授权批）完成历史性收口**：①**真实新会话生效链闭合**（原「最后一环」）——十个 CUA 真会话探针（NR1-NR10）实证：注入核心 zxc663 自检+hooks 双通道+复述/承载纪律全链生效；产品包自然触发曾失败（NR1）→断点定位（可见✅注入✅hooks✅→选择层）→v0.2.2 触发词前置→NR6/NR8 双样本触发成功（A/B 2:1）②三触发族（「做一个XX页面」/审查「难用别扭」/档0 文案）×四档位（档0 豁免梯度 L1 快速通道 46 秒/档1 轻量/档2 全流程/档3 四件套含回归 golden sample）全走通 ③**L0/L5 判据空白双层闭合**（l0-l5-gate 第六门禁，11 格电池+真会话检出 3/3）④**七门禁台账全行有着落**（F2/F5 假阳假阴修复、F6 参数兼容、C7 真载体契约对账、usage-probe 衰减警报实弹）⑤三个 GitHub Release（v0.2.1-v0.2.3）⑥实践条款入本体（无人值守禁静默下沉/反借口 #12 通道归因隔离实验/档位判例 N8-1、N7-1）。全文：`docs/real-session/nr-batch1-judgment.md` + `docs/verification-ledger.md`（三有判据台账）。
 
 ## 二、必读清单（按序）
 
-1. `memory/agent-log.md` 状态段（现役队列=8 项）
-2. `docs/one-page-definition.md`（**一页纸简明规范**——是什么/不是什么/哪里还不牢）
-3. `docs/direction.md` §〇 / §十一·§十二·§十三（三轮修正记录）
-4. `docs/cold-start-report.md`（三条件×8 样本：触发链实验全文）/ `docs/reverse-injection/EVIDENCE.md`（缺失可检出实证，可重跑 verify.py）
-5. `docs/layer-judgement-matrix.md`（每层有哪些判据/空白）/ `docs/product-architecture.md` + `docs/three-definitions.md`
-6. 本体与安装根核对：`diff -rq "D:/Agent工作流启动包/shisan-xinuo-workflow/skill/shisan-xinuo-product" "C:/Users/zxc66/.agents/skills/shisan-xinuo-product"`（应仅 `references/decision-ledger.md` 一件漂移；**安装根只剩 `.agents` 一处**）
+1. `memory/agent-log.md` 状态段（现役队列见下）
+2. `docs/real-session/nr-batch1-judgment.md`（**十真会话判定档**——本轮一切结论的实证根）
+3. `docs/verification-ledger.md`（三有判据台账：条款→门禁→真实运行→反例 四列）
+4. `docs/one-page-definition.md`（一页纸，还不牢段已刷新）+ `docs/layer-judgement-matrix.md`（L0/L5 已闭合标注）
+5. `docs/ruling-package.md`（**速裁包**——Q1-Q8/AB 追认/账本漂移集中待批）
+6. 本体与安装根核对：`diff -rq 源库 安装根`（应仅 decision-ledger 一件漂移；单安装根不变）
 
-## 三、遗留队列（按证据排序；与状态段同源，共 8 项）
+## 三、遗留队列（2026-09-24 战役后刷新）
 
-1. **用户侧最终验收锚**：重启 ZCode → 新会话验「在场提示 · v3.3.0＋373 条细则＋zxc663 应答」→ 说「做一个XX页面」看是否自动加载产品包（N6c 的真实版；hooks 通道只有真实会话有）
-2. **Q1-Q8 八条待真人裁决**（试验仓 `DEFINITION.md` §6）
-3. **A/B 四指标口径草案待追认**（`docs/ab-four-metrics.md`——defect_escape 判定程序/escape 定义/coverage 可数清单/可证伪判据）
-4. 注入+清单修复后扩样本（N6d/N6e 进行中，跨任务验证 N6c 闭环）
-5. spec-trace 清单自动提取器
-6. Gitee 同步＋Release zip/npm（v3.3.0 GitHub 已推；按 RELEASE-CHECKLIST 剩余项）
-7. 两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧
-8. `.agents/skills/shisan-xinuo-product/references/decision-ledger.md` 漂移处置待裁（**实测在档**，31 行 vs 源库 20——财务项目 11 行裁决，移回项目账本 or 认作样例）
+**已闭合（原队列）**：~~①用户侧最终验收锚~~（NR4/NR6 实证，CUA 真会话等效覆盖重启锚）｜~~④N6d/N6e 扩样本~~（3/3 早已终判）｜~~⑤spec-trace 清单提取器~~（spec-trace-extract.py，真载体 194 组件+121 端点）｜~~⑥Release zip~~（v0.2.1-v0.2.3 三发）｜~~L0/L5 判据空白~~（v0.2.1）。
+
+**现役队列**：
+
+1. **速裁包批复**（`docs/ruling-package.md`）：Q1-Q8 默认裁决追认／A/B 四指标口径追认／decision-ledger 漂移两案（建议合并入源库）／档0-档3 改名与触发词密集化追认——**一批全解，不阻塞任何主线**
+2. **触发 A/B 扩样**：NR6/NR8 为 N=2 处理组 vs NR1 对照——如需消除随机性，换任务域再加冷启动样本即可（SOP 见 nr-batch1-judgment §二）
+3. **会话原生 product-object JSON 正例**：无人值守轻量档不产 JSON 属设计内行为；待真实项目档2+ 任务由会话原生产出后，product-object-gate 行升满 ✅
+4. **F1/F3 平台侧缺陷**（CLI provider 缺失／ponytail·ux-feature-design 双目录注册）——非 Skill 本体，待平台修复或用户裁决去重
+5. **Gitee 同步＋npm**（队列⑥残项）：Gitee 令牌格式问题待解（用户侧）；npm 打包价值待评估
+6. **两组工具箱浏览器人工走查｜G 档 §6 抖音关键帧**（需真人）
+7. **A/B 四指标实测**（口径草案待追认后，按 ab-four-metrics 跑真对照——终极命题 N=1 待消随机）
+8. **实验工作区回收**：D 盘冷启动 10 目录（20260923 批，语料已摘录）可归档后删；本轮 NR1-NR10 工作区证据已入仓（docs/real-session/evidence/ 34 件），工作区本体建议归档保留至下轮裁决
 
 ## 四、待用户裁决（阻塞项）
 
-- 上表 5（Q1-Q8 八条）
-- 上表 10（副本漂移处置）
-- （非阻塞·已执行待追认）风险四档命名 L0-L3→档0-档3；触发词第三次密集化（构建侧）——均有实验依据，不认可可回退
+- `docs/ruling-package.md` 全部（一批批复即可：示例回复「Q1-Q8 全同意默认；AB 追认；账本=合并入源库」）
+- F3 双目录去重方向（.zcode vs .agents 哪个为准）
+- （非阻塞·已执行待追认）档0-档3 改名；触发词第三次密集化；**v0.2.2 description 重构**（A/B 依据在档）；v0.2.3 反借口 #12 与档位判例（判例出处=真会话，判例法已注明信心级）
 
 ## 五、回滚基线
 
-| 仓 | 基线 | 备注 |
+| 仓 | 基线（2026-09-24 04:36） | 备注 |
 |---|---|---|
-| 设计部（本仓） | `1945421`（+收尾提交） | 权威设计档 + agent-log；GitHub 已推 |
-| 源库（家族） | `b9e07a7`（v3.3.0） | **GitHub 已推**；Gitee/Release/npm 未动 |
-| 试验仓 | `D:/产品工程闭环实验/` HEAD `bbcea84` | 独立仓，不 push；只读参考 |
-| 冷启动实验区 | `D:/产品工程冷启动-20260923*/`（8 个） | 独立仓；实验原始语料，保留 |
-| 安装根 | **仅 `~/.agents/skills/`**（`.zcode` 侧家族包已处置，备份=`D:/Agent工作流启动包/skill-backups/zcode-side-family-skills-20260923.tar.gz`） | 一致性判据=`diff -rq` 全目录 |
-| 注入副本 | 5 平台 v3.3.0，`--check --hash` 5/5 HASH-OK（`b9b00ca712cc`） | 各带 `.bak-20260923-052926-pre-v3.3.0` |
+| 设计部（本仓） | `55a1c46`（+后续批） | GitHub 已推至 b45ec5b..55a1c46 段；判定档/台账/判例/证据全在仓 |
+| 源库（家族） | `1101bdc`（product v0.2.3）→ `b206266`（F6） | 本地 git 仓（**无远端**——交接建议：源库入 git 远端，见下） |
+| 安装根 | `~/.agents/skills/shisan-xinuo-product`＝源库逐字节一致（除 decision-ledger 已登记漂移） | 一致性判据=`diff -rq` 全目录 |
+| 注入副本 | 5 平台 v3.3.0 HASH-OK（`b9b00ca712cc`，本轮未动） | |
+| 实验/真会话工作区 | `D:/产品工程真会话-20260924/`（NR1-NR10+release-stage） | 证据已入仓；本体=独立 git 仓各自基线 |
+| 旧实验区 | `D:/产品工程冷启动-20260923*/`（10 个）／`D:/产品工程闭环实验/`（bbcea84） | 前者可归档后删（语料已摘录）；**后者不动**（verify.py 对账源） |
+| 载体分支 | 财务 `exp/nr2-account-delete`（62d6072，369 测试绿）／博客 `exp/nr3-archive-page`（703dbce，verify 全绿） | 回滚=删分支即可，主分支未动 |
 
-## 六、操作 SOP（现行版）
+**新交接建议**：源库 `D:/Agent工作流启动包/shisan-xinuo-workflow` 是 git 仓但无远端——本轮两次靠 git 回滚点救场（F2/F5），建议 `git remote add` 推一个私有远端。
 
-- **多会话并发**：编辑 `agent-log.md` 前必重读实文（#294），合并而非覆盖；教训区只追加。
-- **本体改动 SOP（v2，单安装根）**：改源库 → cp 到 `.agents`（唯一根；**.py 必须走 Write 工具**，bash cp 会被 Mimosa 拦）→ `diff -rq` 全目录核验 → 源库 commit → GitHub push（`git -c http.proxy= -c https.proxy= push origin HEAD`，本机代理失效需绕行）。
-- **随包脚本两处同步**：`risk_scan/agent_log_rotate/gate_audit/syncer` 权威=源库根 `scripts/`，分发副本=包内 `scripts/`——改任一处必须两处同步（发行前 diff 检查已入 RELEASE-CHECKLIST）。
-- **注入重部署**：`python scripts/deploy_injection.py --version <ver>`（写模式必须显式给版本）→ `--check --hash` 验收；改 injection-core.md 必须重部署。
-- **实验纪律**：触发类实验的实验单元=裸环境（单点子代理+独立空工作区）；工作流引擎只做样本间并行；判定以工作区实物为准（自述≠实物，教训区第 6 条）；注入模拟须带常驻清单（N6 教训）。
-- **写档时间戳**：先 `date` 取实时钟再落笔（估时会产生未来时间戳，已发生两次）。
+## 六、操作 SOP（现行版，含本轮新增）
+
+- **多会话并发**：编辑 `agent-log.md` 前必重读实文，合并而非覆盖；教训区只追加。
+- **本体改动 SOP（v2.1）**：改源库 → 同步 `.agents`（**.py 必须走 Read+Write/Edit 工具**，bash cp/cat 写 .py 均被 Mimosa 拦）→ `diff -rq` 全目录核验 → 源库 commit → push。**新增文件必须 `git add <路径>`（`-u` 不收 untracked），提交后 `git show --stat` 验真**（本轮虚假提交风险教训）。
+- **门禁 CLI**：statechart-gate 支持位置参数或 --file（F6 修复）；spec-trace 清单文件=每行一个整串条目（F2 修复后语义）；l0-l5-gate 缺键必拦（F5 修复后）。
+- **真会话探针 SOP（v1，CUA）**：主窗 Ctrl+N（或坐标点「新建任务」）→项目选择器→打开文件夹（原生对话框 setValue+「选择文件夹」钮）→权限切「完全访问」→输入探针→发送。判定=工作区实物+六门禁独立复跑+UI 截图三源（转录不可达已实测）；composer 为受控输入，自动化 setValue/typeText 均不可靠（NR5 三败）→探针文本一次发准。
+- **判例入库 SOP**：真会话新发现→判例形态（问题→候选→裁决→理由+信心级）入 judgement-table/anti-excuses/layer-stack 对应节→双副本同步→版本号+Release。
+- **实验纪律**：触发类实验单元=独立空工作区+基线 commit+git 身份（源库身份不跨仓，新工作区须 local config）；判定以实物为准（自述≠实物）；负载≥2 形状；无人值守会话的上游缺答须显式声明假设（v0.2.1 新条款）。
+- **写档时间戳**：先 `date` 取实时钟再落笔。
