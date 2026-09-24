@@ -1,8 +1,8 @@
-STATE: task=产品工程 Skill 夜战第二批收官+议会制实验转场（D:\q）| level=L2-F | confirm=豁免：用户无限授权至 09-25 09:00 硬停 | gates_passed=a11y-gate v0.2.5 全链+E批3/3触发+议会席位/审计/定稿/EXEC-B全验收 | last_errpath=EXEC-A 402余额中断→A4-A10诚实挂起；对象误判→Explore重勘
+STATE: task=夜战终局：原型 v3 FINAL PASS（E-1 整改闭环）+品味判定表 v0.2.6+素材源 G7 | level=L2-F | confirm=豁免：用户无限授权至 09-25 09:00 硬停 | gates_passed=E-1 四视口 getAnimations 实测全达标+A4-A10 全清+判定表五条入本体 | last_errpath=EXEC-A 402→主会话接棒 A4-A10；bash 反引号吞噬→python 直替（再次命中）
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-25 02:5x —— 夜战第二批收官：速裁包全案批复+a11y-gate v0.2.5（B9 🔴→✅）+E0 CLI 判例（NR16）+E 批三探针 3/3（A/B→5/5）+议会制全流程（D:\q/docs/council/ 17 件：三席位冲突→审计 40KB→主导仲裁 41KB→EXEC-B 全量/EXEC-A 402 挂起→定稿 be792b0）；详见流水区 2026-09-25 条
+- 最近更新：2026-09-25 03:5x（流水区终版条为准） —— 夜战第二批收官：速裁包全案批复+a11y-gate v0.2.5（B9 🔴→✅）+E0 CLI 判例（NR16）+E 批三探针 3/3（A/B→5/5）+议会制全流程（D:\q/docs/council/ 17 件：三席位冲突→审计 40KB→主导仲裁 41KB→EXEC-B 全量/EXEC-A 402 挂起→定稿 be792b0）；详见流水区 2026-09-25 条
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -537,3 +537,11 @@ STATE: task=产品工程 Skill 夜战第二批收官+议会制实验转场（D:\
 - **议会制多会话实验**（用户令：审美异质化+冲突仲裁；战场修正=D:\q 三期工程）：CUA 开 4 真会话→三席位完案（seat-0 可用性 9 条/seat-1 极简 143 行/seat-2 沉浸 55 行，冲突真实）→审计 NR24b 接棒（40KB，CDP 313 可点件+三定谳）→主导 NR23b 接棒（41KB，五主战点逐条仲裁）→EXEC-B 全量完案（B1-B14，触控 319→0）→EXEC-A 402 余额中断（A1-A3 在途挂起）→定稿批提交 D:\q be792b0+5b9280a。
 - **机制缺口账 G1-G6**（D:\q/docs/council/skill-gaps.md）：去中心化顺序锁/GUI-CLI 通道隔离/Lite 并发 5-6 实测/指令文件化 SOP/时钟校准条款/端口分配制——回填工作流 Skill 待办已立。
 - GATE: {level=L2-F, v=夜战第二批全流程, cmd=git log --oneline -8（两仓）, exit=0, files=设计部仓7件+源库4件+D:\q三件, refs=0, errpath=对象误判（博客=D:\q非cms-blog-starter）→Explore重勘+诚实挂起v1产物；EXEC-A 402→诚实挂起A4-A10, lessons=预算枯竭是无人值守多会话一等风险；CLI接棒制救GUI锁局；时钟校准每阶段必做, exempt=A4-A10/glass同步/真机走查/抖音视频(人工域), caps=CUA+browser-use+CreateWorkflow+CLI×7+Explore×2, effort=见各席位/审计/定稿GATE, stop_reason=—}
+### 2026-09-25 02:5x-03:5x｜夜战终局：FINAL PASS 达成+品味工程 v0.2.6+素材源 G7
+- **EXEC-A 接棒完案**：402 挂起的 A4-A10 由主会话亲自施工（A4 字号钮进 actdock/A6 点赞微弹+粒子+busy 守卫/A7 data-nav 三语义分道/A8 扫描线漂移+eqbars 交错/E-1 三处整改：eqbars 第三根静态降级+CRT 扫描线 music 态禁用），NR23 复职终审有条件 PASS→E-1 清账→**FINAL PASS 自动生效**。
+- **四视口 getAnimations() 实测**：feed=1/music=2/bridge=1/reader=0，均 ≤2 达标（动 2 静 2 口径）；after 截图四屏+像素级抽验（点赞粒子 ♥681）。
+- **品味工程判定表五条入本体（v0.2.6，a1f4a04）**：抖音 8 动效语汇提取（27 帧实证）→PRESS SCALE/Velocity 吸附/Stagger 交错/LIVE READOUT 机器判据/动效预算 Animation 实例计数——judgement-table.md 第 24-28 条；SKILL.md v0.2.6 双副本同步；tag v0.2.6-product 待推（代理断连）。
+- **工作流 Skill 判例回填**：workflows.md §8.1 议会制判例（26f084b）：去中心化顺序锁/席位接棒制/指令文件化/时钟校准点/预算枯竭一等风险。
+- **G7 素材源扩充**：第 9 集无直链→替代源 finesse-skill（mouse-lin，MIT，西瓜同学）——反廉价黑名单大量条目机器可判定，登记 D:\q skill-gaps.md G7+议题池，下批候选 anti-cheap-gate（致谢纪律在案）。
+- GATE: {level=L2-F, ev=exec+invariant, v=夜战终局收尾批, cmd=git log --oneline -3（三仓）+date, exit=0, files=判定档+skill-gaps G7+agent-log, refs=0(未跑 lookup，0 照报), errpath=bash 反引号吞噬 python 内嵌字符串→getAnimations 一词丢失→python replace 补回（heredoc/反引号坑第三次命中，一律 python 直替）, lessons=FINAL PASS 缓发条款=制度韧性样本（整改完成自动生效，无需再开会）, exempt=真机走查（用户目检域）、源库 GitHub push（代理断连）, caps=web_reader 绕代理深读 GitHub raw, effort=E-1 三处整改+四视口实测+五条判定表蒸馏+素材源深读, stop_reason=—}
+

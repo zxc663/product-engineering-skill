@@ -51,6 +51,13 @@
 - **Skill 缺口 G1-G6**（skill-gaps.md）：去中心化顺序锁/GUI-CLI 通道隔离/Lite 并发 5-6 实测/指令文件化 SOP/时钟校准条款/端口分配制——**回填待办已立**。
 - **判例价值**：①议会制=多会话编排的完整实证（异质化→冲突→仲裁→迭代闭环）；②席位 CLI 接棒制（GUI 锁死时制度韧性）；③预算枯竭（402）=无人值守多会话的一等风险，执行会话必须内建检查点与断点续作语义。
 
+### 议会制终态（03:5x 补记）：FINAL PASS 自动生效达成
+
+- **NR23 复职终审**（GUI 真会话恢复后）：有条件 PASS——条件②④⑤（点赞时序竞态/均衡条配额口径/生命层三处 reduced-motion 降级）即晚整改，条件③（用户目检）留用户，验收权归位。
+- **E-1 整改闭环**：三处全改+getAnimations() headless CDP 实测四视口（feed=1/music=2/bridge=1/reader=0，均 ≤2 达标）+E-1 清账通告 → 主导终审令「FINAL PASS 缓发至整改后」条款**自动满足，FINAL PASS 生效**。原型 v3 迭代单 100% 完案。
+- **视觉抽验**：after-4 屏（reader 点赞粒子 ♥681+微弹散布）像素级确认，A6 情绪回路在案。
+- **品味素材源扩充（第 9 集视频未获直链，替代源更优）**：西瓜同学 finesse-skill 仓库（github.com/mouse-lin/finesse-skill，MIT）——register 分流/反廉价黑名单（HARD BAN+AI tells+字体配色 reflex-reject+Motion Tells+30 秒自检，大量条目机器可判定：eyebrow 计数/纯黑白 hex/饱和度上限 HSL<80%/scroll 驱动动画禁令）/OKLCH 承诺阶梯/redesign-mode 审计优先协议（与 A0 十诫同构交叉印证）。**致谢纪律：下批蒸馏须标注上游 mouse-lin/finesse-skill**。登记议题池，本轮不动 v0.2.6 定版。
+
 ## 一、队列①「用户侧最终验收锚」判定：**前半已闭合 ✅**
 
 HANDOVER 原案=重启 ZCode 新会话验 v3.3.0（在场提示+373 条细则+zxc663 应答）+「做一个XX页面」探针。本轮以 CUA 真会话替代用户重启（用户已授权 CUА 无限使用），证据：
