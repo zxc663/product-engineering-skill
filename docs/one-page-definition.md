@@ -36,7 +36,7 @@ L10 验证         ← 怎么证明做对了
 
 层级门（0a）→ 产品对象六问（0b，缺答=停）→ 功能面盘点 → 功能天生六问 → statechart → 承诺+六态矩阵 → 验收标准前置 → 实现（先查表）→ 验收三件（双向追溯/真证据/写回账本）。
 
-**四台检查机（可重跑）**：`statechart-gate.py`（态机 C1-C7）｜`spec-trace-gate.py`（双向追溯）｜`registry-gate.py`（组件归因）｜`usage-probe.py`（使用率衰减警报）。
+**八台检查机（可重跑）**：`statechart-gate.py`（态机 C1-C7）｜`spec-trace-gate.py`（双向追溯）｜`registry-gate.py`（组件归因）｜`usage-probe.py`（使用率衰减警报）｜`product-object-gate.py`（产品对象 P1-P4）｜`l0-l5-gate.py`（L0 目标合格线+L5 结构底线）｜`frontend-lint-gate.py`（内联样式/硬编码色/console/空 catch）｜`a11y-gate.py`（可达性静态底线 A1-A4）。门禁均带 `--selftest`。
 
 ## 现在哪里还不牢（如实列 · 2026-09-24 战役批刷新）
 
