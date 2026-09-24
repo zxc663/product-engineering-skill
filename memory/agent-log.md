@@ -513,3 +513,13 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - **冷启动处理组终局 4/4**（NR6/NR8/NR12/NR15，四任务域）vs 对照 0/1——触发修复（v0.2.2）证据链闭合。
 - 判定档 NR14/NR15 行已入表（十四→十五样本全景）；HANDOVER/README A/B 数字同步。
 - GATE: {level=L2-S, ev=exec, v=NR15 末样本判定+数字同步, cmd=git show NR15 提交+log 终报核验, exit=0, files=docs/real-session/nr-batch1-judgment.md+docs/HANDOVER.md+README.md+memory/agent-log.md, refs=0, errpath=—, lessons=—, exempt=—, caps=—, effort=—, stop_reason=—}
+
+### 2026-09-24 08:37｜插播：ZCode CLI（cmd 垫片）修复
+- 会话外插播：建 npm 垫片 zcode.cmd 后裸 zcode 报「无法定位 CLI ZCode Built-in Provider Config」→ 根因=CLI 随包 resources\glm\provider\zcode-builtin.json 缺失（桌面端只物化到 ~/.zcode/v2/runtime/provider/）。
+- 修复=把 3.14.1 物化份复制到两候选路径（resources\glm\provider + AppData\config\provider，后者抗升级）；app-server 实测已越过 provider 初始化。
+- GATE: {level=L1, v=CLI启动修复2文件, cmd=timeout 8 cmd /c zcode app-server, exit=0, files=resources\glm\provider\zcode-builtin.json+AppData\config\provider\zcode-builtin.json, refs=0, errpath=无法定位provider→复制物化份到候选路径, lessons=CLI随包provider缺失时从~/.zcode/v2/runtime/provider/<最新版>/拷贝, exempt=未跑真实prompt配额验证, caps=—, effort=双路径落位+app-server实测, stop_reason=—}
+
+### 2026-09-24 08:5X｜CLI 续修：TUI 缺 @zcode/tui，headless 已验证可用
+- 裸 zcode（TUI）报 Cannot find package @zcode/tui → 根因=resources\glm 不完整（同批缺 zcode-builtin.json，疑打包/回滚残缺）；TUI 包为私有（npm 404；npm 上 zcode-cli@0.0.1 为占名包不可装），全机无落点。
+- headless 实测通过：zcode -p 真实调用返回 OK（exit=0）；doctor 报 node-bundle 形态正常。
+- 结论=TUI 需重装/升级桌面端恢复完整 glm；-p 形态 cmd 下立即可用。
