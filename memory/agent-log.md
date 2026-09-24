@@ -1,14 +1,8 @@
-# Agent 工作日志（一档制）
-
-> 权威承载 = 本文件｜开工必读状态段
-
-## 一、状态段
-
-STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）：真会话探针批（CUA 三并行）+漏洞账本+判据空白闭合+分发件 | level=L2-F | route=计划模式四问对齐→CUA 真会话探针→变异电池→蒸馏入库双副本同步 | confirm=豁免：用户无限授权（09-24 09:00 硬停；push 范围=设计部仓；删除=白名单制先归档） | gates_passed=六门禁 selftest 全绿；spec-trace 电池 7 格+l0-l5 电池 11 格全绿；三真会话 L0 缺失检出 3/3 | last_errpath=Bash 写受保护脚本被拦→Read+Write 通道；matrix Edit not-read→TOP#294 重 Read；for+[ -f ] 沙箱假象→ls 直取真值
+STATE: task=产品工程 Skill 夜战第二批收官+议会制实验转场（D:\q）| level=L2-F | confirm=豁免：用户无限授权至 09-25 09:00 硬停 | gates_passed=a11y-gate v0.2.5 全链+E批3/3触发+议会席位/审计/定稿/EXEC-B全验收 | last_errpath=EXEC-A 402余额中断→A4-A10诚实挂起；对象误判→Explore重勘
 - 当前阶段：**实验收敛（2026-09-21 08:22，早于 09:00 期限）**——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）
 - 任务级别：L2-F
 - 本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃
-- 最近更新：2026-09-24 06:45 —— 战役收官：NR13 冷启动×档3 完整自治质量闭环（自判档3→原生三件套→自跑三门禁见真红→修→绿→10+ 走查）+Release 包端到端验证 8/8+十三样本全判定；推送至终批（详见流水区 06:45 条）
+- 最近更新：2026-09-25 02:5x —— 夜战第二批收官：速裁包全案批复+a11y-gate v0.2.5（B9 🔴→✅）+E0 CLI 判例（NR16）+E 批三探针 3/3（A/B→5/5）+议会制全流程（D:\q/docs/council/ 17 件：三席位冲突→审计 40KB→主导仲裁 41KB→EXEC-B 全量/EXEC-A 402 挂起→定稿 be792b0）；详见流水区 2026-09-25 条
 - 遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①**用户侧最终验收锚**：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
 - 历史遗留（已了结留档）：第四包本体未写／门禁脚本未产／statechart-gate 待实现——均已成；旧 13 行堆叠遗留已归并；候选 12/13 已实现并实证（夜班）；强变异 B+报告证据标准已进协议；触发词第三次密集化（构建侧）已落；**候选 11/14+主功能唯一性计数已实现**（product-object-gate P1-P4，07:0x）
 
@@ -523,3 +517,23 @@ STATE: task=产品工程 Skill——无限加固战役（01:38-09:00 硬停）�
 - 裸 zcode（TUI）报 Cannot find package @zcode/tui → 根因=resources\glm 不完整（同批缺 zcode-builtin.json，疑打包/回滚残缺）；TUI 包为私有（npm 404；npm 上 zcode-cli@0.0.1 为占名包不可装），全机无落点。
 - headless 实测通过：zcode -p 真实调用返回 OK（exit=0）；doctor 报 node-bundle 形态正常。
 - 结论=TUI 需重装/升级桌面端恢复完整 glm；-p 形态 cmd 下立即可用。
+
+### 2026-09-25 01:47｜NR20 议席完案：peer-1 极简功能主义派 seat-1 落盘
+- 议会制迭代实验（D:/q/docs/council/）：读 brief-NR20+charter+A0 档+V9 契约→代码取证（mobile-hud.html 1342 行全读+三 CSS grep）→9211 端口浏览器 390×844 走查 26 屏→seat-0「✅ 放行 peer-1」出现后写 seat-1.md（4 组 19 条不满清单+冲突预测+合规不控段）。
+- 头号实锤：mark 黄高亮=零色相契约违例、正文 15px 违十诫#2、阅读页扫描线未按契约减档、icbtn 32px 违十诫#1、swipehint 死 affordance、设备框 406>390 溢出致 4 页裁切、品牌 logo 7 处 404、idbar 文字竖排、阅读器默认态反十诫#3。
+- 验证：走查截图 20+张、grep/curl/evaluate 实测；未验=真机触感（人工域）。9211 服务器已停（防后续席位端口冲突）。
+
+### 2026-09-25 01:57｜NR21 议席完案：peer-2 沉浸叙事派 seat-2 落盘
+- 议会制迭代实验（D:/q/docs/council/）：读 brief-NR21+charter+A0 档+V9 契约→9212 端口浏览器 390×844 目检 22 读者页+欢迎屏/zen/TOC/主题切换/舰桥对照（走查截图 30+ 张+evaluate 实测）→按 release-schedule 自助轮询（seat-0 放行行 grep+seat-1 末行 tail -1，未读内容）→双条件齐后写 seat-2.md（立场宣言 3 行+S/A/B 三级 16 条不满清单+极简派冲突预测 4 条+好骨头存照）。
+- 头号实锤：--font-mono 零 CJK 回退（tokens.css:144）致全站中文标题塌宋体；环境生命层=0（canvas 实测 0，舰桥页反差）；点赞/主题切换/zen 三心跳时刻桌面动效零移动端翻译；TOC sheet 无 scrim 双重曝光；31px 文档级溢出+idbar 竖排+裂图×4+mark 黄（与 peer-1 独立互证）；计数徽章三页系统性 +1。
+- 验证：截图+getComputedStyle+scrollWidth 实测；未验=真机触感/抖音视频本体（人工域）。9212 服务器在跑（后台，供后续席位复用）。
+- GATE: {level=L2-F, ev=exec+cover, v=peer-2 议席（目检 22 页+seat-2 落盘）, cmd=python -m http.server 9212（后台）+浏览器 390×844 走查 22 屏+evaluate 实测, exit=0, files=D:/q/docs/council/seat-2.md, refs=0(未跑 lookup，0 照报), errpath=Playwright 特殊字符 locator 超时→改 CSS 定位+evaluate 表达式（禁函数字符串）; #btn-enter force 点击仍超时→DOM 事件路径, lessons=计数徽章+1 三页同模式疑似隐藏项（审计域）; 顺序锁自查=grep 标记行不读内容合法, exempt=真机触感（人工域）, caps=browser-use IAB 全程+后台 http.server, effort=22 页全走+交互四项实测+双档四源对读, stop_reason=—}
+
+### 2026-09-25 00:0x-02:5x｜夜战第二批：批复落地+a11y-gate v0.2.5+E0/E批+议会制全流程（跨仓 D:\q）
+- **速裁包全案批复落地**（用户预授权「按默认走」）：Q1-Q8 转正/AB 四指标追认/账本合并入源库（e4f4fae，diff -rq 一致）/F3 裁决 .agents 为准（物理去重挂起）；017c009 推送。
+- **E0 CLI 双通道裁决（NR16）**：`zcode -p` headless=真实载体判例四源实证（注入/触发/实物/门禁自跑）+38 项 CDP 取证+「无人值守禁静默下沉」首证生效；判例入台账口径段。
+- **E4 a11y-gate 第八门禁（v0.2.5）**：A1-A4 四规则+selftest 6 断言+六格夹具+博客仓 272 文件真载体五格；过程中检出并修复 F10（R2 的 css/meta 豁免落地，源库 d435cd0=安装根）；B9 🔴→✅，强制清单 9 项全 ✅。
+- **E 批三探针工作流（dwfrun-ab672d24，53min/311万token）**：NR17/NR18/NR19 三任务域 CLI 通道 **3/3 全触发**（A/B 处理组 4/4→5/5）；NR18=L0 合格正例候选；NR19=档3 扩样；换人独立复核完成。
+- **议会制多会话实验**（用户令：审美异质化+冲突仲裁；战场修正=D:\q 三期工程）：CUA 开 4 真会话→三席位完案（seat-0 可用性 9 条/seat-1 极简 143 行/seat-2 沉浸 55 行，冲突真实）→审计 NR24b 接棒（40KB，CDP 313 可点件+三定谳）→主导 NR23b 接棒（41KB，五主战点逐条仲裁）→EXEC-B 全量完案（B1-B14，触控 319→0）→EXEC-A 402 余额中断（A1-A3 在途挂起）→定稿批提交 D:\q be792b0+5b9280a。
+- **机制缺口账 G1-G6**（D:\q/docs/council/skill-gaps.md）：去中心化顺序锁/GUI-CLI 通道隔离/Lite 并发 5-6 实测/指令文件化 SOP/时钟校准条款/端口分配制——回填工作流 Skill 待办已立。
+- GATE: {level=L2-F, v=夜战第二批全流程, cmd=git log --oneline -8（两仓）, exit=0, files=设计部仓7件+源库4件+D:\q三件, refs=0, errpath=对象误判（博客=D:\q非cms-blog-starter）→Explore重勘+诚实挂起v1产物；EXEC-A 402→诚实挂起A4-A10, lessons=预算枯竭是无人值守多会话一等风险；CLI接棒制救GUI锁局；时钟校准每阶段必做, exempt=A4-A10/glass同步/真机走查/抖音视频(人工域), caps=CUA+browser-use+CreateWorkflow+CLI×7+Explore×2, effort=见各席位/审计/定稿GATE, stop_reason=—}
