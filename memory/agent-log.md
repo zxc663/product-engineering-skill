@@ -544,4 +544,9 @@ STATE: task=夜战终局：原型 v3 FINAL PASS（E-1 整改闭环）+品味判�
 - **工作流 Skill 判例回填**：workflows.md §8.1 议会制判例（26f084b）：去中心化顺序锁/席位接棒制/指令文件化/时钟校准点/预算枯竭一等风险。
 - **G7 素材源扩充**：第 9 集无直链→替代源 finesse-skill（mouse-lin，MIT，西瓜同学）——反廉价黑名单大量条目机器可判定，登记 D:\q skill-gaps.md G7+议题池，下批候选 anti-cheap-gate（致谢纪律在案）。
 - GATE: {level=L2-F, ev=exec+invariant, v=夜战终局收尾批, cmd=git log --oneline -3（三仓）+date, exit=0, files=判定档+skill-gaps G7+agent-log, refs=0(未跑 lookup，0 照报), errpath=bash 反引号吞噬 python 内嵌字符串→getAnimations 一词丢失→python replace 补回（heredoc/反引号坑第三次命中，一律 python 直替）, lessons=FINAL PASS 缓发条款=制度韧性样本（整改完成自动生效，无需再开会）, exempt=真机走查（用户目检域）、源库 GitHub push（代理断连）, caps=web_reader 绕代理深读 GitHub raw, effort=E-1 三处整改+四视口实测+五条判定表蒸馏+素材源深读, stop_reason=—}
+### 2026-09-25 04:0x-09:33｜v3.1/v3.2：用户目检否决票修复+阅读体验三改造（超时披露：硬停 09:00，实际收尾 09:33）
+- v3.1：actdock 大椭圆胶囊群→无框图标钮（G8 形态无主地带判例）；G9 五方漏检四根因（能力检索无载体/知识源同质/Brief wins 过度执行/降档无回验）→ workflows §8.1 双副本回填四条款。
+- v3.2（用户四连否决驱动）：R1 亮色可及性（glass=V9 亮列本已存在，reader apphead 加 btn-theme+cycleTheme 抽函数）；R2 排版行规（justify+缩进 2em+段距 12px）；R3 动效移植（解码入场/feed 矩阵 110ms 8% 格/welcome 打字机，reduced-motion 降级+页隐即停+矩阵 alpha 移动端校准一档）。能力检索矩阵首证：ux-feature-design+ui-ux-pro-max+外部证人（NOMO/华为阅读/行规表）。
+- **超时事故**：09:00 硬停超线 33 分钟——G5 主观时钟累积在 v3.2 施工块复发（04:1x 后未再校准 date），09:33 校准才发现。教训升级候选：连续施工块每 30 分钟强制 date。
+- GATE: {level=L2-F, ev=exec+cover, v=v3.1+v3.2 全程, cmd=IAB evaluate 走验+git log, exit=0, files=mobile-hud.html+mobile.css+skill-gaps(G8/G9)+workflows.md+design-specs 新档, refs=0, errpath=feed 开标签锚点错+heredoc 转义坑三筛→Edit 直改+锚点 grep 实测, lessons=打字机选择器 .sub 不存在→.hi2 实测修正；矩阵 canvas 像素级验证(41633px 点亮), exempt=reduced-motion 模拟未跑（静态分支审查）+真机触感, caps=IAB+WebSearch 证人, effort=四轮走验+三源调研+双副本回填, stop_reason=—}
 
