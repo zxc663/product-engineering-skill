@@ -1,8 +1,15 @@
 # product-engineering-skill · 产品工程 Skill（设计部）
 
-> 十三希诺工作流家族第四包 `shisan-xinuo-product` 的**设计源**（设计部）：问题定义、方向档、八份调研蒸馏、可判定门禁与实证。
-> 包本体随家族主仓发行：[shisan-xinuo-workflow](https://github.com/zxc663/shisan-xinuo-workflow)（`skill/shisan-xinuo-product/`，包版本 0.2.0）。
+> 十三希诺工作流家族第四包 `shisan-xinuo-product` 的**设计源（设计部）**：问题定义、方向档、八份调研蒸馏、可判定门禁与实证；包本体随家族主仓分发——[shisan-xinuo-workflow](https://github.com/zxc663/shisan-xinuo-workflow)（`skill/shisan-xinuo-product/`，包版本 **0.2.6**，本批联动发行）。
 > 冷启动先读：[docs/one-page-definition.md](docs/one-page-definition.md)——一页说完「是什么 / 不是什么 / 哪里还不牢」（简明版规范，术语消歧也在里面）。
+> 两仓分工一句话：**主仓管纪律面（拦「不该发生的动作」），本包管产品面（拦「不该缺失的能力」）**——共同目标是让 AI 的产出可判定、可复算。
+
+## 怎么获取与安装
+
+- **随家族一次装齐**（推荐）：`git clone https://github.com/zxc663/shisan-xinuo-workflow` → `pwsh scripts/install-skill.ps1 -Family`（核心 + 流程 + 角色 + 产品工程，四包）。
+- **skills 市场**：`npx skills add zxc663/shisan-xinuo-workflow`（装到平台技能目录后按需加载本包）。
+- **用本仓 Release**：从本仓 Releases 下载 `shisan-xinuo-product-v0.2.6.zip`，解压后将 `shisan-xinuo-product/` 放入平台技能目录。
+- **与核心联动**：核心包已埋条件式挂接钩子（skill-usage §8）——本包在场则三缝合点自动生效（计划检索位 / GATE 门禁真值 / 收尾账本写回）；不在场则跳过并声明。分合都可用。
 
 ---
 
@@ -80,13 +87,15 @@
 
 > **让对当前模型最便宜的路径，不再系统性地成为对产品未来最昂贵的路径。**
 
-### 这套答案现在的实证状态（诚实栏 · 2026-09-24 战役批更新）
+### 诚实栏（已实证 ／ 待追认 ／ 现在还不牢）
+
+**已实证（可重跑）**
 
 - **「缺失可检出」已实证**：statechart-gate C1-C7 四变异反向注入全拦、对照组全绿，可重跑 `docs/reverse-injection/verify.py`；**L0 层再证**——l0-l5-gate 对三个真实会话工作区「目标未陈述」检出 3/3。
 - **真实新会话生效链已闭合（原「最后一环」）**：六个 CUA 真会话探针实证——注入核心（zxc663 自检+hooks 双通道+复述/承载/教训纪律）在真实新会话完整生效；产品包自然触发曾失败（NR1 关键失败样本）→ 断点定位到 description 选择显著性 → v0.2.2 触发词前置 → NR6 同任务对照**触发成功**（能力检索命中自证+statechart 双跑 exit=0+实机走查 6 验收+真缺陷修复回归）。全文：[docs/real-session/nr-batch1-judgment.md](docs/real-session/nr-batch1-judgment.md)。
-- **终极命题双会话对照（N=1）**：装 Skill 侧维护债 13 vs 对照 50、内联样式 1 vs 38、持久测试 63 vs 0；对照侧一个真 bug 从 R1 存活到 R3（无测试防线）；token 曲线递减 vs 暴涨。限定单次对照，随机性未消除。
+**待追认（设计在案）**装 Skill 侧维护债 13 vs 对照 50、内联样式 1 vs 38、持久测试 63 vs 0；对照侧一个真 bug 从 R1 存活到 R3（无测试防线）；token 曲线递减 vs 暴涨。限定单次对照，随机性未消除。
 - **上游 L0-L4 全获机器判据**：product-object-gate P1-P4（真实项目首用即检出 10 项真缺口）+ l0-l5-gate（L0 目标合格线 11 格电池+L5 结构底线三轨；「≤3 clicks」被实证否决不入判据）。
-- **现在还不牢**：判据证据多为 N=1（随机性未消除）；门禁只吃扁平 statechart schema；跨项目泛化待做；L5 语义项（标签同义/混类/阈值）与 tree testing 实测属人工域；A/B 四指标口径草案待追认——全文见一页纸 §「现在哪里还不牢」。
+**现在还不牢** N=1（随机性未消除）；门禁只吃扁平 statechart schema；跨项目泛化待做；L5 语义项（标签同义/混类/阈值）与 tree testing 实测属人工域；A/B 四指标口径草案待追认——全文见一页纸 §「现在哪里还不牢」。
 
 ---
 
@@ -118,32 +127,38 @@ docs/reverse-injection/EVIDENCE.md ← 「缺失可检出」反向注入实证�
 docs/cold-start-report.md  ← 触发链三条件×8 样本实验（断点定位→修复→闭环）
 docs/ab-four-metrics.md    ← A/B 四指标口径草案（defect_escape/rework/coverage/cost，待追认）
 参考Skill/A~H              ← 八份调研蒸馏（设计品味系/工作流极简系/工具文档系/外部同类/桌面项目/成熟方法论/高密度界面/结构层蓝海）
-skill/…（在家族主仓）       ← 第四包本体：SKILL.md+references 九件+scripts 五门禁
+skill/…（在家族主仓）       ← 第四包本体：SKILL.md + references 九件 + scripts 八台门禁与提取器（权威副本在母仓 skill/shisan-xinuo-product/scripts/）
 memory/agent-log.md        ← 工作流水（诚实留档：含每轮 GATE 与教训）
 ```
 
-## 门禁用法（第四包 scripts，均带 `--selftest` 两态自测）
+## 门禁用法（八台，均带 `--selftest` 两态自测）
+
+> 权威副本在母仓 `skill/shisan-xinuo-product/scripts/`（安装后位于技能目录 `shisan-xinuo-product/scripts/`），下例用母仓路径。
 
 ```bash
-# 组件归因检查（自研必须带归因标记 registry:）
-python registry-gate.py --path <组件目录> --selftest
-
-# statechart 结构检查 C1-C7（出路的严格表述+引用完整性+契约 recovery 双向对账）
-python statechart-gate.py --file statechart.json --selftest
-
-# 双向追溯（功能行↔组件↔后端块↔证据 五段绑定；T4 UI 孤儿/T5 死逻辑）
-python spec-trace-gate.py --trace <trace.csv> --selftest
-
-# 产品对象上游判据 P1-P4（定义存在性/主功能唯一/层级声明+上游引用/可运营性）
-python product-object-gate.py --file <object.json> --selftest
-
-# 使用率监控（装了没人触发=衰减警报）
-python usage-probe.py --selftest
+# ① 组件归因检查（自研必须带归因标记 registry:）
+python skill/shisan-xinuo-product/scripts/registry-gate.py --path <组件目录> --selftest
+# ② statechart 结构检查 C1-C7（出路严格表述 + 引用完整性 + 契约 recovery 双向对账）
+python skill/shisan-xinuo-product/scripts/statechart-gate.py --file statechart.json --selftest
+# ③ 双向追溯（功能行↔组件↔后端块↔证据；T4 UI 孤儿 / T5 死逻辑）
+python skill/shisan-xinuo-product/scripts/spec-trace-gate.py --trace <trace.csv> --selftest
+# ④ 产品对象上游判据 P1-P4（定义存在性/主功能唯一/层级声明+上游引用/可运营性）
+python skill/shisan-xinuo-product/scripts/product-object-gate.py --file <object.json> --selftest
+# ⑤ L0 目标合格线 + L5 结构底线（单值性/度量口径/KR 时间窗/导航三件套/前门可达/死端页）
+python skill/shisan-xinuo-product/scripts/l0-l5-gate.py --selftest
+# ⑥ 前端 lint（内联样式/硬编码色/console/空 catch；基线豁免存量只拦新增）
+python skill/shisan-xinuo-product/scripts/frontend-lint-gate.py --selftest
+# ⑦ 可达性静态底线 A1-A4（img-alt/控件可访问名/交互元素可访问名/html-lang）
+python skill/shisan-xinuo-product/scripts/a11y-gate.py --selftest
+# ⑧ 使用率监控（装了没人触发=衰减警报）
+python skill/shisan-xinuo-product/scripts/usage-probe.py --selftest
+# 附：绑定清单自动提取器（从组件目录/后端声明生成 comps/backs 喂 spec-trace-gate）
+python skill/shisan-xinuo-product/scripts/spec-trace-extract.py --help
 ```
 
 ## 与家族的关系
 
-`shisan-xinuo-workflow` 核心包已埋**条件式挂接钩子**（skill-usage §8）：本包在场→三缝合点自动生效（计划检索位/GATE 门禁真值/收尾账本写回）；不在场→跳过+GATE exempt 声明。分合都可用。
+本包 = 家族**第四包**（核心 / 流程 / 角色 / 产品工程，四包独立可装、建议同装）。`shisan-xinuo-workflow` 核心包已埋**条件式挂接钩子**（skill-usage §8）：本包在场→三缝合点自动生效（计划检索位 / GATE 门禁真值 / 收尾账本写回）；不在场→跳过+GATE exempt 声明。主仓 `install-skill.ps1 -Family` 已纳入本包（四包齐装）；获取方式见文首「怎么获取与安装」。
 
 ## 设计纪律（本仓库自己的规矩）
 

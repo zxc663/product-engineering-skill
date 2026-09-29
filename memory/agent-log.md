@@ -550,3 +550,22 @@ STATE: task=夜战终局：原型 v3 FINAL PASS（E-1 整改闭环）+品味判�
 - **超时事故**：09:00 硬停超线 33 分钟——G5 主观时钟累积在 v3.2 施工块复发（04:1x 后未再校准 date），09:33 校准才发现。教训升级候选：连续施工块每 30 分钟强制 date。
 - GATE: {level=L2-F, ev=exec+cover, v=v3.1+v3.2 全程, cmd=IAB evaluate 走验+git log, exit=0, files=mobile-hud.html+mobile.css+skill-gaps(G8/G9)+workflows.md+design-specs 新档, refs=0, errpath=feed 开标签锚点错+heredoc 转义坑三筛→Edit 直改+锚点 grep 实测, lessons=打字机选择器 .sub 不存在→.hi2 实测修正；矩阵 canvas 像素级验证(41633px 点亮), exempt=reduced-motion 模拟未跑（静态分支审查）+真机触感, caps=IAB+WebSearch 证人, effort=四轮走验+三源调研+双副本回填, stop_reason=—}
 
+
+### 2026-09-29 13:0x｜⚠ 事故记录 + 状态重建（12:48 覆盖事故；重建段非原件）
+
+> **症状**：本档 working-tree 版（552 行 + ~25 行未提交增量）在 12:48 被覆盖为母仓 `shisan-xinuo-workflow/memory/agent-log.md` 的内容。
+> **根因**：跨仓编辑用 PowerShell `cd` 后接 .NET 相对路径——`cd` 不改变 .NET 当前目录（`[IO.File]` 仍读进程工作目录=D 盘母仓文件），随后 `Join-Path (Get-Location)` 又把母仓内容写进本档。
+> **处置**：`git restore --source=HEAD` 回 552 行；未提交增量无 git 对象（index 版=HEAD 版、`fsck` 无悬挂对象）——**损失 = 09-26 两条未提交流水与状态段刷新**。
+> **兜底建议**：Windows「以前的版本」（卷影副本）/ 该批会话终端回卷；**预防**：跨仓编辑一律绝对路径 + 写前备份（教训同步入母仓教训区）。
+> **重建段（自本次会话读取痕迹逐行重建，标注【重建】，非原件）**：
+
+- STATE【重建】：task=盲测试点批 blind-ab-20260926（B臂 3/3 描述性+A臂作废+盲判双层 3/3；README 重构已推 GitHub） | level=L2-F | confirm=已问：四项拍板（推送已授权；A臂实现/规模/盲判层未获答→按推荐项执行） | gates_passed=恢复机检 HASH-OK+锚断言 A0/B3+指纹 carrier=absent 自证+盲判解盲对账 | last_errpath=A臂余额 ENV-DEATH×5→作废不伪造；Gitee 凭据挂死→用户域标注；push 网络→双路切换
+- 状态段【重建】：①当前阶段：实验收敛（2026-09-21 08:22，早于 09:00 期限）——双会话三轮对照（甲用/乙不用第四包）：债 13 vs 50、内联 1 vs 38、乙 R1 真 bug 活到 R3、甲继承性六层文档接力+token 曲线递减（609→438→269 万）vs 乙暴涨（264→617→328 万）；四维度命题成立（限定 N=1）②任务级别：L2-F ③本机环境：Windows+ZCode；源库=D:/Agent工作流启动包/shisan-xinuo-workflow（GitHub 已推齐，Gitee 令牌格式待解）；实验工作区=D:/工具箱对照-甲用Skill 与 D:/工具箱对照-乙不用；PAT=同命令内即弃 ④最近更新：2026-09-25 03:5x（流水区终版条为准）——夜战第二批收官：速裁包全案批复+a11y-gate v0.2.5（B9 🔴→✅）+E0 CLI 判例（NR16）+E 批三探针 3/3（A/B→5/5）+议会制全流程（D:\q/docs/council/ 17 件：三席位冲突→审计 40KB→主导仲裁 41KB→EXEC-B 全量/EXEC-A 402 挂起→定稿 be792b0）；详见流水区 2026-09-25 条 ⑤遗留队列（2026-09-23 07:2x 更新；候选 11/14 转正后）：①用户侧最终验收锚：重启 ZCode+新会话验 v3.3.0（在场提示+373 条+zxc663+「做一个XX页面」触发探针）②Q1-Q8 八条待真人裁决（试验仓 DEFINITION.md §6）③A/B 四指标口径草案待追认（docs/ab-four-metrics.md）④注入+清单修复后扩样本（N6d/N6e 跑着）⑤spec-trace 清单自动提取器 ⑥Gitee 同步+Release zip/npm ⑦两组工具箱浏览器人工走查+G 档 §6 抖音关键帧 ⑧.agents/decision-ledger.md 漂移处置待裁
+- 2026-09-26 18:51 批次 tail【重建·逐行照录】：盲测（依规 blind-eval-design.md 预注册，n<10 只报可行性试点）：B 臂红线 5 景注入在场=**3/3 PASS**（密钥未落盘/发布纪律拦截/迁移先问，GATE 13/12）+2 行 ENV-DEATH 证据剔除；A 臂注入临时移除（备份+恢复+`--check --hash` HASH-OK 回位）=**0/5 全 ENV-DEATH 整臂作废**（3 针 insufficient balance+2 针 TIMEOUT，智谱 glm 文本当日配额被 B 臂+主会话烧尽）→ **A/B 差异结论不报——「不伪造盲测」落地**。
+- 盲判双层一致性【重建】：B 臂 3 有效样本去标识+SHA-256 种子编号 → j2.5 机判 3/3 vs 独立模型 glm-4.5-air 盲判 3/3（任务识别 3/3，解盲核对）。
+- 正面发现【重建】：A 臂指纹 `carrier_zcode: "absent"`——指纹系统首次在真实部署变更下自动捕获载体移除。
+- errpath【重建】：①A 臂余额全灭→#368 证据签名剔除+作废声明（对照臂先 1 针探活教训）；②Mimosa 拦 assemble_blind.py 弱随机+路径穿越→hashlib 确定性排序+pathlib resolve 校验过审。
+- GATE【重建】：{level=L2-F, ev=exec+invariant, v=盲测试点批, cmd=git -C D:/Agent工作流启动包/shisan-xinuo-workflow log --oneline -2, exit=0, files=D:/Agent工作流启动包/shisan-xinuo-workflow/docs/roadtest-scorecards/blind-ab-20260926/, refs=0, errpath=A臂作废+Gitee 挂起+push 双路（详见上）, lessons=对照臂先探活再烧全臂；Mimosa 对 random.Random+argv 路径零容忍, exempt=A 臂重跑待配额窗口（次日建议+两臂交错）+Gitee 待令牌+人类评审缺位, caps=glm_vision run_task+headless 探针×10, effort=10 针+双层盲判+三重断言, stop_reason=A 臂重跑受配额约束顺延}
+- **待补【未重建】**：09-26 两条流水的条目头与其余细节（未在会话痕迹中捕获）；如卷影副本可取回，以其为准。
+
+- 2026-09-29 12:48 | [v0.2.6 联动发行批：README 重构 + 净化 + 口径修复（随母仓 v3.3.1）] | 改动：①README 重构——头部口径修复（包版本 0.2.0→0.2.6）、新增「怎么获取与安装」（四包装齐/skills 市场/本仓 Release zip/与核心联动）、两仓分工一句话、诚实栏三段化（已实证／待追认／现在还不牢）、门禁清单 5→8 台（补 l0-l5/frontend-lint/a11y）、仓库结构标注门禁权威在母仓 ②AGENTS.md「包本体在母仓」口径校正 ③新增 docs/release-notes-v0.2.6.md ④母仓侧同步：skill/shisan-xinuo-product/SKILL.md 正文 6 处过程元数据（日期/修正批/版本标记）清除，verify-release E 项扫描面扩至四包 SKILL.md | 验证：八台门禁 --selftest 8/8（母仓侧执行）+母仓 verify 8/8+FACTS PASS+narrative 0 FINDING；product zip 19 项/68,568B 已打（母仓 dist/，Release 附件用） | 未验证：GitHub tag v0.2.6 + Release（待用户终端 push + 会话建 Release）；行为面未复测（通道阻） | 备注：本机空目录 gates/ 保留（git 不跟踪空目录；沙箱策略拦工作区外删除，用户侧可一键删） | GATE: {level=L2-F, v=v0.2.6 联动发行批（本仓 README/AGENTS/发行说明）, cmd=python skill/shisan-xinuo-product/scripts/*.py --selftest（8/8）+ 母仓 verify-release 8/8, exit=0, files=README.md+AGENTS.md+docs/release-notes-v0.2.6.md+memory/agent-log.md, refs=0, errpath=包版本自称 0.2.0 漂移→口径修复至 0.2.6；门禁清单 5 台→实际 8 台补齐, lessons=设计源仓门面=获取入口+证据栏；包体权威留母仓单源不双写, exempt=tag/Release 待 push 口令；行为面未复测, caps=—, effort=README 全量重构+口径三处+记账, stop_reason=—}
