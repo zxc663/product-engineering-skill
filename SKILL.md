@@ -7,7 +7,7 @@ metadata:
   version: 1.0.0
   tags: [product-engineering, interaction-design, statechart, quality-gates, spec-trace, design-contract]
   author: zxc663
-  homepage: https://github.com/zxc663/product-engineering-skill
+  homepage: https://github.com/zxc663/shisan-xinuo-product-en
 ---
 
 # Product Engineering · the bridging layer

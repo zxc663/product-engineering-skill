@@ -35,7 +35,7 @@
 ## 安装
 
 ```bash
-npx skills add zxc663/product-engineering-skill
+npx skills add zxc663/shisan-xinuo-product-en
 ```
 
 ## 运行
@@ -64,7 +64,7 @@ python scripts/spec-trace-gate.py --file bindings.json --components comps.txt --
 - 门禁查的是**形态不是语义**：statechart 过了检不等于它是对的。结构检查与领域评审缺一不可。
 - `a11y-gate` / `frontend-lint-gate` 是低误报静态子集——不是 axe-core，不是完整 lint 配置。
 - 重构后须重建基线。
-- 本仓检查**英文工件**（判定词表为英文）。中文项目请用中文源包 [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow)（机制同源，词表为中文）。
+- 本仓检查**英文工件**（判定词表为英文）。中文项目请用中文源包 [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product)（机制同源，词表为中文）。
 
 ## 出处
 

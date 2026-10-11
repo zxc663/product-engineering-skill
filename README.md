@@ -35,7 +35,7 @@ Nine scripts, five numbered rule families — **C / T / P / R / A** — each rul
 ## Install
 
 ```bash
-npx skills add zxc663/product-engineering-skill
+npx skills add zxc663/shisan-xinuo-product-en
 ```
 
 ## Run
@@ -64,7 +64,7 @@ The checkers **audit themselves**. Every `--selftest` ships positive and negativ
 - The gates check **form, not semantics**: a passing statechart is not a correct statechart. Structural checks and domain review are both required.
 - `a11y-gate` / `frontend-lint-gate` are low-false-positive static subsets — not axe-core, not a full lint setup.
 - Baselines must be rebuilt after refactors.
-- This repo checks **English artifacts** (the judgement word lists are English). For Chinese-language projects, use the Chinese source package [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow) (same mechanisms, Chinese word lists).
+- This repo checks **English artifacts** (the judgement word lists are English). For Chinese-language projects, use the Chinese source package [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product) (same mechanisms, Chinese word lists).
 
 ## Provenance
 
