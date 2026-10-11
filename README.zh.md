@@ -4,7 +4,7 @@
 
 把「做一个 XX 页面 / 工具 / 应用」钉成**可判定契约**——层级门、产品六问、statechart、机器可查的验收门禁——让「演示」与「产品」的差距是被验证的，而不是被假设的。
 
-交付形态 = 一份 [SKILL.md](SKILL.md)（agent 遵循的跑道）+ 九台带自测的门禁脚本（机器可查切片）。
+交付形态 = 一份 [SKILL.md](SKILL.md)（agent 遵循的跑道）+ 九台带自测的门禁脚本。每台检查器自带反向测试——信任它之前，先验证它。
 
 ## 为什么
 
@@ -14,9 +14,11 @@
 - **「看起来做完了」不是裁决。**没有机器可判的验收标准，评审就退化成反复读文档然后祈祷。
 - **复杂度会走私进代码。**内联样式、死代码、空 catch、伪按钮（绑了 click 的 `div`）都能混过每一次随意的扫视。
 
-本技能把产品工程里反复出现的主张做成**可判定的**，再用自带反向样本的脚本去判定。判不了的主张（语义、品味、真实可达性）明说并交给人工——门禁刻意只查**形态不查语义**。
+本技能把产品工程里反复出现的主张做成**可判定的**，再用脚本去判定。判不了的主张（语义、品味、真实可达性）明说并交给人工——门禁只查**形态**，这正是机器裁决拥有最终发言权的那一层。
 
 ## 它查什么
+
+九台脚本、五套编号规则族——**C / T / P / R / A**——每条规则都可追溯到一台门禁断言：
 
 | 脚本 | 一行角色 |
 |---|---|
@@ -49,26 +51,24 @@ python scripts/spec-trace-gate.py --file bindings.json --components comps.txt --
 
 九台全测：`python scripts/<gate>.py --selftest`
 
-每台检查器都在 `--selftest` 里带反向样本——每个绕过形态都有能抓住它的测试。
+检查器**审计自己**：每份 `--selftest` 都带正反两向样本——每个已知绕过形态都有能抓住它的测试。抓不住自己盲区的检查器不出厂。基线模式（`--write-baseline`）让存量项目接入便宜：存量豁免、新增必拦。
 
 ## 工作方式
 
 - [SKILL.md](SKILL.md)——八步跑道：层级门 → 六问 → statechart → 风险定档 → 实现 → 验收。
 - [references/](references/)——细节层：判定表、层级栈、产品对象、联通层、契约 schema 等，按需加载。
-- `scripts/`——上述机器门禁。检测刻意停在正则级：低误报，存量项目走基线接入。
+- `scripts/`——上述机器门禁。检测是确定性的静态形态检查：低误报，存量项目可增量接入。
 
 ## 诚实边界
 
 - 门禁查的是**形态不是语义**：statechart 过了检不等于它是对的。结构检查与领域评审缺一不可。
 - `a11y-gate` / `frontend-lint-gate` 是低误报静态子集——不是 axe-core，不是完整 lint 配置。
-- 基线模式（`--write-baseline`）让存量项目接入便宜（存量豁免、新增必拦）——重构后须重建基线。
-- 检测是**负面过滤**：门禁全绿只说明列出的缺陷形态不在场，不说明产品是好的。
-- Skill 对 agent 行为是**概率护栏**，不是保证。
+- 重构后须重建基线。
 - 本仓检查**英文工件**（判定词表为英文）。中文项目请用中文源包 [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow)（机制同源，词表为中文）。
 
 ## 出处
 
-- **中文权威源**：[`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product)（`zxc663/shisan-xinuo-workflow` 仓 `skill/shisan-xinuo-product/`）。
+- **机制权威**：[`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product)——中文源包（`zxc663/shisan-xinuo-workflow` 仓 `skill/shisan-xinuo-product/`）对机制拥有权威。
 - 本仓为 **clean-room 英文发行版**：政策上机制等价、措辞独立成文；两条版本线各自独立（英文 1.x，中文源 0.2.x）。
 - 同步策略见 [AGENTS.md](AGENTS.md)：门禁或规则变更时两版同改，或注明分叉。
 

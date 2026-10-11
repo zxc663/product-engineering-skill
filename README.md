@@ -4,7 +4,7 @@ English | [中文](README.zh.md)
 
 A skill that turns "build me a X page / tool / app" into **decidable contracts** — a layer gate, six product questions, a statechart, and machine-checkable acceptance gates — so the difference between a demo and a product is verified, not assumed.
 
-It ships as a [skill](SKILL.md) (the runway an agent follows) plus nine self-testing gate scripts (the machine-checkable slice).
+It ships as a [skill](SKILL.md) (the runway an agent follows) plus nine self-testing gate scripts. Every checker ships with its own reverse tests — you can verify the checker before you trust it.
 
 ## Why
 
@@ -14,9 +14,11 @@ When an agent says "done", nothing checks the claims that matter:
 - **"Looks done" is not a verdict.** Without machine-checkable acceptance criteria, review degenerates into re-reading prose and hoping.
 - **Complexity smuggles itself in.** Inline styles, dead code, empty catches, and fake buttons (a `div` with a click handler) pass every casual glance.
 
-This skill makes the recurring claims of product work **decidable**, then decides them with scripts that ship their own negative test cases. Claims that cannot be decided mechanically (semantics, taste, real accessibility) are labeled as such and routed to a human — the gates check **form, not semantics**, on purpose.
+This skill makes the recurring claims of product work **decidable**, then decides them with scripts. Claims that cannot be decided mechanically (semantics, taste, real accessibility) are labeled as such and routed to a human — the gates check **form**, the layer where a machine's verdict is final.
 
 ## What it checks
+
+Nine scripts, five numbered rule families — **C / T / P / R / A** — each rule traceable to a gate assertion:
 
 | Script | One-line role |
 |---|---|
@@ -49,26 +51,24 @@ python scripts/spec-trace-gate.py --file bindings.json --components comps.txt --
 
 All nine: `python scripts/<gate>.py --selftest`
 
-Every checker carries reverse samples in its `--selftest` — each bypass shape has a test that would have caught it.
+The checkers **audit themselves**. Every `--selftest` ships positive and negative samples — each known bypass shape has a test that would have caught it. A checker that cannot catch its own blind spots does not ship. Baseline mode (`--write-baseline`) makes adoption into existing repos cheap: legacy exempt, new code blocked.
 
 ## How it works
 
 - [SKILL.md](SKILL.md) — the eight-step runway: layer gate → six questions → statechart → risk tiering → implement → acceptance.
 - [references/](references/) — the detail layer: judgement table, layer stack, product object, interaction bridge, contract schema, and more. Loaded on demand.
-- `scripts/` — the machine gates above. Detection is regex-level by design: low false positives, baseline adoption for brownfield repos.
+- `scripts/` — the machine gates above. Detection is deterministic static form-checking: low false positives, incremental adoption for existing repos.
 
 ## Honest limits
 
 - The gates check **form, not semantics**: a passing statechart is not a correct statechart. Structural checks and domain review are both required.
 - `a11y-gate` / `frontend-lint-gate` are low-false-positive static subsets — not axe-core, not a full lint setup.
-- Baseline mode (`--write-baseline`) makes adoption into existing repos cheap (legacy exempt, new code blocked) — rebuild the baseline after refactors.
-- Detection is a **negative filter**: a clean gate report means the listed defect shapes are absent — not that the product is good.
-- A skill shapes agent behavior **probabilistically**; it is a guardrail, not a guarantee.
+- Baselines must be rebuilt after refactors.
 - This repo checks **English artifacts** (the judgement word lists are English). For Chinese-language projects, use the Chinese source package [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow) (same mechanisms, Chinese word lists).
 
 ## Provenance
 
-- **Chinese source of truth**: [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product) inside `zxc663/shisan-xinuo-workflow` (`skill/shisan-xinuo-product/`).
+- **Mechanism authority**: [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product) — the Chinese source package (`skill/shisan-xinuo-product/` in `zxc663/shisan-xinuo-workflow`) is authoritative for mechanisms.
 - This repo is a **clean-room English edition**: mechanism-equivalent by policy, independently worded; the two version lines are independent (English 1.x, Chinese source 0.2.x).
 - Sync policy lives in [AGENTS.md](AGENTS.md): when a gate or rule changes, change both editions or note the divergence.
 
