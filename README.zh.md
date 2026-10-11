@@ -6,12 +6,22 @@
 
 交付形态 = 一份 [SKILL.md](SKILL.md)（agent 遵循的跑道）+ 九台带自测的门禁脚本（机器可查切片）。
 
+## 为什么
+
+当 agent 说「做完了」，没有任何东西去核验那些真正要紧的主张：
+
+- **演示能跑，产品不行。**错误态、空态、死端、发明出来的端点，只在真实用户撞上时才暴露——那时 agent 已经转身走了。
+- **「看起来做完了」不是裁决。**没有机器可判的验收标准，评审就退化成反复读文档然后祈祷。
+- **复杂度会走私进代码。**内联样式、死代码、空 catch、伪按钮（绑了 click 的 `div`）都能混过每一次随意的扫视。
+
+本技能把产品工程里反复出现的主张做成**可判定的**，再用自带反向样本的脚本去判定。判不了的主张（语义、品味、真实可达性）明说并交给人工——门禁刻意只查**形态不查语义**。
+
 ## 它查什么
 
 | 脚本 | 一行角色 |
 |---|---|
 | `statechart-gate` | 每个态都有出路：无死端、全可达、错误态有恢复转换、契约双向对账（C1–C7） |
-| `spec-trace-gate` | 三方绑定追溯 页面↔组件↔后端↔证据：孤儿、死逻辑、幽灵端点（T1–T6） |
+| `spec-trace-gate` | 三方绑定追溯 页面↔组件↔后端↔证据：孤儿、死逻辑、幽灵端点、文件型证据存在性（T1–T7） |
 | `product-object-gate` | 产品对象在档：主功能恰好一个、层级声明+上游引用、可运营性有答案（P1–P4） |
 | `l0-l5-gate` | 目标合格线+信息架构底线：可度量北极星、带时间窗 KR、导航三件套、无死端页（L0/L5） |
 | `registry-gate` | 新组件必须带归因标记（`registry: … source=…` 或自研理由）；基线模式豁免存量 |
@@ -34,9 +44,12 @@ npx skills add zxc663/product-engineering-skill
 python scripts/statechart-gate.py --file sc.json --contract contract.json
 python scripts/frontend-lint-gate.py --path src/components --write-baseline   # 基线豁免存量、只拦新增
 python scripts/l0-l5-gate.py --goal goal.json --ia ia.json
+python scripts/spec-trace-gate.py --file bindings.json --components comps.txt --backends backends.txt
 ```
 
 九台全测：`python scripts/<gate>.py --selftest`
+
+每台检查器都在 `--selftest` 里带反向样本——每个绕过形态都有能抓住它的测试。
 
 ## 工作方式
 
@@ -49,8 +62,15 @@ python scripts/l0-l5-gate.py --goal goal.json --ia ia.json
 - 门禁查的是**形态不是语义**：statechart 过了检不等于它是对的。结构检查与领域评审缺一不可。
 - `a11y-gate` / `frontend-lint-gate` 是低误报静态子集——不是 axe-core，不是完整 lint 配置。
 - 基线模式（`--write-baseline`）让存量项目接入便宜（存量豁免、新增必拦）——重构后须重建基线。
+- 检测是**负面过滤**：门禁全绿只说明列出的缺陷形态不在场，不说明产品是好的。
 - Skill 对 agent 行为是**概率护栏**，不是保证。
 - 本仓检查**英文工件**（判定词表为英文）。中文项目请用中文源包 [`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow)（机制同源，词表为中文）。
+
+## 出处
+
+- **中文权威源**：[`shisan-xinuo-product`](https://github.com/zxc663/shisan-xinuo-workflow/tree/main/skill/shisan-xinuo-product)（`zxc663/shisan-xinuo-workflow` 仓 `skill/shisan-xinuo-product/`）。
+- 本仓为 **clean-room 英文发行版**：政策上机制等价、措辞独立成文；两条版本线各自独立（英文 1.x，中文源 0.2.x）。
+- 同步策略见 [AGENTS.md](AGENTS.md)：门禁或规则变更时两版同改，或注明分叉。
 
 ## 参与
 

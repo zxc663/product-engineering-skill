@@ -6,6 +6,9 @@ This repo ships one thing: the English edition of the product-engineering skill
 - Development source (Chinese edition) lives in the mother repo
   `shisan-xinuo-workflow` at `skill/shisan-xinuo-product/`. Keep the two editions
   mechanism-equivalent; when a gate or rule changes, change both or note the divergence.
+- Authority flows one way: the Chinese source is authoritative for mechanisms; this
+  edition may diverge in wording. Any intentional mechanism divergence is stated in the
+  commit message and the README "Provenance" section.
 - Writing discipline: state the rule plus at most one sentence of why. No dates,
   decision logs, candidate/promotion narration, or local paths in any shipped file.
 - Scripts are the product: every gate must keep `--selftest` green before commit.
